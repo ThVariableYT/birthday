@@ -451,7 +451,29 @@
                     </div>
                 </div>
 
-                <div class="space-y-2.5 text-left" id="trackListContainer"></div>
+                <div class="space-y-2.5 text-left" id="trackListContainer">
+                    <button class="track-btn w-full p-3.5 bg-white/60 hover:bg-white border border-white/60 hover:border-amber-200 rounded-2xl flex items-center justify-between transition-all duration-300 group" data-file="Your Thoughts.flac" data-name="Heena's Special Theme" data-id="song1">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm font-serif-elegant text-stone-600 group-hover:text-amber-800">01</span>
+                            <span class="text-xs font-semibold text-stone-800">Heena's Special Theme</span>
+                        </div>
+                        <i class="fa-solid fa-play text-[0.65rem] text-stone-400 group-hover:text-amber-600"></i>
+                    </button>
+                    <button class="track-btn w-full p-3.5 bg-white/60 hover:bg-white border border-white/60 hover:border-amber-200 rounded-2xl flex items-center justify-between transition-all duration-300 group" data-file="song2.mp3" data-name="Timeless Memories" data-id="song2">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm font-serif-elegant text-stone-600 group-hover:text-amber-800">02</span>
+                            <span class="text-xs font-semibold text-stone-800">Timeless Memories</span>
+                        </div>
+                        <i class="fa-solid fa-play text-[0.65rem] text-stone-400 group-hover:text-amber-600"></i>
+                    </button>
+                    <button class="track-btn w-full p-3.5 bg-white/60 hover:bg-white border border-white/60 hover:border-amber-200 rounded-2xl flex items-center justify-between transition-all duration-300 group" data-file="Saajna.flac" data-name="Joy & Light" data-id="song3">
+                        <div class="flex items-center gap-3">
+                            <span class="text-sm font-serif-elegant text-stone-600 group-hover:text-amber-800">03</span>
+                            <span class="text-xs font-semibold text-stone-800">Joy & Light</span>
+                        </div>
+                        <i class="fa-solid fa-play text-[0.65rem] text-stone-400 group-hover:text-amber-600"></i>
+                    </button>
+                </div>
 
                 <div class="mt-6 pt-6 border-t border-white/20">
                     <button id="showAddTrackBtn" class="w-full py-2.5 px-4 bg-white/35 hover:bg-white/50 border border-white/40 rounded-xl text-[0.7rem] font-bold tracking-wider uppercase text-stone-700 transition-all duration-300">
@@ -544,24 +566,6 @@
     </div>
 
     <script>
-        const myPlaylist = [
-            {
-                name: "Your Thoughts",
-                audioFile: "Your Thoughts.flac",
-                lyricsFile: "Your Thoughts.lrc"
-            },
-            {
-                name: "Saajna",
-                audioFile: "Saajna.flac",
-                lyricsFile: "Saajna.lrc"
-            },
-            {
-                name: "Perfect",
-                audioFile: "Perfect.m4a",
-                lyricsFile: "Perfect.lrc"
-            }
-        ];
-
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let vinylOsc = null;
         let vinylGain = null;
@@ -575,27 +579,30 @@
         let synthMockTime = 0;
         let lyricsBaseSize = 1.1;
 
-        function renderHardcodedTracklist() {
-            const container = document.getElementById('trackListContainer');
-            container.innerHTML = '';
-            myPlaylist.forEach((track, index) => {
-                const newIndex = index + 1;
-                const indexStr = newIndex < 10 ? '0' + newIndex : newIndex;
-                const btn = document.createElement('button');
-                btn.className = "track-btn w-full p-3.5 bg-white/60 hover:bg-white border border-white/60 hover:border-amber-200 rounded-2xl flex items-center justify-between transition-all duration-300 group";
-                btn.setAttribute('data-file', track.audioFile);
-                btn.setAttribute('data-lyrics-file', track.lyricsFile);
-                btn.setAttribute('data-name', track.name);
-                btn.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <span class="text-sm font-serif-elegant text-stone-600 group-hover:text-amber-800">${indexStr}</span>
-                        <span class="text-xs font-semibold text-stone-800">${track.name}</span>
-                    </div>
-                    <i class="fa-solid fa-play text-[0.65rem] text-stone-400 group-hover:text-amber-600"></i>
-                `;
-                container.appendChild(btn);
-            });
-        }
+        const defaultLyrics = {
+            "Heena's Special Theme": [
+                { time: 0, text: "Welcome to Heena's Celebration Theme..." },
+                { time: 3, text: "A melody crafted for a wonderful soul." },
+                { time: 7, text: "You bring warmth to the coldest days..." },
+                { time: 11, text: "And brighten every single path with your light." },
+                { time: 15, text: "We hope this day is as sweet as you are." },
+                { time: 19, text: "Happy Birthday, Heena!" }
+            ],
+            "Timeless Memories": [
+                { time: 0, text: "Thinking of all the times we shared..." },
+                { time: 4, text: "Every laugh, every deep conversation." },
+                { time: 8, text: "Through changing seasons and passing years..." },
+                { time: 12, text: "Your beautiful loyalty has remained our anchor." },
+                { time: 16, text: "Here is to many more precious memories together!" }
+            ],
+            "Joy & Light": [
+                { time: 0, text: "A bright sky, a gorgeous peaceful dawn..." },
+                { time: 3, text: "Your smile brings the sun when the rain is pouring." },
+                { time: 7, text: "Never change your beautiful patient spirit..." },
+                { time: 11, text: "You are the ultimate safe haven." },
+                { time: 15, text: "Wishing you infinite happiness today and forever!" }
+            ]
+        };
 
         function showToastMessage(text) {
             const toast = document.getElementById('customToast');
@@ -932,6 +939,42 @@
             document.getElementById('jarNote').innerText = jarThoughts[randomIndex];
         });
 
+        const activeChimes = new Set();
+        document.querySelectorAll('.chime-bar').forEach(chime => {
+            const playNote = (el) => {
+                const note = parseFloat(el.getAttribute('data-note'));
+                el.classList.add('active');
+                playChime(note, 'triangle', 2.0, 0.25);
+                const rect = el.getBoundingClientRect();
+                createSparkles(rect.left + rect.width / 2, rect.top, 8, 'rainbow', 0, -3);
+                setTimeout(() => el.classList.remove('active'), 200);
+            };
+
+            chime.addEventListener('pointerdown', (e) => {
+                e.preventDefault();
+                playNote(chime);
+            });
+
+            chime.addEventListener('pointerenter', (e) => {
+                if (e.buttons === 1) {
+                    playNote(chime);
+                }
+            });
+        });
+
+        document.getElementById('harpContainer').addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            const target = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (target && target.classList.contains('chime-bar')) {
+                const id = target.getAttribute('data-note');
+                if (!activeChimes.has(id)) {
+                    activeChimes.add(id);
+                    target.dispatchEvent(new PointerEvent('pointerdown'));
+                    setTimeout(() => activeChimes.delete(id), 150);
+                }
+            }
+        });
+
         const vinylRecord = document.getElementById('vinylRecord');
         const tonearm = document.getElementById('tonearm');
         const currentTrackName = document.getElementById('currentTrackName');
@@ -1110,7 +1153,6 @@
             const isUploaded = btn.hasAttribute('data-uploaded');
             const fileId = btn.getAttribute('data-file-id');
             const targetAudioFile = btn.getAttribute('data-file');
-            const targetLyricsFile = btn.getAttribute('data-lyrics-file');
 
             if (vinylRecord.classList.contains('paused-record') || currentTrackName.innerText !== trackName) {
                 if (ambientActive) {
@@ -1144,8 +1186,7 @@
                     currentPlayType = "uploaded";
                     showLyricsContainer(lyrics);
                 } else {
-                    const safeAudioPath = "./" + targetAudioFile;
-                    uploadedAudio = new Audio(safeAudioPath);
+                    uploadedAudio = new Audio(targetAudioFile);
                     uploadedAudio.addEventListener('timeupdate', () => {
                         updateLyricsSync(uploadedAudio.currentTime);
                     });
@@ -1153,12 +1194,17 @@
                         stopVinylAndReset();
                     });
                     uploadedAudio.addEventListener('error', () => {
-                        showToastMessage(`Could not load track: "${targetAudioFile}". Verify files are uploaded with exact casing.`);
+                        showToastMessage(`Place "${targetAudioFile}" in the root folder of this website to listen!`);
                         stopVinylAndReset();
                     });
 
-                    const safeLyricsPath = "./" + targetLyricsFile;
-                    fetch(safeLyricsPath)
+                    const filenameBase = targetAudioFile.replace('.mp3', '');
+                    const lrcFilename = filenameBase + '.lrc';
+                    const txtFilename = filenameBase + '.txt';
+
+                    const baseDefaultLyrics = defaultLyrics[trackName] || [];
+
+                    fetch(lrcFilename)
                         .then(res => {
                             if (!res.ok) throw new Error();
                             return res.text();
@@ -1167,14 +1213,21 @@
                             showLyricsContainer(parseLrc(text));
                         })
                         .catch(() => {
-                            showLyricsContainer([
-                                { time: 0, text: `Could not load lyrics from "${targetLyricsFile}"` },
-                                { time: 3, text: "Ensure file names match exactly and are in the same folder." }
-                            ]);
+                            fetch(txtFilename)
+                                .then(res => {
+                                    if (!res.ok) throw new Error();
+                                    return res.text();
+                                })
+                                .then(text => {
+                                    showLyricsContainer(parseLrc(text));
+                                })
+                                .catch(() => {
+                                    showLyricsContainer(baseDefaultLyrics);
+                                });
                         });
 
                     uploadedAudio.play().catch(() => {
-                        showToastMessage(`Audio playback failed. Please check browser permission to autoplay.`);
+                        showToastMessage(`Place "${targetAudioFile}" in the root folder of this website to listen!`);
                         stopVinylAndReset();
                     });
                     currentPlayType = "hardcoded";
@@ -1270,18 +1323,6 @@
                     { time: 3, text: "(No custom lyrics file uploaded)" }
                 ]);
             }
-        });
-
-        document.getElementById('musicToggle').addEventListener('click', () => {
-            if (ambientActive) {
-                stopAmbientMusic();
-            } else {
-                startAmbientMusic();
-            }
-        });
-
-        window.addEventListener('load', () => {
-            renderHardcodedTracklist();
         });
 
     </script>
