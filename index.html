@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Heena — Happy Birthday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(at 0% 0%, #fff0ed 0px, transparent 50%), 
+                        radial-gradient(at 100% 0%, #f7e6fd 0px, transparent 50%), 
+                        radial-gradient(at 50% 100%, #fff4db 0px, transparent 50%), 
+                        #fbf8f3;
+            overflow-x: hidden;
+        }
+        .font-serif-elegant {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        .glass-premium {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.25));
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8), 0 20px 45px rgba(184, 143, 109, 0.08);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .perspective {
+            perspective: 1500px;
+        }
+        .preserve-3d {
+            transform-style: preserve-3d;
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        .liquid-blob-1 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(253, 186, 116, 0.5) 0%, rgba(244, 63, 94, 0.25) 50%, rgba(220,165,165,0) 75%);
+            filter: blur(60px);
+            animation: morph-1 10s ease-in-out infinite alternate;
+        }
+        .liquid-blob-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(216, 180, 254, 0.5) 0%, rgba(147, 197, 253, 0.2) 50%, rgba(162,196,222,0) 80%);
+            filter: blur(70px);
+            animation: morph-2 12s ease-in-out infinite alternate-reverse;
+        }
+        @keyframes morph-1 {
+            0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(60px, -40px) scale(1.2) rotate(45deg); }
+            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(-40px, 50px) scale(0.85) rotate(90deg); }
+        }
+        @keyframes morph-2 {
+            0% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(0, 0) scale(0.85) rotate(0deg); }
+            50% { border-radius: 30% 80% 40% 60% / 40% 50% 60% 70%; transform: translate(-60px, 50px) scale(1.15) rotate(-60deg); }
+            100% { border-radius: 80% 20% 70% 30% / 60% 30% 80% 40%; transform: translate(50px, -50px) scale(1.0) rotate(-120deg); }
+        }
+        @keyframes float-item {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(4deg); }
+        }
+        .animate-float {
+            animation: float-item 7s ease-in-out infinite;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer-anim 2.5s infinite;
+        }
+        @keyframes shimmer-anim {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .vial-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            bottom: 10px;
+            animation: float-bubble 4s infinite linear;
+        }
+        @keyframes float-bubble {
+            0% { transform: translateY(0) scale(0.5); opacity: 0; }
+            20% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-70px) scale(1.2); opacity: 0; }
+        }
+        .chime-bar {
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .chime-bar:active, .chime-bar.active {
+            transform: scaleY(1.15) scaleX(0.95);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(253, 186, 116, 0.4));
+            box-shadow: 0 0 20px rgba(253, 186, 116, 0.6);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen text-stone-800 antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-[-5%] left-[-15%] liquid-blob-1"></div>
+        <div class="absolute bottom-[-5%] right-[-15%] liquid-blob-2"></div>
+    </div>
+
+    <canvas id="sparkleCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></canvas>
+
+    <div id="introScreen" class="fixed inset-0 bg-gradient-to-br from-[#fff3ef] to-[#f4e9fc] z-50 flex flex-col items-center justify-center p-6 transition-all duration-1000">
+        <div class="glass-premium p-10 md:p-14 rounded-[3.5rem] text-center max-w-sm flex flex-col items-center shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1.5 shimmer"></div>
+            
+            <div class="w-40 h-40 mb-10 cursor-pointer relative flex items-center justify-center group" id="giftBoxContainer">
+                <div class="absolute inset-0 bg-gradient-to-tr from-rose-200 via-white to-amber-100 rounded-full border border-white shadow-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                    <svg viewBox="0 0 100 100" class="w-28 h-28">
+                        <defs>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffdf7a" />
+                                <stop offset="100%" stop-color="#ff9f75" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <g filter="url(#glow)">
+                            <path d="M 50,25 Q 42,5 25,12 Q 8,20 30,35 Q 50,50 50,55 Q 50,50 70,35 Q 92,20 75,12 Q 58,5 50,25 Z" fill="url(#goldGrad)" opacity="0.95"/>
+                            <circle cx="50" cy="53" r="12" fill="url(#goldGrad)"/>
+                            <path d="M 40,53 L 60,53 M 50,43 L 50,63" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="absolute -top-2 -right-2 w-5 h-5 bg-rose-400 rounded-full animate-ping"></div>
+            </div>
+            
+            <h1 class="text-5xl font-serif-elegant font-normal tracking-wide text-stone-900 mb-2">Heena</h1>
+            <p class="text-stone-500 mb-10 text-[0.75rem] font-bold tracking-[0.4em] uppercase">Unveil the Luminescence</p>
+            
+            <button id="openGiftBtn" class="w-full relative overflow-hidden bg-gradient-to-r from-white/95 to-white/60 border border-amber-200 text-stone-800 font-serif-elegant tracking-widest text-[0.75rem] uppercase py-4 px-8 rounded-full shadow-xl hover:border-amber-300 hover:scale-[1.03] active:scale-95 transition-all duration-300 group">
+                <span class="absolute inset-0 w-full h-full shimmer opacity-25"></span>
+                <span class="relative z-10 flex items-center justify-center gap-2 font-semibold">
+                    Begin the Celebration
+                    <i class="fa-solid fa-sparkles text-amber-500 animate-pulse"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div id="mainContent" class="hidden min-h-screen pb-28 opacity-0 transition-opacity duration-1000 max-w-md mx-auto relative z-10">
+        
+        <div class="fixed top-4 right-4 z-40 flex gap-2">
+            <button id="musicToggle" class="w-11 h-11 rounded-full glass-premium flex items-center justify-center text-stone-700 hover:text-rose-500 transition-colors shadow-lg">
+                <i class="fa-solid fa-music text-sm"></i>
+            </button>
+        </div>
+
+        <header class="relative pt-20 pb-14 px-6 text-center">
+            <div class="absolute top-8 left-8 text-rose-300/80 text-xl animate-float" style="animation-duration: 4s;"><i class="fa-solid fa-star"></i></div>
+            <div class="absolute top-24 right-8 text-amber-300/80 text-2xl animate-float" style="animation-duration: 5s;"><i class="fa-solid fa-sparkles animate-pulse"></i></div>
+            
+            <p class="text-[0.7rem] tracking-[0.4em] uppercase text-rose-500 font-extrabold mb-4">Celestial Tribute</p>
+            <h1 class="text-7xl font-serif-elegant font-normal tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-rose-800 to-amber-700 leading-tight">Heena</h1>
+            <div class="w-20 h-[2px] bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto my-6"></div>
+            <p class="text-xs text-stone-500 italic tracking-wider px-4 leading-relaxed">An interactive, luminous archive dedicated to a soul of pure warmth, grace, and timeless friendship.</p>
+        </header>
+
+        <main class="px-6 space-y-12">
+
+            <section class="glass-premium p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
+                <div class="absolute -top-16 -left-16 w-32 h-32 bg-rose-200/30 rounded-full filter blur-2xl"></div>
+                <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-wide">Luminescent Flames</h3>
+                <p class="text-[0.65rem] text-rose-500 tracking-widest uppercase font-extrabold mb-12">Tap to extinguish each candle & make your wish</p>
+                
+                <div class="flex justify-center items-end gap-8 h-36 relative mb-4">
+                    <div class="w-60 h-14 bg-gradient-to-b from-white/80 to-white/30 border border-white rounded-t-[2rem] relative shadow-2xl flex items-center justify-center">
+                        <div class="absolute -top-16 left-1/2 -translate-x-1/2 flex gap-10">
+                            <div class="candle flex flex-col items-center cursor-pointer" data-id="1">
+                                <div class="flame w-4 h-8 bg-gradient-to-t from-red-500 via-amber-300 to-white rounded-full animate-pulse transition-all duration-500 origin-bottom shadow-[0_0_25px_rgba(251,191,36,0.9)]"></div>
+                                <div class="wick w-[1px] h-2 bg-stone-800"></div>
+                                <div class="body w-3.5 h-14 bg-gradient-to-r from-rose-100 to-rose-200 border-l border-white rounded-t-sm shadow-sm"></div>
+                            </div>
+                            <div class="candle flex flex-col items-center cursor-pointer" data-id="2">
+                                <div class="flame w-4 h-8 bg-gradient-to-t from-red-500 via-amber-300 to-white rounded-full animate-pulse transition-all duration-500 origin-bottom shadow-[0_0_25px_rgba(251,191,36,0.9)]" style="animation-delay: 0.15s;"></div>
+                                <div class="wick w-[1px] h-2 bg-stone-800"></div>
+                                <div class="body w-3.5 h-14 bg-gradient-to-r from-amber-100 to-amber-200 border-l border-white rounded-t-sm shadow-sm"></div>
+                            </div>
+                            <div class="candle flex flex-col items-center cursor-pointer" data-id="3">
+                                <div class="flame w-4 h-8 bg-gradient-to-t from-red-500 via-amber-300 to-white rounded-full animate-pulse transition-all duration-500 origin-bottom shadow-[0_0_25px_rgba(251,191,36,0.9)]" style="animation-delay: 0.3s;"></div>
+                                <div class="wick w-[1px] h-2 bg-stone-800"></div>
+                                <div class="body w-3.5 h-14 bg-gradient-to-r from-purple-100 to-purple-200 border-l border-white rounded-t-sm shadow-sm"></div>
+                            </div>
+                        </div>
+                        <div class="text-[0.65rem] text-stone-500 tracking-[0.2em] uppercase font-bold">Heena's Cake</div>
+                    </div>
+                </div>
+
+                <div id="wishMessage" class="hidden mt-8 p-6 bg-gradient-to-br from-white/95 to-white/60 border border-rose-100 rounded-[1.8rem] text-xs text-stone-700 leading-relaxed font-serif-elegant italic shadow-xl transition-all duration-1000">
+                    “May the universe realign to bring you the quiet joy, deep peace, and beautiful wonder you so gracefully give to everyone around you, Heena. You deserve everything exquisite.” ✨
+                </div>
+            </section>
+
+            <section class="space-y-6">
+                <div class="px-2">
+                    <h3 class="font-serif-elegant text-2xl text-stone-900 tracking-wide">The Memory Crystals</h3>
+                    <p class="text-[0.65rem] text-rose-500 tracking-widest uppercase font-extrabold mt-1">Tap a card to view our shared light</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4" id="cardsContainer">
+                    <div class="polaroid perspective h-60 cursor-pointer group">
+                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all">
+                                <div class="w-full h-36 bg-gradient-to-tr from-rose-100/40 to-amber-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🌸</div>
+                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Elegant Quietude</p>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-rose-50/95 to-white/95 p-5 rounded-[2rem] border border-rose-200/60 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] text-stone-700 shadow-xl">
+                                <p class="leading-relaxed font-medium">Your poise is comforting. In a loud world, you possess a quiet, shimmering strength that makes everyone feel entirely safe.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="polaroid perspective h-60 cursor-pointer group">
+                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all">
+                                <div class="w-full h-36 bg-gradient-to-tr from-purple-100/40 to-rose-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🤍</div>
+                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Sacred Sanctuary</p>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-50/95 to-white/95 p-5 rounded-[2rem] border border-purple-200/60 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] text-stone-700 shadow-xl">
+                                <p class="leading-relaxed font-medium">For every single time I ranted about every little thing, you never once turned away. You listened, held space, and consoled me with infinite, tender patience. You are my ultimate safe haven.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="polaroid perspective h-60 cursor-pointer group">
+                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all">
+                                <div class="w-full h-36 bg-gradient-to-tr from-amber-100/40 to-purple-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🍂</div>
+                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Unwavering Rock</p>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-amber-50/95 to-white/95 p-5 rounded-[2rem] border border-amber-200/60 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] text-stone-700 shadow-xl">
+                                <p class="leading-relaxed font-medium">Through every changing season, your loyalty is absolute. Having you by my side is life's most beautiful reassurance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="polaroid perspective h-60 cursor-pointer group">
+                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all">
+                                <div class="w-full h-36 bg-gradient-to-tr from-rose-100/40 to-emerald-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🪐</div>
+                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Infinite Grace</p>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-rose-50/95 to-white/95 p-5 rounded-[2rem] border border-stone-200/60 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] text-stone-700 shadow-xl">
+                                <p class="leading-relaxed font-medium">You handle everything life throws at you with such admirable, pristine grace. You are a masterpiece of a friend.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass-premium p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
+                <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-amber-200/30 rounded-full filter blur-2xl"></div>
+                <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-wide">Vial of Luminescence</h3>
+                <p class="text-[0.65rem] text-rose-500 tracking-widest uppercase font-extrabold mb-10">Tap the vial to release a glimmer of love</p>
+                
+                <div class="relative w-36 h-44 mx-auto cursor-pointer flex items-center justify-center group" id="loveJar">
+                    <div id="bubbleContainer" class="absolute inset-0 w-24 h-32 mx-auto overflow-hidden rounded-b-[2rem] bottom-4 pointer-events-none z-10"></div>
+                    <svg viewBox="0 0 100 130" class="w-full h-full drop-shadow-2xl transition-all duration-500 group-hover:scale-105 relative z-20">
+                        <defs>
+                            <linearGradient id="vialGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(255,255,255,0.7)"/>
+                                <stop offset="50%" stop-color="rgba(255,255,255,0.15)"/>
+                                <stop offset="100%" stop-color="rgba(255,218,185,0.35)"/>
+                            </linearGradient>
+                            <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f3e1cb"/>
+                                <stop offset="50%" stop-color="#dfba9b"/>
+                                <stop offset="100%" stop-color="#a87f5d"/>
+                            </linearGradient>
+                            <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(253, 164, 186, 0.55)" />
+                                <stop offset="100%" stop-color="rgba(251, 191, 36, 0.65)" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="40" y="10" width="20" height="8" rx="2" fill="url(#goldAcc)"/>
+                        <rect x="36" y="18" width="28" height="4" rx="1" fill="url(#goldAcc)"/>
+                        <path d="M 42,22 L 58,22 L 58,32 L 42,32 Z" fill="rgba(255,255,255,0.3)"/>
+                        <path d="M 42,32 C 23,35 12,60 12,85 C 12,115 28,130 50,130 C 72,130 88,115 88,85 C 88,60 77,35 58,32 Z" fill="url(#vialGlassGrad)" stroke="rgba(255,255,255,0.85)" stroke-width="2"/>
+                        <path id="liquidLevel" d="M 15,85 C 28,80 38,90 50,85 C 62,80 72,90 85,85 C 87,105 78,125 50,125 C 22,125 13,105 15,85 Z" fill="url(#liquidGrad)" class="transition-transform duration-500 ease-out origin-center"/>
+                        <path d="M 22,65 C 25,50 35,40 45,36" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <circle cx="50" cy="95" r="11" fill="url(#goldAcc)" opacity="0.85"/>
+                        <path d="M 50,89 L 52,93 L 56,93 L 53,95 L 54,99 L 50,97 L 46,99 L 47,95 L 44,93 L 48,93 Z" fill="#fff"/>
+                    </svg>
+                    <div id="jarSpark" class="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
+                        <i class="fa-solid fa-sparkles text-3xl text-amber-300 opacity-0 transform scale-50 transition-all duration-700"></i>
+                    </div>
+                </div>
+
+                <div id="jarNote" class="mt-8 p-6 bg-gradient-to-br from-white/95 to-white/60 border border-amber-100 rounded-[1.8rem] text-xs text-stone-700 leading-relaxed font-serif-elegant italic shadow-inner h-28 flex items-center justify-center text-center transition-all duration-300">
+                    Tap the vial to release a glimmer of appreciation.
+                </div>
+            </section>
+
+            <section class="glass-premium p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
+                <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-wide">Harp of Whispers</h3>
+                <p class="text-[0.65rem] text-rose-500 tracking-widest uppercase font-extrabold mb-8">Swipe or tap the chimes to hear celestial melodies</p>
+                <div class="flex justify-between items-end gap-2 h-32 px-2" id="harpContainer">
+                    <div class="chime-bar flex-1 h-full rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="261.63" data-name="Do">C</div>
+                    <div class="chime-bar flex-1 h-[93%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="293.66" data-name="Re">D</div>
+                    <div class="chime-bar flex-1 h-[86%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="329.63" data-name="Mi">E</div>
+                    <div class="chime-bar flex-1 h-[79%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="392.00" data-name="Sol">G</div>
+                    <div class="chime-bar flex-1 h-[72%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="440.00" data-name="La">A</div>
+                    <div class="chime-bar flex-1 h-[65%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="523.25" data-name="Do">C</div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-28 text-center px-6">
+            <div class="w-12 h-[1px] bg-stone-300 mx-auto mb-6"></div>
+            <p class="text-[0.65rem] tracking-[0.4em] text-rose-500 uppercase font-extrabold">Exclusively for Heena</p>
+            <p class="text-xs font-serif-elegant italic text-stone-500 mt-2">A beautiful friendship glowing through time.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playChime(freq = 523.25, type = 'sine', duration = 1.5, volume = 0.2) {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const osc = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gainNode.gain.setValueAtTime(volume, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+            osc.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        function playCelebrationMelody() {
+            const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50, 1318.51];
+            notes.forEach((freq, index) => {
+                setTimeout(() => playChime(freq, 'sine', 2.0, 0.15), index * 100);
+            });
+        }
+
+        function playAmbientChord() {
+            const root = 261.63;
+            playChime(root, 'sine', 3.0, 0.12);
+            playChime(root * 1.25, 'sine', 3.2, 0.1);
+            playChime(root * 1.5, 'sine', 3.4, 0.1);
+            playChime(root * 1.875, 'sine', 3.6, 0.08);
+        }
+
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Sparkle {
+            constructor(x, y, colorType, customSpeedX = null, customSpeedY = null) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 4 + 1.5;
+                this.speedX = customSpeedX !== null ? customSpeedX : Math.random() * 5 - 2.5;
+                this.speedY = customSpeedY !== null ? customSpeedY : Math.random() * -5 - 2;
+                
+                const r = Math.floor(Math.random() * 3);
+                if (colorType === 'gold') {
+                    this.color = r === 0 ? 'rgba(251, 191, 36, 0.9)' : r === 1 ? 'rgba(253, 186, 116, 0.85)' : 'rgba(255, 255, 255, 0.95)';
+                } else if (colorType === 'smoke') {
+                    this.color = 'rgba(150, 140, 135, 0.4)';
+                    this.size = Math.random() * 8 + 4;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * -1 - 0.5;
+                } else {
+                    this.color = r === 0 ? 'rgba(244, 63, 94, 0.85)' : r === 1 ? 'rgba(216, 180, 254, 0.85)' : 'rgba(253, 186, 116, 0.85)';
+                }
+                
+                this.alpha = 1;
+                this.decay = Math.random() * 0.01 + 0.006;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = Math.random() * 0.08 - 0.04;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.color !== 'rgba(150, 140, 135, 0.4)') {
+                    this.speedY += 0.03;
+                }
+                this.alpha -= this.decay;
+                this.rotation += this.rotationSpeed;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.fillStyle = this.color;
+                
+                if (Math.random() > 0.6) {
+                    ctx.beginPath();
+                    for (let i = 0; i < 4; i++) {
+                        ctx.lineTo(0, -this.size);
+                        ctx.rotate(Math.PI / 2);
+                    }
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+        }
+
+        function createSparkles(x, y, count = 15, colorType = 'rainbow', customSX = null, customSY = null) {
+            for (let i = 0; i < count; i++) {
+                particles.push(new Sparkle(x, y, colorType, customSX, customSY));
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(p => p.alpha > 0);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        window.addEventListener('pointermove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            if (Math.random() > 0.85) {
+                createSparkles(mouseX, mouseY, 1, 'gold', Math.random() * 0.4 - 0.2, Math.random() * 0.4 - 0.2);
+            }
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target.closest('button') || e.target.closest('.candle') || e.target.closest('.polaroid') || e.target.closest('#loveJar') || e.target.closest('.chime-bar')) return;
+            createSparkles(e.clientX, e.clientY, 8, 'gold');
+            playChime(600 + Math.random() * 600, 'sine', 0.8, 0.1);
+        });
+
+        const jarThoughts = [
+            "Your elegance is defined not by show, but by the quiet grace with which you treat others.",
+            "You listen with your whole heart, making everyone feel truly understood and valued.",
+            "In every storm, you are a grounding presence, anchoring everything with serene wisdom.",
+            "The warmth of your laughter has the subtle power to put any troubled mind at complete ease.",
+            "Your loyalty is rare and breathtaking, Heena. Having you as a friend is a masterclass in trust.",
+            "Thank you for being the beautiful soul who simply makes the entire world feel gentle and kind.",
+            "Your friendship is a quiet sanctuary, a space of infinite solace, safety, and joy."
+        ];
+
+        document.getElementById('openGiftBtn').addEventListener('click', () => {
+            playCelebrationMelody();
+            createSparkles(window.innerWidth / 2, window.innerHeight / 2, 70, 'rainbow');
+            
+            document.getElementById('introScreen').classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                document.getElementById('introScreen').style.display = 'none';
+                const main = document.getElementById('mainContent');
+                main.classList.remove('hidden');
+                setTimeout(() => {
+                    main.classList.remove('opacity-0');
+                }, 50);
+            }, 1000);
+        });
+
+        document.getElementById('giftBoxContainer').addEventListener('click', (e) => {
+            createSparkles(e.clientX, e.clientY, 35, 'gold');
+            playChime(659.25, 'triangle', 1.0, 0.25);
+        });
+
+        let blownCandles = 0;
+        document.querySelectorAll('.candle').forEach(candle => {
+            candle.addEventListener('click', function(e) {
+                const flame = this.querySelector('.flame');
+                if (flame && !flame.classList.contains('hidden')) {
+                    flame.classList.add('hidden');
+                    
+                    const rect = flame.getBoundingClientRect();
+                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 30, 'smoke');
+                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 20, 'gold');
+                    
+                    playChime(587.33, 'triangle', 1.2, 0.2);
+                    blownCandles++;
+                    
+                    if (blownCandles === 3) {
+                        setTimeout(() => {
+                            playCelebrationMelody();
+                            document.getElementById('wishMessage').classList.remove('hidden');
+                            for (let i = 0; i < 5; i++) {
+                                setTimeout(() => {
+                                    createSparkles(window.innerWidth / 2, window.innerHeight / 3, 50, 'rainbow');
+                                }, i * 200);
+                            }
+                        }, 500);
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.polaroid').forEach(polaroid => {
+            polaroid.addEventListener('click', function() {
+                const inner = this.querySelector('.card-inner');
+                const isFlipped = inner.classList.toggle('rotate-y-180');
+                if (isFlipped) {
+                    inner.style.transform = 'rotateY(180deg)';
+                } else {
+                    inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                }
+                playChime(440, 'sine', 1.0, 0.15);
+            });
+            
+            polaroid.addEventListener('pointermove', function(e) {
+                const inner = this.querySelector('.card-inner');
+                if (inner.classList.contains('rotate-y-180')) return;
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                inner.style.transform = `rotateX(${-y / 10}deg) rotateY(${x / 10}deg)`;
+            });
+            
+            polaroid.addEventListener('pointerleave', function() {
+                const inner = this.querySelector('.card-inner');
+                if (inner.classList.contains('rotate-y-180')) {
+                    inner.style.transform = 'rotateY(180deg)';
+                } else {
+                    inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                }
+            });
+        });
+
+        function createVialBubble() {
+            const container = document.getElementById('bubbleContainer');
+            const b = document.createElement('div');
+            b.classList.add('vial-bubble');
+            const size = Math.random() * 8 + 4;
+            b.style.width = `${size}px`;
+            b.style.height = `${size}px`;
+            b.style.left = `${Math.random() * 80 + 10}%`;
+            b.style.animationDuration = `${Math.random() * 2 + 2}s`;
+            container.appendChild(b);
+            setTimeout(() => b.remove(), 4000);
+        }
+
+        setInterval(() => {
+            if (!document.getElementById('mainContent').classList.contains('hidden')) {
+                createVialBubble();
+            }
+        }, 800);
+
+        document.getElementById('loveJar').addEventListener('click', function(e) {
+            playChime(783.99, 'sine', 1.2, 0.2);
+            
+            const level = document.getElementById('liquidLevel');
+            level.style.transform = 'skewY(6deg) scaleY(1.08)';
+            setTimeout(() => level.style.transform = 'none', 400);
+
+            for (let i = 0; i < 12; i++) {
+                setTimeout(createVialBubble, i * 50);
+            }
+
+            const spark = document.querySelector('#jarSpark i');
+            spark.classList.remove('opacity-0', 'scale-50');
+            spark.classList.add('opacity-100', 'scale-150', '-translate-y-16');
+            
+            createSparkles(e.clientX, e.clientY, 30, 'gold');
+
+            setTimeout(() => {
+                spark.classList.add('opacity-0', 'scale-50');
+                spark.classList.remove('opacity-100', 'scale-150', '-translate-y-16');
+            }, 800);
+
+            const randomIndex = Math.floor(Math.random() * jarThoughts.length);
+            document.getElementById('jarNote').innerText = jarThoughts[randomIndex];
+        });
+
+        document.getElementById('musicToggle').addEventListener('click', () => {
+            playAmbientChord();
+        });
+
+        const activeChimes = new Set();
+        document.querySelectorAll('.chime-bar').forEach(chime => {
+            const playNote = (el) => {
+                const note = parseFloat(el.getAttribute('data-note'));
+                el.classList.add('active');
+                playChime(note, 'triangle', 2.0, 0.25);
+                const rect = el.getBoundingClientRect();
+                createSparkles(rect.left + rect.width / 2, rect.top, 8, 'rainbow', 0, -3);
+                setTimeout(() => el.classList.remove('active'), 200);
+            };
+
+            chime.addEventListener('pointerdown', (e) => {
+                e.preventDefault();
+                playNote(chime);
+            });
+
+            chime.addEventListener('pointerenter', (e) => {
+                if (e.buttons === 1) {
+                    playNote(chime);
+                }
+            });
+        });
+
+        document.getElementById('harpContainer').addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            const target = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (target && target.classList.contains('chime-bar')) {
+                const id = target.getAttribute('data-note');
+                if (!activeChimes.has(id)) {
+                    activeChimes.add(id);
+                    target.dispatchEvent(new PointerEvent('pointerdown'));
+                    setTimeout(() => activeChimes.delete(id), 150);
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
