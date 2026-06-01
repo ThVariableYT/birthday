@@ -523,7 +523,7 @@
             <section class="glass-premium p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl">
                 <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-wide">Harp of Whispers</h3>
                 <p class="text-[0.65rem] text-rose-500 tracking-widest uppercase font-extrabold mb-8">Swipe or tap the chimes to hear celestial melodies</p>
-                <div class="flex justify-between items-end gap-2 h-32 px-2" id="harpContainer">
+                <div class="flex justify-between items-end gap-2 h-32 px-2 select-none touch-none" id="harpContainer">
                     <div class="chime-bar flex-1 h-full rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="261.63" data-name="Do">C</div>
                     <div class="chime-bar flex-1 h-[93%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="293.66" data-name="Re">D</div>
                     <div class="chime-bar flex-1 h-[86%] rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-stone-400 font-bold tracking-widest uppercase cursor-pointer" data-note="329.63" data-name="Mi">E</div>
@@ -1277,6 +1277,59 @@
                 stopAmbientMusic();
             } else {
                 startAmbientMusic();
+            }
+        });
+
+        const harpContainer = document.getElementById('harpContainer');
+        const chimes = document.querySelectorAll('.chime-bar');
+
+        function triggerChime(chime, clientX, clientY) {
+            if (!chime.classList.contains('active')) {
+                chime.classList.add('active');
+                const note = parseFloat(chime.getAttribute('data-note'));
+                playChime(note, 'sine', 1.5, 0.15);
+                createSparkles(clientX, clientY, 5, 'gold', Math.random() * 2 - 1, Math.random() * -3);
+                setTimeout(() => {
+                    chime.classList.remove('active');
+                }, 400);
+            }
+        }
+
+        chimes.forEach(chime => {
+            chime.addEventListener('pointerdown', (e) => {
+                triggerChime(chime, e.clientX, e.clientY);
+            });
+        });
+
+        let isHarpActive = false;
+
+        harpContainer.addEventListener('pointerdown', (e) => {
+            isHarpActive = true;
+            try {
+                harpContainer.setPointerCapture(e.pointerId);
+            } catch(err) {}
+            const element = document.elementFromPoint(e.clientX, e.clientY);
+            if (element && element.classList.contains('chime-bar')) {
+                triggerChime(element, e.clientX, e.clientY);
+            }
+        });
+
+        harpContainer.addEventListener('pointerup', (e) => {
+            isHarpActive = false;
+            try {
+                harpContainer.releasePointerCapture(e.pointerId);
+            } catch(err) {}
+        });
+
+        harpContainer.addEventListener('pointercancel', () => {
+            isHarpActive = false;
+        });
+
+        harpContainer.addEventListener('pointermove', (e) => {
+            if (!isHarpActive) return;
+            const element = document.elementFromPoint(e.clientX, e.clientY);
+            if (element && element.classList.contains('chime-bar')) {
+                triggerChime(element, e.clientX, e.clientY);
             }
         });
 
