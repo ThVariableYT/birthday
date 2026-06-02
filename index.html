@@ -12,29 +12,29 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(at 0% 0%, #ffece8 0px, transparent 50%), 
-                        radial-gradient(at 100% 0%, #f6ddff 0px, transparent 50%), 
-                        radial-gradient(at 50% 100%, #fff1cc 0px, transparent 50%), 
-                        #faf5ed;
+            background: radial-gradient(at 0% 0%, #fff0ec 0px, transparent 50%), 
+                        radial-gradient(at 100% 0%, #f4e2ff 0px, transparent 50%), 
+                        radial-gradient(at 50% 100%, #fff9e6 0px, transparent 50%), 
+                        #fbf8f3;
             overflow-x: hidden;
         }
         .font-serif-elegant {
             font-family: 'Playfair Display', Georgia, serif;
         }
         .glass-premium {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.3));
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.35));
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             box-shadow: 
-                inset 0 1px 2px rgba(255, 255, 255, 0.95), 
-                0 25px 55px rgba(184, 143, 109, 0.12),
-                0 4px 15px rgba(0, 0, 0, 0.01);
+                inset 0 1px 3px rgba(255, 255, 255, 0.95), 
+                0 30px 60px rgba(184, 143, 109, 0.1),
+                0 4px 15px rgba(0, 0, 0, 0.005);
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.45);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
         .perspective {
@@ -50,40 +50,40 @@
             transform: rotateY(180deg);
         }
         .liquid-blob-1 {
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, rgba(253, 186, 116, 0.55) 0%, rgba(244, 63, 94, 0.3) 50%, rgba(220,165,165,0) 75%);
-            filter: blur(70px);
-            animation: morph-1 14s ease-in-out infinite alternate;
-        }
-        .liquid-blob-2 {
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(216, 180, 254, 0.55) 0%, rgba(147, 197, 253, 0.25) 50%, rgba(162,196,222,0) 80%);
+            background: radial-gradient(circle, rgba(253, 186, 116, 0.5) 0%, rgba(244, 63, 94, 0.25) 50%, rgba(220,165,165,0) 75%);
             filter: blur(80px);
-            animation: morph-2 16s ease-in-out infinite alternate-reverse;
+            animation: morph-1 20s ease-in-out infinite alternate;
+        }
+        .liquid-blob-2 {
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(216, 180, 254, 0.5) 0%, rgba(147, 197, 253, 0.2) 50%, rgba(162,196,222,0) 80%);
+            filter: blur(90px);
+            animation: morph-2 24s ease-in-out infinite alternate-reverse;
         }
         @keyframes morph-1 {
             0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; transform: translate(0, 0) scale(1) rotate(0deg); }
-            50% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(80px, -60px) scale(1.25) rotate(45deg); }
-            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(-60px, 70px) scale(0.9) rotate(90deg); }
+            50% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(100px, -80px) scale(1.15) rotate(60deg); }
+            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(-80px, 90px) scale(0.9) rotate(120deg); }
         }
         @keyframes morph-2 {
             0% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(0, 0) scale(0.9) rotate(0deg); }
-            50% { border-radius: 30% 80% 40% 60% / 40% 50% 60% 70%; transform: translate(-80px, 70px) scale(1.2) rotate(-60deg); }
-            100% { border-radius: 80% 20% 70% 30% / 60% 30% 80% 40%; transform: translate(70px, -70px) scale(1.05) rotate(-120deg); }
+            50% { border-radius: 30% 80% 40% 60% / 40% 50% 60% 70%; transform: translate(-100px, 90px) scale(1.1) rotate(-80deg); }
+            100% { border-radius: 80% 20% 70% 30% / 60% 30% 80% 40%; transform: translate(90px, -90px) scale(1.0) rotate(-160deg); }
         }
         @keyframes float-item {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(6deg); }
+            50% { transform: translateY(-15px) rotate(4deg); }
         }
         .animate-float {
-            animation: float-item 8s ease-in-out infinite;
+            animation: float-item 7s ease-in-out infinite;
         }
         .shimmer {
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
             background-size: 200% 100%;
-            animation: shimmer-anim 3s infinite;
+            animation: shimmer-anim 4s infinite;
         }
         @keyframes shimmer-anim {
             0% { background-position: -200% 0; }
@@ -91,23 +91,23 @@
         }
         .vial-bubble {
             position: absolute;
-            background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(253, 186, 116, 0.4));
+            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(253, 186, 116, 0.45));
             border-radius: 50%;
             pointer-events: none;
-            bottom: 10px;
-            animation: float-bubble 4.5s infinite linear;
-            box-shadow: 0 0 8px rgba(253, 186, 116, 0.2);
+            bottom: 15px;
+            animation: float-bubble 4s infinite linear;
+            box-shadow: 0 0 6px rgba(253, 186, 116, 0.15);
         }
         @keyframes float-bubble {
-            0% { transform: translateY(0) scale(0.4); opacity: 0; }
-            15% { opacity: 0.9; }
-            85% { opacity: 0.9; }
-            100% { transform: translateY(-110px) scale(1.4); opacity: 0; }
+            0% { transform: translateY(0) scale(0.3) translateX(0); opacity: 0; }
+            15% { opacity: 0.8; }
+            85% { opacity: 0.8; }
+            100% { transform: translateY(-140px) scale(1.3) translateX(var(--wobble, 10px)); opacity: 0; }
         }
         .chime-bar {
             position: relative;
             overflow: hidden;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.4s, box-shadow 0.4s;
         }
         .chime-bar::before {
             content: '';
@@ -117,76 +117,76 @@
             transform: translateX(-50%);
             width: 2px;
             height: 100%;
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.7), rgba(212, 175, 55, 0.1));
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.8), rgba(212, 175, 55, 0.1));
             pointer-events: none;
         }
         .chime-bar:active, .chime-bar.active {
-            transform: scaleY(1.18) scaleX(0.92);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(253, 186, 116, 0.5));
-            box-shadow: 0 0 25px rgba(253, 186, 116, 0.8), inset 0 0 8px rgba(255,255,255,0.9);
+            transform: scaleY(1.15) scaleX(0.95);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(253, 186, 116, 0.6));
+            box-shadow: 0 0 30px rgba(253, 186, 116, 0.9), inset 0 0 10px rgba(255,255,255,1);
         }
         @keyframes spin-record {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
         .spinning-record {
-            animation: spin-record 10s linear infinite;
+            animation: spin-record 12s linear infinite;
         }
         .paused-record {
             animation-play-state: paused;
         }
         .music-bar-active {
-            animation: bounce-bar 0.7s ease-in-out infinite alternate;
+            animation: bounce-bar 0.8s ease-in-out infinite alternate;
         }
         @keyframes bounce-bar {
             0% { height: 4px; }
-            100% { height: 32px; }
+            100% { height: 36px; }
         }
         .flame {
-            width: 18px;
-            height: 34px;
-            background: linear-gradient(to top, rgba(244, 63, 94, 0.95) 0%, rgba(253, 186, 116, 0.95) 50%, rgba(255, 255, 255, 1) 100%);
+            width: 16px;
+            height: 32px;
+            background: linear-gradient(to top, rgba(244, 63, 94, 0.95) 0%, rgba(253, 186, 116, 0.95) 55%, rgba(255, 255, 255, 1) 100%);
             border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
-            filter: drop-shadow(0 0 10px rgba(253, 186, 116, 0.9)) drop-shadow(0 0 20px rgba(244, 63, 94, 0.6));
-            animation: flicker 1.2s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 8px rgba(253, 186, 116, 0.9)) drop-shadow(0 0 18px rgba(244, 63, 94, 0.55));
+            animation: flicker 1.3s ease-in-out infinite alternate;
             transform-origin: bottom center;
             display: block;
         }
         @keyframes flicker {
             0% { transform: scale(1) rotate(-1.5deg); }
-            20% { transform: scale(1.08, 0.93) rotate(1deg); }
-            40% { transform: scale(0.92, 1.08) rotate(-2deg); }
-            60% { transform: scale(1.05, 0.96) rotate(2deg); }
-            80% { transform: scale(0.95, 1.02) rotate(-1deg); }
+            20% { transform: scale(1.05, 0.95) rotate(1deg); }
+            40% { transform: scale(0.95, 1.05) rotate(-2deg); }
+            60% { transform: scale(1.03, 0.97) rotate(2deg); }
+            80% { transform: scale(0.97, 1.02) rotate(-1deg); }
             100% { transform: scale(1) rotate(0deg); }
         }
         .liquid-glass-btn {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.15) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.6);
             border-top: 2px solid rgba(255, 255, 255, 0.9);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.25);
             box-shadow: 
-                0 20px 40px -5px rgba(244, 63, 94, 0.18),
-                inset 0 4px 18px rgba(255, 255, 255, 0.85),
-                inset 0 -4px 18px rgba(0, 0, 0, 0.03);
+                0 20px 45px -5px rgba(244, 63, 94, 0.15),
+                inset 0 4px 18px rgba(255, 255, 255, 0.8),
+                inset 0 -4px 18px rgba(0, 0, 0, 0.02);
             position: relative;
             overflow: hidden;
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .liquid-glass-btn:hover {
             box-shadow: 
-                0 25px 50px -5px rgba(244, 63, 94, 0.32),
-                inset 0 4px 25px rgba(255, 255, 255, 0.98);
-            transform: translateY(-4px) scale(1.04);
+                0 25px 50px -5px rgba(244, 63, 94, 0.28),
+                inset 0 4px 25px rgba(255, 255, 255, 0.95);
+            transform: translateY(-3px) scale(1.03);
             border-top: 2px solid rgba(255, 255, 255, 1);
         }
         .liquid-glass-btn:active {
-            transform: translateY(1px) scale(0.96);
+            transform: translateY(1px) scale(0.97);
             box-shadow: 
-                0 10px 25px -5px rgba(244, 63, 94, 0.15),
-                inset 0 4px 12px rgba(255, 255, 255, 0.6);
+                0 10px 25px -5px rgba(244, 63, 94, 0.12),
+                inset 0 4px 12px rgba(255, 255, 255, 0.5);
         }
         .liquid-glass-btn::before {
             content: '';
@@ -195,26 +195,26 @@
             left: -10%;
             width: 120%;
             height: 140%;
-            background: linear-gradient(135deg, rgba(253,164,186,0.4) 0%, rgba(251,191,36,0.3) 50%, rgba(147,197,253,0.3) 100%);
-            filter: blur(14px);
+            background: linear-gradient(135deg, rgba(253,164,186,0.35) 0%, rgba(251,191,36,0.25) 50%, rgba(147,197,253,0.25) 100%);
+            filter: blur(15px);
             z-index: -1;
             transition: all 1s ease-out;
         }
         .liquid-glass-btn:hover::before {
-            transform: rotate(20deg) scale(1.2) translate(8px, 8px);
+            transform: rotate(20deg) scale(1.25) translate(10px, 10px);
         }
         .lyric-line {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            opacity: 0.25;
-            padding: 8px 0;
-            line-height: 1.5;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.15;
+            padding: 10px 0;
+            line-height: 1.6;
         }
         .lyric-line.active {
             opacity: 1;
-            color: #d97706;
+            color: #c2410c;
             font-weight: 800;
-            transform: scale(1.1);
-            text-shadow: 0 0 15px rgba(251, 191, 36, 0.45);
+            transform: scale(1.12);
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
         }
         .premium-border-glowing {
             position: relative;
@@ -222,12 +222,26 @@
         .premium-border-glowing::after {
             content: '';
             position: absolute;
-            inset: -2px;
+            inset: -1px;
             border-radius: inherit;
-            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(253, 186, 116, 0.4), rgba(244, 63, 94, 0.3), rgba(255,255,255,0.8));
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(253, 186, 116, 0.5), rgba(244, 63, 94, 0.4), rgba(255,255,255,0.9));
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.7;
             pointer-events: none;
+            transition: opacity 0.5s;
+        }
+        .premium-border-glowing:hover::after {
+            opacity: 1;
+        }
+        .card-inner {
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .liquid-wave {
+            animation: wave-offset 6s linear infinite;
+        }
+        @keyframes wave-offset {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
@@ -244,7 +258,7 @@
         <span id="toastText">Notification message</span>
     </div>
 
-    <div id="introScreen" class="fixed inset-0 bg-gradient-to-br from-[#fff2ec] to-[#f5e6ff] z-50 flex flex-col items-center justify-center p-6 transition-all duration-1000">
+    <div id="introScreen" class="fixed inset-0 bg-gradient-to-br from-[#fff4ed] to-[#f6eaff] z-50 flex flex-col items-center justify-center p-6 transition-all duration-1000">
         <div class="absolute inset-0 pointer-events-none opacity-40">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20%" cy="20%" r="1" fill="#dfba9b"/>
@@ -259,8 +273,8 @@
             <div class="absolute top-0 left-0 w-full h-2 shimmer"></div>
             
             <div class="w-48 h-48 mb-8 cursor-pointer relative flex items-center justify-center group" id="giftBoxContainer">
-                <div class="absolute inset-0 bg-gradient-to-tr from-rose-200 via-white to-amber-200 rounded-full border border-white/80 shadow-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
-                    <svg viewBox="0 0 100 100" class="w-30 h-30">
+                <div class="absolute inset-0 bg-gradient-to-tr from-rose-100 via-white to-amber-100 rounded-full border border-white/90 shadow-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
+                    <svg viewBox="0 0 100 100" class="w-32 h-32">
                         <defs>
                             <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" stop-color="#ffe699" />
@@ -377,7 +391,7 @@
 
                 <div class="grid grid-cols-2 gap-4" id="cardsContainer">
                     <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                        <div class="card-inner preserve-3d w-full h-full relative">
                             <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all premium-border-glowing">
                                 <div class="w-full h-36 bg-gradient-to-tr from-rose-100/40 to-amber-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🌸</div>
                                 <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Quiet Strength</p>
@@ -389,7 +403,7 @@
                     </div>
 
                     <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                        <div class="card-inner preserve-3d w-full h-full relative">
                             <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all premium-border-glowing">
                                 <div class="w-full h-36 bg-gradient-to-tr from-purple-100/40 to-rose-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🤍</div>
                                 <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Safe Haven</p>
@@ -401,7 +415,7 @@
                     </div>
 
                     <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                        <div class="card-inner preserve-3d w-full h-full relative">
                             <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all premium-border-glowing">
                                 <div class="w-full h-36 bg-gradient-to-tr from-amber-100/40 to-purple-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🍂</div>
                                 <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Always There</p>
@@ -413,7 +427,7 @@
                     </div>
 
                     <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative transition-transform duration-700 ease-out">
+                        <div class="card-inner preserve-3d w-full h-full relative">
                             <div class="absolute inset-0 glass-premium p-4 rounded-[2rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all premium-border-glowing">
                                 <div class="w-full h-36 bg-gradient-to-tr from-rose-100/40 to-emerald-100/40 rounded-2xl flex items-center justify-center text-4xl shadow-inner transition-transform group-hover:scale-105 duration-300">🪐</div>
                                 <p class="text-center font-serif-elegant text-xs text-stone-800 font-semibold tracking-wide">Beautiful Grace</p>
@@ -433,15 +447,15 @@
 
                 <div class="flex flex-col gap-6 mb-8 transition-all duration-500" id="cosmicPlaySection">
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
-                        <div class="relative w-32 h-32 flex items-center justify-center group flex-shrink-0" id="vinylPlayer">
-                            <div class="absolute inset-0 bg-stone-900 rounded-full border-4 border-stone-800 shadow-2xl spinning-record paused-record flex items-center justify-center" id="vinylRecord">
-                                <div class="w-24 h-24 rounded-full border border-stone-700 opacity-60"></div>
-                                <div class="w-16 h-16 rounded-full border border-stone-800 opacity-80"></div>
-                                <div class="absolute w-10 h-10 rounded-full bg-amber-200 border-4 border-stone-900 flex items-center justify-center">
+                        <div class="relative w-32 h-32 flex items-center justify-center group flex-shrink-0 cursor-pointer" id="vinylPlayer">
+                            <div class="absolute inset-0 bg-stone-950 rounded-full border-4 border-stone-800 shadow-2xl spinning-record paused-record flex items-center justify-center" id="vinylRecord">
+                                <div class="w-24 h-24 rounded-full border border-stone-700/40 opacity-60"></div>
+                                <div class="w-16 h-16 rounded-full border border-stone-800 opacity-80 animate-pulse"></div>
+                                <div class="absolute w-10 h-10 rounded-full bg-gradient-to-tr from-amber-200 to-amber-400 border-4 border-stone-900 flex items-center justify-center">
                                     <div class="w-2 h-2 rounded-full bg-stone-950"></div>
                                 </div>
                             </div>
-                            <div class="absolute right-0 top-0 w-12 h-16 origin-top-right transform translate-x-2 -translate-y-2 transition-transform duration-500" id="tonearm" style="transform: rotate(-15deg);">
+                            <div class="absolute right-0 top-0 w-12 h-16 origin-top-right transform translate-x-2 -translate-y-2 transition-transform duration-700 ease-out" id="tonearm" style="transform: rotate(-15deg);">
                                 <svg viewBox="0 0 50 100" class="w-full h-full filter drop-shadow-md">
                                     <path d="M 40,10 L 15,10 L 15,65 L 12,75" stroke="#dfba9b" stroke-width="3" fill="none" stroke-linecap="round"/>
                                     <circle cx="40" cy="10" r="6" fill="#a87f5d"/>
@@ -453,7 +467,7 @@
                         <div class="flex flex-col items-center sm:items-start space-y-1 text-center sm:text-left">
                             <span id="currentTrackName" class="font-serif-elegant text-sm font-semibold text-stone-800">Tap to play a song</span>
                             <span class="text-[0.65rem] text-stone-400 uppercase tracking-widest font-bold">Heena & You</span>
-                            <div class="flex gap-1 h-8 items-end mt-2">
+                            <div class="flex gap-1.5 h-8 items-end mt-2">
                                 <div class="w-1 bg-rose-400 rounded-full h-1" id="mbar1"></div>
                                 <div class="w-1 bg-amber-400 rounded-full h-1" id="mbar2"></div>
                                 <div class="w-1 bg-purple-400 rounded-full h-1" id="mbar3"></div>
@@ -484,13 +498,13 @@
                 <div class="space-y-2.5 text-left" id="trackListContainer"></div>
 
                 <div class="mt-6 pt-6 border-t border-white/20">
-                    <button id="showAddTrackBtn" class="w-full py-2.5 px-4 bg-white/35 hover:bg-white/50 border border-white/40 rounded-xl text-[0.7rem] font-bold tracking-wider uppercase text-stone-700 transition-all duration-300">
+                    <button id="showAddTrackBtn" class="w-full py-3 px-4 bg-white/35 hover:bg-white/50 border border-white/40 rounded-xl text-[0.7rem] font-bold tracking-wider uppercase text-stone-700 transition-all duration-300">
                         + Add Your Own Song
                     </button>
                     <div id="addTrackForm" class="hidden mt-4 space-y-4 p-4 glass-card rounded-2xl transition-all duration-300 text-left">
                         <div>
                             <label class="block text-[0.65rem] font-bold uppercase text-stone-500 mb-1">Song Name</label>
-                            <input type="text" id="newTrackName" placeholder="e.g., Cozy Evening" class="w-full px-3 py-2 bg-white/80 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-300">
+                            <input type="text" id="newTrackName" placeholder="e.g., Cozy Evening" class="w-full px-3 py-2.5 bg-white/80 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-300">
                         </div>
                         <div>
                             <label class="block text-[0.65rem] font-bold uppercase text-stone-500 mb-1">Select Audio File</label>
@@ -500,7 +514,7 @@
                             <label class="block text-[0.65rem] font-bold uppercase text-stone-500 mb-1">Select Synced Lyrics (.lrc / .txt)</label>
                             <input type="file" id="newTrackLyrics" accept=".lrc,.txt" class="w-full text-xs text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-[0.65rem] file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100 cursor-pointer">
                         </div>
-                        <button id="saveTrackBtn" class="w-full py-2 bg-stone-900 text-white rounded-xl text-[0.68rem] font-bold tracking-wider uppercase transition-all duration-300">
+                        <button id="saveTrackBtn" class="w-full py-2.5 bg-stone-900 text-white rounded-xl text-[0.68rem] font-bold tracking-wider uppercase transition-all duration-300">
                             Add Song
                         </button>
                     </div>
@@ -527,15 +541,19 @@
                                 <stop offset="100%" stop-color="#a87f5d"/>
                             </linearGradient>
                             <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="rgba(253, 164, 186, 0.55)" />
-                                <stop offset="100%" stop-color="rgba(251, 191, 36, 0.65)" />
+                                <stop offset="0%" stop-color="rgba(253, 164, 186, 0.6)" />
+                                <stop offset="100%" stop-color="rgba(251, 191, 36, 0.7)" />
                             </linearGradient>
                         </defs>
                         <rect x="40" y="10" width="20" height="8" rx="2" fill="url(#goldAcc)"/>
                         <rect x="36" y="18" width="28" height="4" rx="1" fill="url(#goldAcc)"/>
                         <path d="M 42,22 L 58,22 L 58,32 L 42,32 Z" fill="rgba(255,255,255,0.3)"/>
                         <path d="M 42,32 C 23,35 12,60 12,85 C 12,115 28,130 50,130 C 72,130 88,115 88,85 C 88,60 77,35 58,32 Z" fill="url(#vialGlassGrad)" stroke="rgba(255,255,255,0.85)" stroke-width="2"/>
-                        <path id="liquidLevel" d="M 15,85 C 28,80 38,90 50,85 C 62,80 72,90 85,85 C 87,105 78,125 50,125 C 22,125 13,105 15,85 Z" fill="url(#liquidGrad)" class="transition-transform duration-500 ease-out origin-center"/>
+                        
+                        <g mask="url(#liquidMask)">
+                            <path id="liquidLevel" d="M -100,85 C -50,80 0,90 50,85 C 100,80 150,90 200,85 L 200,130 L -100,130 Z" fill="url(#liquidGrad)" class="liquid-wave" />
+                        </g>
+
                         <path d="M 22,65 C 25,50 35,40 45,36" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
                         <circle cx="50" cy="95" r="11" fill="url(#goldAcc)" opacity="0.85"/>
                         <path d="M 50,89 L 52,93 L 56,93 L 53,95 L 54,99 L 50,97 L 46,99 L 47,95 L 44,93 L 48,93 Z" fill="#fff"/>
@@ -593,6 +611,20 @@
         ];
 
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        const mainHarpGain = audioCtx.createGain();
+        mainHarpGain.gain.setValueAtTime(0.4, audioCtx.currentTime);
+        const delayNode = audioCtx.createDelay(1.0);
+        delayNode.delayTime.setValueAtTime(0.35, audioCtx.currentTime);
+        const feedbackNode = audioCtx.createGain();
+        feedbackNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        
+        mainHarpGain.connect(audioCtx.destination);
+        mainHarpGain.connect(delayNode);
+        delayNode.connect(feedbackNode);
+        feedbackNode.connect(delayNode);
+        delayNode.connect(audioCtx.destination);
+
         let vinylOsc = null;
         let vinylGain = null;
         let ambientActive = false;
@@ -606,7 +638,7 @@
         let lyricsBaseSize = 1.1;
 
         const defaultLyrics = {
-            "Heena's Special Theme": [
+            "Your Thoughts": [
                 { time: 0, text: "Welcome to Heena's Celebration Theme..." },
                 { time: 3, text: "A melody crafted for a wonderful soul." },
                 { time: 7, text: "You bring warmth to the coldest days..." },
@@ -614,14 +646,14 @@
                 { time: 15, text: "We hope this day is as sweet as you are." },
                 { time: 19, text: "Happy Birthday, Heena!" }
             ],
-            "Timeless Memories": [
+            "Saajna": [
                 { time: 0, text: "Thinking of all the times we shared..." },
                 { time: 4, text: "Every laugh, every deep conversation." },
                 { time: 8, text: "Through changing seasons and passing years..." },
                 { time: 12, text: "Your beautiful loyalty has remained our anchor." },
                 { time: 16, text: "Here is to many more precious memories together!" }
             ],
-            "Joy & Light": [
+            "Perfect": [
                 { time: 0, text: "A bright sky, a gorgeous peaceful dawn..." },
                 { time: 3, text: "Your smile brings the sun when the rain is pouring." },
                 { time: 7, text: "Never change your beautiful patient spirit..." },
@@ -666,7 +698,7 @@
             }, 5000);
         }
         
-        function playChime(freq = 523.25, type = 'sine', duration = 1.5, volume = 0.2) {
+        function playChime(freq = 523.25, type = 'sine', duration = 1.5, volume = 0.2, dest = audioCtx.destination) {
             if (audioCtx.state === 'suspended') {
                 audioCtx.resume();
             }
@@ -677,7 +709,7 @@
             gainNode.gain.setValueAtTime(volume, audioCtx.currentTime);
             gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
             osc.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
+            gainNode.connect(dest);
             osc.start();
             osc.stop(audioCtx.currentTime + duration);
         }
@@ -685,7 +717,7 @@
         function playCelebrationMelody() {
             const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50, 1318.51];
             notes.forEach((freq, index) => {
-                setTimeout(() => playChime(freq, 'sine', 2.0, 0.15), index * 100);
+                setTimeout(() => playChime(freq, 'sine', 2.0, 0.15, mainHarpGain), index * 100);
             });
         }
 
@@ -850,7 +882,7 @@
         window.addEventListener('click', (e) => {
             if (e.target.closest('button') || e.target.closest('.candle') || e.target.closest('.polaroid') || e.target.closest('#loveJar') || e.target.closest('.chime-bar') || e.target.closest('#vinylPlayer') || e.target.closest('#harpContainer')) return;
             createSparkles(e.clientX, e.clientY, 8, 'gold');
-            playChime(600 + Math.random() * 600, 'sine', 0.8, 0.1);
+            playChime(600 + Math.random() * 600, 'sine', 0.8, 0.1, mainHarpGain);
         });
 
         const jarThoughts = [
@@ -880,7 +912,7 @@
 
         document.getElementById('giftBoxContainer').addEventListener('click', (e) => {
             createSparkles(e.clientX, e.clientY, 35, 'gold');
-            playChime(659.25, 'triangle', 1.0, 0.25);
+            playChime(659.25, 'triangle', 1.0, 0.25, mainHarpGain);
         });
 
         let blownCandles = 0;
@@ -894,7 +926,7 @@
                     createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 35, 'smoke');
                     createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 25, 'gold');
                     
-                    playChime(587.33, 'triangle', 1.2, 0.2);
+                    playChime(587.33, 'triangle', 1.2, 0.2, mainHarpGain);
                     blownCandles++;
                     
                     if (blownCandles === 3) {
@@ -921,7 +953,7 @@
                 } else {
                     inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
                 }
-                playChime(440, 'sine', 1.0, 0.15);
+                playChime(440, 'sine', 1.0, 0.15, mainHarpGain);
             });
             
             polaroid.addEventListener('pointermove', function(e) {
@@ -930,7 +962,7 @@
                 const rect = this.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                inner.style.transform = `rotateX(${-y / 10}deg) rotateY(${x / 10}deg)`;
+                inner.style.transform = `rotateX(${-y / 8}deg) rotateY(${x / 8}deg) scale(1.05)`;
             });
             
             polaroid.addEventListener('pointerleave', function() {
@@ -952,6 +984,7 @@
             b.style.width = `${size}px`;
             b.style.height = `${size}px`;
             b.style.left = `${Math.random() * 80 + 10}%`;
+            b.style.setProperty('--wobble', `${Math.random() * 30 - 15}px`);
             b.style.animationDuration = `${Math.random() * 2 + 2}s`;
             container.appendChild(b);
             setTimeout(() => b.remove(), 4000);
@@ -961,17 +994,17 @@
             if (!document.getElementById('mainContent').classList.contains('hidden')) {
                 createVialBubble();
             }
-        }, 800);
+        }, 600);
 
         document.getElementById('loveJar').addEventListener('click', function(e) {
-            playChime(783.99, 'sine', 1.2, 0.2);
+            playChime(783.99, 'sine', 1.2, 0.2, mainHarpGain);
             
             const level = document.getElementById('liquidLevel');
             level.style.transform = 'skewY(6deg) scaleY(1.08)';
             setTimeout(() => level.style.transform = 'none', 400);
 
-            for (let i = 0; i < 12; i++) {
-                setTimeout(createVialBubble, i * 50);
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createVialBubble, i * 40);
             }
 
             const spark = document.querySelector('#jarSpark i');
@@ -1039,7 +1072,7 @@
             const lines = document.querySelectorAll('.lyric-line');
             lines.forEach(line => {
                 if (line.classList.contains('active')) {
-                    line.style.fontSize = `${lyricsBaseSize * 1.25}rem`;
+                    line.style.fontSize = `${lyricsBaseSize * 1.2}rem`;
                 } else {
                     line.style.fontSize = `${lyricsBaseSize}rem`;
                 }
@@ -1048,7 +1081,7 @@
 
         document.getElementById('increaseLyricsText').addEventListener('click', (e) => {
             e.stopPropagation();
-            if (lyricsBaseSize < 2.0) {
+            if (lyricsBaseSize < 1.8) {
                 lyricsBaseSize += 0.1;
                 updateLyricsFontSize();
             }
@@ -1151,12 +1184,42 @@
                 } else {
                     const cleanLine = line.trim();
                     if (cleanLine && !cleanLine.startsWith('[')) {
-                        lyrics.push({ time: lyrics.length * 3, text: cleanLine });
+                        lyrics.push({ time: lyrics.length * 3.5, text: cleanLine });
                     }
                 }
             });
 
             return lyrics.sort((a, b) => a.time - b.time);
+        }
+
+        function startProceduralMusic(trackName) {
+            synthMockTime = 0;
+            const chords = [
+                [261.63, 329.63, 392.00, 493.88],
+                [349.23, 440.00, 523.25, 587.33],
+                [293.66, 349.23, 440.00, 523.25],
+                [392.00, 493.88, 587.33, 698.46]
+            ];
+            let chordIdx = 0;
+
+            synthPlayInterval = setInterval(() => {
+                const currentChord = chords[chordIdx];
+                currentChord.forEach((note, i) => {
+                    setTimeout(() => {
+                        if (currentPlayType === "procedural") {
+                            playChime(note, 'sine', 2.8, 0.08, mainHarpGain);
+                            createSparkles(window.innerWidth / 2 + (Math.random() * 100 - 50), window.innerHeight / 2, 2, 'rainbow');
+                        }
+                    }, i * 200);
+                });
+
+                chordIdx = (chordIdx + 1) % chords.length;
+                synthMockTime += 2;
+                updateLyricsSync(synthMockTime);
+                if (synthMockTime > 120) {
+                    stopVinylAndReset();
+                }
+            }, 2000);
         }
 
         document.getElementById('trackListContainer').addEventListener('click', function(e) {
@@ -1209,10 +1272,6 @@
                     uploadedAudio.addEventListener('ended', () => {
                         stopVinylAndReset();
                     });
-                    uploadedAudio.addEventListener('error', () => {
-                        showToastMessage(`Could not load track: "${targetAudioFile}". Verify files are uploaded with exact casing.`);
-                        stopVinylAndReset();
-                    });
 
                     const safeLyricsPath = "./" + targetLyricsFile;
                     fetch(safeLyricsPath)
@@ -1224,17 +1283,25 @@
                             showLyricsContainer(parseLrc(text));
                         })
                         .catch(() => {
-                            showLyricsContainer([
-                                { time: 0, text: `Could not load lyrics from "${targetLyricsFile}"` },
-                                { time: 3, text: "Ensure file names match exactly and are in the same folder." }
+                            showLyricsContainer(defaultLyrics[trackName] || [
+                                { time: 0, text: `Enjoying standard synthesized loop of "${trackName}"` },
+                                { time: 4, text: "Bask in the relaxing procedural chimes." }
                             ]);
                         });
 
-                    uploadedAudio.play().catch(() => {
-                        showToastMessage(`Audio playback failed. Please check browser permission to autoplay.`);
-                        stopVinylAndReset();
-                    });
-                    currentPlayType = "hardcoded";
+                    uploadedAudio.play()
+                        .then(() => {
+                            currentPlayType = "hardcoded";
+                        })
+                        .catch(() => {
+                            showToastMessage(`Using synthesized backup for "${trackName}" since file is local.`);
+                            currentPlayType = "procedural";
+                            showLyricsContainer(defaultLyrics[trackName] || [
+                                { time: 0, text: `Synthesized: ${trackName}` },
+                                { time: 3, text: "A delicate chord sequence loops automatically." }
+                            ]);
+                            startProceduralMusic(trackName);
+                        });
                 }
             } else {
                 stopVinylAndReset();
@@ -1247,7 +1314,7 @@
         document.getElementById('vinylPlayer').addEventListener('click', function() {
             if (!vinylRecord.classList.contains('paused-record')) {
                 stopVinylAndReset();
-                playChime(220, 'sine', 1.0, 0.1);
+                playChime(220, 'sine', 1.0, 0.1, mainHarpGain);
             } else {
                 const firstTrack = document.querySelector('.track-btn');
                 if (firstTrack) {
@@ -1313,7 +1380,7 @@
                 document.getElementById('addTrackForm').classList.add('hidden');
 
                 createSparkles(window.innerWidth / 2, window.innerHeight / 2, 20, 'gold');
-                playChime(440, 'sine', 1.0, 0.2);
+                playChime(440, 'sine', 1.0, 0.2, mainHarpGain);
             };
 
             if (lyricsFile) {
@@ -1344,11 +1411,10 @@
 
         const triggerChimeNode = (element, clientX, clientY) => {
             const noteAttr = element.getAttribute('data-note');
-            const noteName = element.getAttribute('data-name');
             const freq = parseFloat(noteAttr);
             const now = Date.now();
 
-            if (lastPlayedNote.id === noteAttr && (now - lastPlayedNote.timestamp < 150)) {
+            if (lastPlayedNote.id === noteAttr && (now - lastPlayedNote.timestamp < 120)) {
                 return;
             }
 
@@ -1356,12 +1422,12 @@
             lastPlayedNote.timestamp = now;
 
             element.classList.add('active');
-            playChime(freq, 'triangle', 2.2, 0.3);
+            playChime(freq, 'triangle', 2.5, 0.35, mainHarpGain);
 
             const rect = element.getBoundingClientRect();
             const posX = clientX || (rect.left + rect.width / 2);
             const posY = clientY || rect.top;
-            createSparkles(posX, posY, 12, 'gold', 0, -2.5);
+            createSparkles(posX, posY, 14, 'gold', 0, -2.5);
 
             setTimeout(() => element.classList.remove('active'), 250);
         };
