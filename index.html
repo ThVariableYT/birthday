@@ -7,40 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Parisienne&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(at 0% 0%, #fff0ea 0px, transparent 60%), 
-                        radial-gradient(at 100% 0%, #fbe3ff 0px, transparent 60%), 
-                        radial-gradient(at 50% 100%, #fff3d1 0px, transparent 60%), 
-                        #fefbf8;
+            font-family: 'Quicksand', sans-serif;
+            background: radial-gradient(at 0% 0%, #fff1ea 0px, transparent 60%), 
+                        radial-gradient(at 100% 0%, #fce2ff 0px, transparent 60%), 
+                        radial-gradient(at 50% 100%, #fff4d1 0px, transparent 60%), 
+                        #fdfaf6;
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
         }
         .font-serif-elegant {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Parisienne', cursive;
+        }
+        .font-display-premium {
+            font-family: 'EB Garamond', serif;
+        }
+        .font-romantic-script {
+            font-family: 'Parisienne', cursive;
         }
         .glass-premium {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.45));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55));
             backdrop-filter: blur(40px);
             -webkit-backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.9);
             box-shadow: 
-                inset 0 1px 3px rgba(255, 255, 255, 0.9), 
-                0 35px 70px rgba(244, 150, 150, 0.12),
-                0 10px 25px rgba(253, 164, 186, 0.05);
+                inset 0 1px 4px rgba(255, 255, 255, 1), 
+                0 35px 70px rgba(244, 150, 150, 0.08),
+                0 10px 25px rgba(253, 164, 186, 0.03);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.55);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.65);
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.8);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: inset 0 1px 3px rgba(255,255,255,0.9);
         }
         .perspective {
-            perspective: 1500px;
+            perspective: 2000px;
         }
         .preserve-3d {
             transform-style: preserve-3d;
@@ -52,18 +60,18 @@
             transform: rotateY(180deg);
         }
         .liquid-blob-1 {
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, rgba(255, 190, 170, 0.5) 0%, rgba(255, 150, 175, 0.25) 50%, rgba(220,165,165,0) 75%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 185, 165, 0.55) 0%, rgba(255, 145, 175, 0.25) 50%, rgba(220,165,165,0) 75%);
             filter: blur(80px);
             animation: morph-1 16s ease-in-out infinite alternate;
             will-change: transform, border-radius;
             transform: translate3d(0,0,0);
         }
         .liquid-blob-2 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(240, 200, 255, 0.5) 0%, rgba(180, 210, 255, 0.2) 50%, rgba(162,196,222,0) 80%);
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(245, 195, 255, 0.55) 0%, rgba(175, 205, 255, 0.25) 50%, rgba(162,196,222,0) 80%);
             filter: blur(90px);
             animation: morph-2 20s ease-in-out infinite alternate-reverse;
             will-change: transform, border-radius;
@@ -71,17 +79,17 @@
         }
         @keyframes morph-1 {
             0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; transform: translate(0, 0) scale(1) rotate(0deg); }
-            50% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(50px, -30px) scale(1.15) rotate(45deg); }
-            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(-30px, 40px) scale(0.9) rotate(90deg); }
+            50% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(60px, -40px) scale(1.15) rotate(45deg); }
+            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(-40px, 50px) scale(0.9) rotate(90deg); }
         }
         @keyframes morph-2 {
             0% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(0, 0) scale(0.9) rotate(0deg); }
-            50% { border-radius: 30% 80% 40% 60% / 40% 50% 60% 70%; transform: translate(-50px, 40px) scale(1.1) rotate(-60deg); }
-            100% { border-radius: 80% 20% 70% 30% / 60% 30% 80% 40%; transform: translate(40px, -40px) scale(1.0) rotate(-120deg); }
+            50% { border-radius: 30% 80% 40% 60% / 40% 50% 60% 70%; transform: translate(-60px, 50px) scale(1.1) rotate(-60deg); }
+            100% { border-radius: 80% 20% 70% 30% / 60% 30% 80% 40%; transform: translate(50px, -50px) scale(1.0) rotate(-120deg); }
         }
         @keyframes float-item {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2.5deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
         }
         .animate-float {
             animation: float-item 6s ease-in-out infinite;
@@ -273,6 +281,32 @@
             0% { box-shadow: 0 0 8px 1px rgba(253, 186, 116, 0.2), 0 0 20px 4px rgba(244, 63, 94, 0.1); }
             100% { box-shadow: 0 0 20px 6px rgba(253, 186, 116, 0.45), 0 0 35px 12px rgba(244, 63, 94, 0.25); }
         }
+        .parallax-deck-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        .parallax-node {
+            position: relative;
+            width: 100%;
+            display: flex;
+            will-change: transform;
+        }
+        .parallax-card-body {
+            width: 280px;
+            height: 380px;
+            cursor: pointer;
+            position: relative;
+            transition: box-shadow 0.4s ease;
+        }
+        @media (max-width: 640px) {
+            .parallax-card-body {
+                width: 250px;
+                height: 340px;
+            }
+        }
     </style>
 </head>
 <body class="relative min-h-screen text-stone-800 antialiased overflow-x-hidden select-none">
@@ -285,7 +319,7 @@
     <canvas id="sparkleCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></canvas>
 
     <div id="customToast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 glass-premium px-6 py-4 rounded-[2rem] text-xs font-bold text-stone-800 text-center shadow-2xl transition-all duration-500 translate-y-20 opacity-0 pointer-events-none max-w-[85vw] border-amber-200/40">
-        <span id="toastText">Notification message</span>
+        <span id="toastText"></span>
     </div>
 
     <div id="introScreen" class="fixed inset-0 bg-gradient-to-br from-[#fff4ed] to-[#f6eaff] z-50 flex flex-col items-center justify-center p-4 transition-all duration-1000">
@@ -302,7 +336,7 @@
         <div class="glass-premium p-8 md:p-12 rounded-[3.5rem] text-center max-w-sm w-full flex flex-col items-center shadow-2xl relative overflow-hidden premium-border-glowing">
             <div class="absolute top-0 left-0 w-full h-2 shimmer"></div>
             
-            <div class="w-40 h-40 mb-6 cursor-pointer relative flex items-center justify-center group" id="giftBoxContainer">
+            <div class="w-40 h-40 mb-2 cursor-pointer relative flex items-center justify-center group" id="giftBoxContainer">
                 <div class="absolute inset-0 bg-gradient-to-tr from-rose-100 via-white to-amber-100 rounded-full border border-white/90 shadow-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                     <svg viewBox="0 0 100 100" class="w-24 h-24">
                         <defs>
@@ -328,11 +362,11 @@
                 <div class="absolute -top-1 -right-1 w-5 h-5 bg-rose-400 rounded-full animate-ping"></div>
             </div>
             
-            <h1 class="text-5xl font-serif-elegant font-normal tracking-wide text-stone-900 mb-2">Heena</h1>
+            <h1 class="text-7xl font-romantic-script text-stone-900 mb-2">Heena</h1>
             <p class="text-stone-500 mb-5 text-[0.7rem] font-bold tracking-[0.4em] uppercase">Unveil the Luminescence</p>
             <p class="text-xs text-stone-400 mb-6 italic px-2 leading-relaxed">Where cozy chocolate notes, celestial chords, and golden friendship align.</p>
             
-            <button id="openGiftBtn" class="liquid-glass-btn w-full text-stone-800 font-serif-elegant tracking-widest text-[0.8rem] uppercase py-5 px-8 rounded-3xl flex items-center justify-center gap-3 font-bold">
+            <button id="openGiftBtn" class="liquid-glass-btn w-full text-stone-800 font-display-premium tracking-[0.2em] text-[0.8rem] uppercase py-5 px-8 rounded-3xl flex items-center justify-center gap-3 font-bold">
                 <span>Begin the Celebration</span>
                 <i class="fa-solid fa-sparkles text-amber-500 animate-pulse text-sm"></i>
             </button>
@@ -347,12 +381,12 @@
             </button>
         </div>
 
-        <header class="relative pt-16 pb-10 text-center select-none">
+        <header class="relative pt-12 pb-6 text-center select-none">
             <div class="absolute top-4 left-4 text-rose-300/80 text-lg animate-float" style="animation-duration: 4s;"><i class="fa-solid fa-star"></i></div>
             <div class="absolute top-16 right-4 text-amber-300/80 text-xl animate-float" style="animation-duration: 5s;"><i class="fa-solid fa-sparkles animate-pulse"></i></div>
             
-            <p class="text-[0.65rem] tracking-[0.4em] uppercase text-rose-500 font-extrabold mb-3">Celestial Tribute</p>
-            <h1 class="text-6xl font-serif-elegant font-normal tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-rose-800 to-amber-700 leading-tight">Heena</h1>
+            <p class="text-[0.65rem] tracking-[0.4em] uppercase text-rose-500 font-extrabold mb-1">Celestial Tribute</p>
+            <h1 class="text-8xl font-romantic-script text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-rose-700 to-amber-700 leading-none py-4">Heena</h1>
             <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-amber-300 to-transparent mx-auto my-4"></div>
             <p class="text-[0.75rem] text-stone-500 italic tracking-wider px-2 leading-relaxed">An interactive, luminous archive dedicated to a soul of pure warmth, grace, and timeless friendship.</p>
         </header>
@@ -361,7 +395,7 @@
 
             <section class="glass-premium p-6 sm:p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing" id="cakeSection">
                 <div class="absolute -top-16 -left-16 w-32 h-32 bg-amber-100/30 rounded-full filter blur-2xl"></div>
-                <h3 class="font-serif-elegant text-xl sm:text-2xl text-stone-900 mb-1 tracking-wide">Hazelnut Truffle Cake</h3>
+                <h3 class="font-display-premium text-2xl text-stone-900 mb-1 tracking-widest">Hazelnut Truffle Cake</h3>
                 <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-8">Swipe or tap to blow out the flames</p>
                 
                 <div class="flex justify-center items-end h-36 relative mb-4">
@@ -407,62 +441,87 @@
                     </div>
                 </div>
 
-                <div id="wishMessage" class="hidden mt-6 p-5 bg-gradient-to-br from-white/95 to-white/65 border border-rose-100 rounded-[1.8rem] text-xs text-stone-700 leading-relaxed font-serif-elegant italic shadow-xl transition-all duration-1000">
+                <div id="wishMessage" class="hidden mt-6 p-6 bg-gradient-to-br from-white/95 to-white/65 border border-rose-100 rounded-[1.8rem] text-xl md:text-2xl text-stone-700 leading-relaxed font-serif-elegant shadow-xl transition-all duration-1000">
                     “I hope life brings you quiet joy, deep peace, and wonderful moments, just like the happiness you always give to everyone around you, Heena. You deserve the absolute best.” ✨
                 </div>
             </section>
 
-            <section class="space-y-4">
-                <div class="px-2">
-                    <h3 class="font-serif-elegant text-2xl text-stone-900 tracking-wide">The Memory Crystals</h3>
-                    <p class="text-[0.65rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mt-1">Tap a card to read a sweet note</p>
+            <section class="space-y-6">
+                <div class="px-2 text-center">
+                    <h3 class="font-display-premium text-3xl text-stone-900 tracking-widest">The Memories Archipelago</h3>
+                    <p class="text-[0.65rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mt-1.5">Scroll to float the crystals • Tap to reveal</p>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 max-sm:gap-3" id="cardsContainer">
-                    <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative">
-                            <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/70 to-[#ffdaeb]/85 p-3.5 rounded-[2.5rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all border border-white/80 shadow-[0_15px_30px_rgba(253,164,186,0.22)]">
-                                <div class="w-full h-[9.5rem] bg-white/45 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.7),_0_8px_20px_rgba(253,164,186,0.12)] transition-transform group-hover:scale-105 duration-300">🌸</div>
-                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-bold tracking-wide py-2">Quiet Strength</p>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff2ee] p-5 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] sm:text-[0.75rem] text-stone-700 shadow-2xl">
-                                <p class="leading-relaxed font-medium">You are always calm and polite. Even though in the beginning I assumed that you were rude, I am glad that I was proved wrong.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative">
-                            <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/70 to-[#ffdaeb]/85 p-3.5 rounded-[2.5rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all border border-white/80 shadow-[0_15px_30px_rgba(253,164,186,0.22)]">
-                                <div class="w-full h-[9.5rem] bg-white/45 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.7),_0_8px_20px_rgba(253,164,186,0.12)] transition-transform group-hover:scale-105 duration-300">🤍</div>
-                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-bold tracking-wide py-2">Safe Haven</p>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff2ee] p-5 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] sm:text-[0.75rem] text-stone-700 shadow-2xl">
-                                <p class="leading-relaxed font-medium">Whenever I needed to complain about small things, you always listened. You were so patient and kind, and you always made me feel safe.</p>
+                <div class="parallax-deck-container" id="deckContainer">
+                    
+                    <div class="parallax-node justify-start" data-speed="40" data-rot="-5">
+                        <div class="parallax-card-body perspective group">
+                            <div class="card-inner preserve-3d w-full h-full relative duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/80 to-[#ffdaeb]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(253,164,186,0.22)]">
+                                    <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.8),_0_8px_20px_rgba(253,164,186,0.12)] transition-transform group-hover:scale-105 duration-300">🌸</div>
+                                    <div class="text-center py-2">
+                                        <p class="font-display-premium text-xl text-stone-900 font-extrabold tracking-widest">Quiet Strength</p>
+                                        <p class="text-[0.6rem] text-rose-500 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff5f2] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
+                                    <p class="leading-relaxed font-semibold font-display-premium italic text-stone-800 text-lg mb-3">Quiet Strength</p>
+                                    <p class="leading-relaxed font-medium font-serif-elegant text-xl md:text-2xl text-stone-800">You are always calm and polite. Even though in the beginning I assumed that you were rude, I am glad that I was proved wrong.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative">
-                            <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/70 to-[#ffdaeb]/85 p-3.5 rounded-[2.5rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all border border-white/80 shadow-[0_15px_30px_rgba(253,164,186,0.22)]">
-                                <div class="w-full h-[9.5rem] bg-white/45 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.7),_0_8px_20px_rgba(253,164,186,0.12)] transition-transform group-hover:scale-105 duration-300">🍂</div>
-                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-bold tracking-wide py-2">Always There</p>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff2ee] p-5 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] sm:text-[0.75rem] text-stone-700 shadow-2xl">
-                                <p class="leading-relaxed font-medium">No matter what happens, you are always a true and loyal friend. Knowing you are with me makes me very happy.</p>
+                    <div class="parallax-node justify-end" data-speed="-25" data-rot="4">
+                        <div class="parallax-card-body perspective group">
+                            <div class="card-inner preserve-3d w-full h-full relative duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-b from-[#e8f0fe]/80 to-[#fdf4e5]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(251,191,36,0.18)]">
+                                    <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.8),_0_8px_20px_rgba(251,191,36,0.08)] transition-transform group-hover:scale-105 duration-300">🤍</div>
+                                    <div class="text-center py-2">
+                                        <p class="font-display-premium text-xl text-stone-900 font-extrabold tracking-widest">Safe Haven</p>
+                                        <p class="text-[0.6rem] text-amber-600 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fffbf2] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
+                                    <p class="leading-relaxed font-semibold font-display-premium italic text-stone-800 text-lg mb-3">Safe Haven</p>
+                                    <p class="leading-relaxed font-medium font-serif-elegant text-xl md:text-2xl text-stone-800">Whenever I needed to complain about small things, you always listened. You were so patient and kind, and you always made me feel safe.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="polaroid perspective h-60 cursor-pointer group">
-                        <div class="card-inner preserve-3d w-full h-full relative">
-                            <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/70 to-[#ffdaeb]/85 p-3.5 rounded-[2.5rem] flex flex-col justify-between backface-hidden group-hover:border-rose-300 transition-all border border-white/80 shadow-[0_15px_30px_rgba(253,164,186,0.22)]">
-                                <div class="w-full h-[9.5rem] bg-white/45 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.7),_0_8px_20px_rgba(253,164,186,0.12)] transition-transform group-hover:scale-105 duration-300">🪐</div>
-                                <p class="text-center font-serif-elegant text-xs text-stone-800 font-bold tracking-wide py-2">Beautiful Grace</p>
+                    <div class="parallax-node justify-start" data-speed="35" data-rot="-3">
+                        <div class="parallax-card-body perspective group">
+                            <div class="card-inner preserve-3d w-full h-full relative duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-b from-[#f3e8ff]/80 to-[#ffe5ec]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(168,85,247,0.18)]">
+                                    <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.8),_0_8px_20px_rgba(168,85,247,0.08)] transition-transform group-hover:scale-105 duration-300">🍂</div>
+                                    <div class="text-center py-2">
+                                        <p class="font-display-premium text-xl text-stone-900 font-extrabold tracking-widest">Always There</p>
+                                        <p class="text-[0.6rem] text-purple-500 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff5f8] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
+                                    <p class="leading-relaxed font-semibold font-display-premium italic text-stone-800 text-lg mb-3">Always There</p>
+                                    <p class="leading-relaxed font-medium font-serif-elegant text-xl md:text-2xl text-stone-800">No matter what happens, you are always a true and loyal friend. Knowing you are with me makes me very happy.</p>
+                                </div>
                             </div>
-                            <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff2ee] p-5 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-[0.7rem] sm:text-[0.75rem] text-stone-700 shadow-2xl">
-                                <p class="leading-relaxed font-medium">You face every problem with so much patience and calm. You are a truly wonderful friend.</p>
+                        </div>
+                    </div>
+
+                    <div class="parallax-node justify-end" data-speed="-30" data-rot="5">
+                        <div class="parallax-card-body perspective group">
+                            <div class="card-inner preserve-3d w-full h-full relative duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-b from-[#e0f2fe]/80 to-[#fae8ff]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(14,165,233,0.18)]">
+                                    <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.8),_0_8px_20px_rgba(14,165,233,0.08)] transition-transform group-hover:scale-105 duration-300">🪐</div>
+                                    <div class="text-center py-2">
+                                        <p class="font-display-premium text-xl text-stone-900 font-extrabold tracking-widest">Beautiful Grace</p>
+                                        <p class="text-[0.6rem] text-sky-500 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    </div>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-white to-[#f5fbf2] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
+                                    <p class="leading-relaxed font-semibold font-display-premium italic text-stone-800 text-lg mb-3">Beautiful Grace</p>
+                                    <p class="leading-relaxed font-medium font-serif-elegant text-xl md:text-2xl text-stone-800">You face every problem with so much patience and calm. You are a truly wonderful friend.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -471,7 +530,7 @@
 
             <section class="glass-premium p-5 sm:p-7 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing">
                 <div class="absolute -top-16 -right-16 w-32 h-32 bg-amber-100/20 rounded-full filter blur-2xl"></div>
-                <h3 class="font-serif-elegant text-xl sm:text-2xl text-stone-900 mb-1 tracking-wide">Cosmic Sync</h3>
+                <h3 class="font-display-premium text-2xl text-stone-900 mb-1 tracking-widest">Cosmic Sync</h3>
                 <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-6">We love the same music!</p>
 
                 <div class="flex flex-col gap-5 mb-6 transition-all duration-500" id="cosmicPlaySection">
@@ -495,7 +554,7 @@
                         </div>
 
                         <div class="flex flex-col items-center sm:items-start space-y-1 text-center sm:text-left">
-                            <span id="currentTrackName" class="font-serif-elegant text-xs sm:text-sm font-semibold text-stone-800">Tap to play a song</span>
+                            <span id="currentTrackName" class="font-display-premium text-sm font-semibold text-stone-800">Tap to play a song</span>
                             <span class="text-[0.6rem] text-stone-400 uppercase tracking-widest font-bold">Heena & You</span>
                             <div class="flex gap-1.5 h-6 items-end mt-1.5">
                                 <div class="w-1 bg-rose-400 rounded-full h-1" id="mbar1"></div>
@@ -553,7 +612,7 @@
 
             <section class="glass-premium p-6 sm:p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing">
                 <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-amber-200/30 rounded-full filter blur-2xl"></div>
-                <h3 class="font-serif-elegant text-xl sm:text-2xl text-stone-900 mb-1 tracking-wide">Vial of Luminescence</h3>
+                <h3 class="font-display-premium text-2xl text-stone-900 mb-1 tracking-widest">Vial of Luminescence</h3>
                 <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-8">Tap the bottle to see a sweet note</p>
                 
                 <div class="relative w-32 h-40 mx-auto cursor-pointer flex items-center justify-center group" id="loveJar">
@@ -596,13 +655,13 @@
                     </div>
                 </div>
 
-                <div id="jarNote" class="mt-6 p-5 bg-gradient-to-br from-white/95 to-white/60 border border-amber-100 rounded-[1.8rem] text-xs text-stone-700 leading-relaxed font-serif-elegant italic shadow-inner h-24 flex items-center justify-center text-center transition-all duration-300">
+                <div id="jarNote" class="mt-6 p-5 bg-gradient-to-br from-white/95 to-white/60 border border-amber-100 rounded-[1.8rem] text-lg text-stone-700 leading-relaxed font-serif-elegant h-24 flex items-center justify-center text-center transition-all duration-300">
                     Tap the bottle to see a sweet message of appreciation.
                 </div>
             </section>
 
             <section class="glass-premium p-6 sm:p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing">
-                <h3 class="font-serif-elegant text-xl sm:text-2xl text-stone-900 mb-1 tracking-wide">Harp of Whispers</h3>
+                <h3 class="font-display-premium text-2xl text-stone-900 mb-1 tracking-widest">Harp of Whispers</h3>
                 <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-6">Swipe or tap the chimes to hear celestial melodies</p>
                 <div class="flex justify-between items-end gap-2 h-32 px-1 touch-none relative z-10" id="harpContainer">
                     <div class="chime-bar flex-1 h-full rounded-full glass-card border border-white/60 flex flex-col justify-end pb-3 text-[0.6rem] text-amber-700 font-extrabold tracking-widest uppercase cursor-pointer" data-note="261.63" data-name="Do">C</div>
@@ -619,7 +678,7 @@
         <footer class="mt-20 text-center select-none">
             <div class="w-12 h-[1px] bg-stone-300 mx-auto mb-4"></div>
             <p class="text-[0.6rem] tracking-[0.4em] text-rose-500 uppercase font-extrabold">Exclusively for Heena</p>
-            <p class="text-xs font-serif-elegant italic text-stone-500 mt-1">A beautiful friendship glowing through time.</p>
+            <p class="text-xs font-display-premium italic text-stone-500 mt-1">A beautiful friendship glowing through time.</p>
         </footer>
 
     </div>
@@ -708,7 +767,7 @@
                 btn.setAttribute('data-name', track.name);
                 btn.innerHTML = `
                     <div class="flex items-center gap-3">
-                        <span class="text-xs font-serif-elegant text-stone-500 group-hover:text-amber-800">${indexStr}</span>
+                        <span class="text-xs font-display-premium text-stone-500 group-hover:text-amber-800">${indexStr}</span>
                         <span class="text-xs font-bold text-stone-800">${track.name}</span>
                     </div>
                     <div class="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
@@ -913,7 +972,7 @@
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target.closest('button') || e.target.closest('.candle') || e.target.closest('.polaroid') || e.target.closest('#loveJar') || e.target.closest('.chime-bar') || e.target.closest('#vinylPlayer') || e.target.closest('#harpContainer') || e.target.closest('#cakeSection')) return;
+            if (e.target.closest('button') || e.target.closest('.candle') || e.target.closest('.parallax-card-body') || e.target.closest('#loveJar') || e.target.closest('.chime-bar') || e.target.closest('#vinylPlayer') || e.target.closest('#harpContainer') || e.target.closest('#cakeSection')) return;
             createSparkles(e.clientX, e.clientY, 8, 'gold');
             playChime(600 + Math.random() * 600, 'sine', 0.8, 0.1, mainHarpGain);
         });
@@ -939,6 +998,7 @@
                 main.classList.remove('hidden');
                 setTimeout(() => {
                     main.classList.remove('opacity-0');
+                    ScrollTrigger.refresh();
                 }, 50);
             }, 1000);
         });
@@ -1010,33 +1070,66 @@
             });
         });
 
-        document.querySelectorAll('.polaroid').forEach(polaroid => {
-            polaroid.addEventListener('click', function() {
-                const inner = this.querySelector('.card-inner');
+        gsap.registerPlugin(ScrollTrigger);
+
+        const parNodes = gsap.utils.toArray('.parallax-node');
+        
+        parNodes.forEach((node) => {
+            const speed = parseFloat(node.getAttribute('data-speed')) || 0;
+            const targetRot = parseFloat(node.getAttribute('data-rot')) || 0;
+
+            gsap.fromTo(node, 
+                {
+                    y: speed,
+                    rotation: targetRot * 0.3
+                },
+                {
+                    y: -speed,
+                    rotation: targetRot,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: node,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1.2
+                    }
+                }
+            );
+
+            const card = node.querySelector('.parallax-card-body');
+            const inner = card.querySelector('.card-inner');
+
+            card.addEventListener('click', function(e) {
                 const isFlipped = inner.classList.toggle('rotate-y-180');
                 if (isFlipped) {
-                    inner.style.transform = 'rotateY(180deg)';
+                    gsap.to(inner, { rotateY: 180, duration: 0.6, ease: 'power2.out' });
+                    const rect = card.getBoundingClientRect();
+                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 25, 'rainbow');
                 } else {
-                    inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                    gsap.to(inner, { rotateY: 0, rotateX: 0, duration: 0.6, ease: 'power2.out' });
                 }
                 playChime(440, 'sine', 1.0, 0.12, mainHarpGain);
             });
-            
-            polaroid.addEventListener('pointermove', function(e) {
-                const inner = this.querySelector('.card-inner');
+
+            card.addEventListener('pointermove', function(e) {
                 if (inner.classList.contains('rotate-y-180')) return;
-                const rect = this.getBoundingClientRect();
+                const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-                inner.style.transform = `rotateX(${-y / 8}deg) rotateY(${x / 8}deg) scale(1.04)`;
+                gsap.to(inner, {
+                    rotateY: x / 4,
+                    rotateX: -y / 4,
+                    scale: 1.06,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
             });
-            
-            polaroid.addEventListener('pointerleave', function() {
-                const inner = this.querySelector('.card-inner');
+
+            card.addEventListener('pointerleave', function() {
                 if (inner.classList.contains('rotate-y-180')) {
-                    inner.style.transform = 'rotateY(180deg)';
+                    gsap.to(inner, { rotateY: 180, rotateX: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
                 } else {
-                    inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                    gsap.to(inner, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
                 }
             });
         });
@@ -1434,7 +1527,7 @@
                 btn.setAttribute('data-name', name);
                 btn.innerHTML = `
                     <div class="flex items-center gap-3">
-                        <span class="text-xs font-serif-elegant text-stone-500 group-hover:text-amber-800">${indexStr}</span>
+                        <span class="text-xs font-display-premium text-stone-500 group-hover:text-amber-800">${indexStr}</span>
                         <span class="text-xs font-bold text-stone-800">${name}</span>
                     </div>
                     <div class="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
