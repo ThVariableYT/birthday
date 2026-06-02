@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Heena — Celestial Tribute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Fira+Code:wght@300;400&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-bg-start: #FFF9F6;
+            --color-bg-end: #FFF0F5;
+            --color-burgundy: #501D22;
+            --color-rose: #D98880;
+            --color-gold: #E2B653;
+            --color-dark-brown: #1C0D0A;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--color-bg-start);
+            color: var(--color-burgundy);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .font-serif-elegant {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .font-cursive-signature {
+            font-family: 'Pinyon Script', cursive;
+        }
+
+        .font-mono-micro {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .animated-bg {
+            background: linear-gradient(-45deg, #FFF6F0, #FFF0F5, #F5E9FF, #FFF3F3);
+            background-size: 400% 400%;
+            animation: gradientShift 25s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .paper-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        .premium-pastel-card {
+            background: linear-gradient(135deg, rgba(255, 245, 241, 0.9) 0%, rgba(255, 218, 218, 0.75) 100%);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 
+                inset 0 1px 3px rgba(255, 255, 255, 0.8),
+                0 25px 55px rgba(220, 174, 170, 0.18),
+                0 10px 20px rgba(80, 29, 34, 0.03);
+            border-radius: 3rem;
+        }
+
+        .premium-inner-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.45) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
+        }
+
+        .realistic-flame {
+            width: 16px;
+            height: 32px;
+            background: radial-gradient(ellipse at bottom, #FFFFFF 15%, #FFF099 35%, #FF9933 60%, #FF3300 85%, transparent 100%);
+            border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+            filter: drop-shadow(0 0 8px rgba(255, 180, 0, 0.95)) drop-shadow(0 0 16px rgba(255, 100, 0, 0.6));
+            transform-origin: bottom center;
+            will-change: transform;
+            animation: flameFlicker 0.7s ease-in-out infinite alternate;
+        }
+
+        @keyframes flameFlicker {
+            0% { transform: scale(1) rotate(-1.5deg); }
+            50% { transform: scale(1.08, 0.93) rotate(1deg); }
+            100% { transform: scale(0.94, 1.05) rotate(-0.5deg); }
+        }
+
+        .chime-bar {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+            will-change: transform;
+        }
+
+        .chime-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(226, 182, 83, 0.5), transparent);
+            pointer-events: none;
+        }
+
+        .chime-bar:active, .chime-bar.active {
+            transform: scaleY(1.12) scaleX(0.95);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(217, 136, 128, 0.35));
+            box-shadow: 0 15px 30px rgba(217, 136, 128, 0.25);
+        }
+
+        .lyric-line {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.2;
+            padding: 8px 0;
+        }
+
+        .lyric-line.active {
+            opacity: 1;
+            color: var(--color-burgundy);
+            font-weight: 600;
+            transform: scale(1.08);
+            text-shadow: 0 0 15px rgba(217, 136, 128, 0.3);
+        }
+
+        .spinning-record {
+            animation: spinVinyl 15s linear infinite;
+        }
+
+        .paused-record {
+            animation-play-state: paused;
+        }
+
+        @keyframes spinVinyl {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .char-reveal {
+            display: inline-block;
+            opacity: 0;
+            transform: scale(0.5) translateY(25px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .char-reveal.reveal {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .unfurl-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease-in-out;
+        }
+
+        .unfurl-content.active {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(35px) scale(0.97);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .premium-action-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+            border: 1px solid rgba(226, 182, 83, 0.4);
+            box-shadow: 
+                0 12px 25px -5px rgba(80, 29, 34, 0.05),
+                inset 0 2px 4px rgba(255, 255, 255, 0.7);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .premium-action-btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(226, 182, 83, 0.75);
+            box-shadow: 
+                0 18px 35px -5px rgba(217, 136, 128, 0.2),
+                inset 0 2px 8px rgba(255, 255, 255, 0.95);
+        }
+
+        .polaroid-card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(80, 29, 34, 0.12);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(80, 29, 34, 0.25);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-delay: 0s !important;
+                animation-duration: 0s !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0s !important;
+                scroll-behavior: auto !important;
+                transform: none !important;
+            }
+            .realistic-flame {
+                animation: none !important;
+                border-radius: 50% 50% 10% 10% !important;
+            }
+            .paper-grain {
+                display: none !important;
+            }
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .spinning-record {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="animated-bg relative min-h-screen selection:bg-[#FCD5D9] selection:text-[#501D22] antialiased overflow-x-hidden">
+
+    <div class="paper-grain"></div>
+
+    <canvas id="sparkleCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></canvas>
+
+    <div class="fixed top-6 right-6 z-40 flex items-center gap-3">
+        <span id="ambientStatusLabel" class="text-[0.62rem] font-mono-micro tracking-widest text-[#8A5E61] uppercase hidden sm:inline select-none">Atmosphere</span>
+        <button id="ambientDroneTrigger" class="w-10 h-10 rounded-full premium-inner-card flex items-center justify-center text-[#501D22] hover:text-black transition-all shadow-lg border border-white/80" aria-label="Toggle atmospheric background drone">
+            <svg id="ambientAudioIcon" viewBox="0 0 24 24" class="w-4 h-4 fill-none stroke-current" stroke-width="1.5">
+                <path id="audioIconOff" d="M11 5L6 9H2v6h4l5 4V5z M23 9l-6 6 M17 9l6 6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path id="audioIconOn" class="hidden" d="M11 5L6 9H2v6h4l5 4V5z M15.54 8.46a5 5 0 0 1 0 7.07 M19.07 4.93a10 10 0 0 1 0 14.14" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <div id="experienceGateOverlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center p-6 select-none transition-all duration-[1300ms] ease-in-out bg-gradient-to-br from-[#FFF9F6] via-[#FFF1F5] to-[#FCECEC]">
+        
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="celestialGrid" width="80" height="80" patternUnits="userSpaceOnUse">
+                        <circle cx="40" cy="40" r="1.5" fill="rgba(80, 29, 34, 0.25)" />
+                        <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(80, 29, 34, 0.08)" stroke-width="0.75"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#celestialGrid)" />
+            </svg>
+        </div>
+
+        <div id="luminescentLidCircle" class="relative w-64 h-64 flex items-center justify-center cursor-pointer group">
+            <div id="blobVisualShaper" class="absolute inset-0 transition-transform duration-1000 ease-out scale-95 group-hover:scale-105">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                    <path id="organicEvolvingBlob" d="M43,-64.5C55.4,-57.4,65,-45,71.2,-30.9C77.4,-16.8,80.1,-1.1,76.5,13.2C72.8,27.5,62.7,40.3,50.7,51.1C38.7,61.9,24.8,70.5,9.4,72.4C-5.9,74.2,-22.8,69.2,-37.6,60.8C-52.4,52.3,-65.2,40.3,-71.4,25.5C-77.6,10.6,-77.2,-7.1,-71.5,-22.8C-65.7,-38.5,-54.6,-52.1,-40.9,-58.6C-27.2,-65.1,-10.9,-64.4,2.9,-69C16.8,-73.6,30.6,-71.6,43,-64.5Z" 
+                          fill="rgba(217, 136, 128, 0.1)" 
+                          stroke="rgba(217, 136, 128, 0.45)" 
+                          stroke-width="1.5" 
+                          transform="translate(100, 100)" 
+                          class="transition-all duration-1000" />
+                </svg>
+            </div>
+
+            <div id="shimmeringCenterPoint" class="absolute w-10 h-10 rounded-full bg-gradient-to-tr from-[#E2B653] to-[#FFF9F6] shadow-[0_0_35px_12px_rgba(226,182,83,0.7)] animate-pulse flex items-center justify-center transition-all duration-700">
+                <div class="w-3 h-3 rounded-full bg-white"></div>
+            </div>
+            
+            <div class="absolute w-20 h-20 rounded-full border border-[#D98880]/30 animate-ping opacity-75 pointer-events-none" style="animation-duration: 2.8s;"></div>
+        </div>
+
+        <div class="text-center mt-12 max-w-sm z-10">
+            <span class="text-[0.62rem] tracking-[0.5em] text-[#D98880] uppercase font-mono-micro block mb-3">CELESTIAL TRIBUTE</span>
+            <h1 class="text-4xl font-serif-elegant font-light text-[#501D22] tracking-wider leading-relaxed">
+                The Luminescence <br>of Heena
+            </h1>
+            <p class="text-[#8A5E61] text-xs mt-4 tracking-wide leading-relaxed px-4 font-light">
+                An interactive, luminous archive dedicated to a soul of pure warmth, grace, and timeless friendship.
+            </p>
+
+            <button id="activateTributeBtn" class="premium-action-btn text-[0.72rem] tracking-[0.3em] font-mono-micro text-[#501D22] uppercase px-10 py-5 rounded-full mt-10 transition-all">
+                Begin the Celebration
+            </button>
+        </div>
+    </div>
+
+    <div id="mainTributeContainer" class="max-w-xl mx-auto px-6 pt-32 pb-40 relative z-10">
+        
+        <header class="text-center mb-20 select-none">
+            <div class="flex flex-col items-center justify-center gap-1 mb-4">
+                <span class="text-rose-400 text-lg">★</span>
+                <span class="text-[0.68rem] font-mono-micro tracking-[0.55em] text-[#D98880] uppercase">CELESTIAL TRIBUTE</span>
+            </div>
+
+            <h1 id="celebrationHeader" class="text-7xl font-serif-elegant tracking-wide text-[#501D22] leading-tight mb-4 select-none">
+            </h1>
+
+            <p class="text-[0.7rem] font-mono-micro tracking-[0.25em] text-[#E2B653] uppercase mb-8">June 03, 2026 — Timeless Orbit</p>
+            
+            <p class="text-[#8A5E61] font-light text-xs leading-relaxed max-w-md mx-auto italic">
+                “Some souls possess a quiet, radiant glow—gentle and polite—that makes the entire cosmos feel incredibly safe and infinitely brighter.”
+            </p>
+
+            <div class="mt-8 flex justify-center gap-1">
+                <svg width="60" height="20" viewBox="0 0 60 20" class="stroke-[#D98880]/40 fill-none" stroke-width="1">
+                    <path d="M 0,10 Q 15,0 30,10 T 60,10" />
+                </svg>
+            </div>
+        </header>
+
+        <main class="space-y-24">
+
+            <section class="scroll-reveal premium-pastel-card p-8 md:p-10" id="truffleCakeSection">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-serif-elegant font-normal text-[#501D22]">Hazelnut Truffle Cake</h2>
+                    <p class="text-[#D98880] text-[0.68rem] tracking-widest font-bold mt-1.5 uppercase">TAP TO BLOW OUT THE FLAMES AND MAKE A WISH</p>
+                </div>
+
+                <div class="relative py-10 flex flex-col items-center justify-center">
+                    
+                    <div class="absolute -top-6 inset-x-0 h-24 pointer-events-none overflow-hidden flex justify-center items-center">
+                        <div class="w-48 h-full relative" id="sparkParticleBox"></div>
+                    </div>
+
+                    <div class="flex gap-10 items-end justify-center mb-[-1px] relative z-20">
+                        <div class="candle-trigger group flex flex-col items-center cursor-pointer" data-candle-index="1">
+                            <div class="realistic-flame" id="candleFlame1"></div>
+                            <div class="w-[1.5px] h-3.5 bg-stone-900 mb-[1px]"></div>
+                            <div class="w-4 h-12 rounded-t-sm bg-[#E3B448] relative shadow-md">
+                                <div class="absolute inset-y-0 right-1 w-[2px] bg-white/20"></div>
+                            </div>
+                        </div>
+
+                        <div class="candle-trigger group flex flex-col items-center cursor-pointer" data-candle-index="2">
+                            <div class="realistic-flame" id="candleFlame2"></div>
+                            <div class="w-[1.5px] h-3.5 bg-stone-900 mb-[1px]"></div>
+                            <div class="w-4 h-14 rounded-t-sm bg-[#E8929A] relative shadow-md">
+                                <div class="absolute inset-y-0 right-1 w-[2px] bg-white/30"></div>
+                            </div>
+                        </div>
+
+                        <div class="candle-trigger group flex flex-col items-center cursor-pointer" data-candle-index="3">
+                            <div class="realistic-flame" id="candleFlame3"></div>
+                            <div class="w-[1.5px] h-3.5 bg-stone-900 mb-[1px]"></div>
+                            <div class="w-4 h-12 rounded-t-sm bg-[#E3B448] relative shadow-md">
+                                <div class="absolute inset-y-0 right-1 w-[2px] bg-white/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-64 flex flex-col items-center preserve-3d" style="transform: rotateX(6deg);">
+                        
+                        <div class="relative w-[190px] h-[65px] bg-[#1C0D0A] rounded-t-[20px] flex flex-col items-center justify-between border-b border-[#2C1915]/60 shadow-lg z-10">
+                            <div class="w-full flex justify-around px-10 pt-4 text-xs opacity-90 select-none">
+                                <span class="text-stone-400">🌰</span>
+                                <span class="text-[#E2B653] text-[9px] animate-pulse">✦</span>
+                                <span class="text-stone-400">🌰</span>
+                                <span class="text-[#E2B653] text-[9px] animate-pulse">✦</span>
+                                <span class="text-stone-400">🌰</span>
+                            </div>
+                            <div class="w-[90%] h-[1.5px] bg-gradient-to-r from-transparent via-[#E2B653]/35 to-transparent mb-1"></div>
+                        </div>
+
+                        <div class="relative w-[230px] h-[55px] bg-[#1C0D0A] rounded-t-[15px] rounded-b-[4px] shadow-2xl z-0">
+                            <div class="absolute left-6 -bottom-5 w-2 h-5 bg-[#E2B653] rounded-full shadow-md"></div>
+                            <div class="absolute left-18 -bottom-3.5 w-1.5 h-4 bg-[#E2B653] rounded-full shadow-md" style="left: 70px;"></div>
+                            <div class="absolute right-18 -bottom-6 w-2 h-7 bg-[#E2B653] rounded-full shadow-md" style="right: 70px;"></div>
+                            <div class="absolute right-6 -bottom-4 w-1.5 h-4.5 bg-[#E2B653] rounded-full shadow-md"></div>
+                        </div>
+
+                        <div class="absolute -bottom-8 w-52 h-10 bg-rose-950/15 rounded-full filter blur-md -z-10"></div>
+                    </div>
+                </div>
+
+                <div id="unfoldedCelebrationNote" class="unfurl-content mt-8">
+                    <div class="bg-[#FFFDFB] p-8 rounded-[2.5rem] border border-[#FFD5D5]/50 shadow-inner relative overflow-hidden">
+                        <div class="absolute left-6 top-0 bottom-0 w-[1px] bg-[#FCD5D9]"></div>
+                        
+                        <div class="pl-8 relative z-10">
+                            <span class="font-mono-micro text-[0.62rem] tracking-widest text-[#D98880] uppercase block mb-4">Letter to Heena — June 3</span>
+                            <p class="font-serif-elegant italic text-sm text-[#501D22] leading-relaxed">
+                                "I hope life brings you quiet, peaceful joy and wonderful moments, just like the effortless happiness you always give to everyone around you, Heena. You deserve the absolute best today and on every orbit ahead."
+                            </p>
+                            
+                            <div class="mt-6 flex items-center justify-between">
+                                <span class="font-mono-micro text-[0.55rem] text-stone-400 uppercase tracking-widest">Always &amp; Forever</span>
+                                <svg width="32" height="32" viewBox="0 0 100 100" class="stroke-[#D98880]/30 fill-none">
+                                    <path d="M 30,50 C 40,20 60,80 70,50" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scroll-reveal relative py-6" id="crystalsTributeSection">
+                <div class="mb-14">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[0.6rem] font-mono-micro tracking-widest text-[#D98880] uppercase">Tribute Frame 02</span>
+                    </div>
+                    <h2 class="text-3xl font-serif-elegant font-normal text-[#501D22]">The Memory Crystals</h2>
+                    <p class="text-[#D98880] text-[0.68rem] tracking-widest font-bold mt-1.5 uppercase">TAP A CARD TO READ A SWEET NOTE</p>
+                </div>
+
+                <div class="relative min-h-[46rem] md:min-h-[44rem] z-20 w-full" id="crystalsInteractiveLayer">
+                    
+                    <div class="polaroid-card absolute top-0 left-0 w-64 max-w-[80vw] bg-[#FFFBF9] p-4 pb-10 rounded-2xl shadow-[0_15px_35px_rgba(80,29,34,0.06)] border border-[#FFDADA]/40 cursor-pointer transform -rotate-6 hover:z-30 hover:shadow-2xl" data-card-item-id="1">
+                        <div class="w-full aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFF9F6] to-[#FFE3E3] overflow-hidden relative flex items-center justify-center p-6 border border-[#FFDADA]/20">
+                            <span class="text-4xl filter drop-shadow-md">🌸</span>
+                        </div>
+                        <div class="mt-5 px-1">
+                            <span class="font-mono-micro text-[0.55rem] tracking-[0.2em] text-[#D98880] uppercase">AURA</span>
+                            <h3 class="font-serif-elegant text-sm text-[#501D22] font-semibold mt-0.5">Quiet Strength</h3>
+                            <p class="text-[0.72rem] text-[#8A5E61] font-light leading-relaxed mt-2.5">
+                                You are always exceptionally calm, composed, and polite. Your subtle, quiet dignity is an extraordinary anchor in all environments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="polaroid-card absolute top-12 right-0 w-64 max-w-[80vw] bg-[#FFFBF9] p-4 pb-10 rounded-2xl shadow-[0_15px_35px_rgba(80,29,34,0.06)] border border-[#FFDADA]/40 cursor-pointer transform rotate-3 hover:z-30 hover:shadow-2xl" data-card-item-id="2">
+                        <div class="w-full aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFF9F6] to-[#FFE3E3] overflow-hidden relative flex items-center justify-center p-6 border border-[#FFDADA]/20">
+                            <span class="text-4xl filter drop-shadow-md">💜</span>
+                        </div>
+                        <div class="mt-5 px-1">
+                            <span class="font-mono-micro text-[0.55rem] tracking-[0.2em] text-[#D98880] uppercase">SANCTUARY</span>
+                            <h3 class="font-serif-elegant text-sm text-[#501D22] font-semibold mt-0.5">Safe Haven</h3>
+                            <p class="text-[0.72rem] text-[#8A5E61] font-light leading-relaxed mt-2.5">
+                                Whenever I complained about trivial or small things, you always listened so patiently. Your understanding essence creates instant safety.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="polaroid-card absolute top-[22rem] left-2 w-64 max-w-[80vw] bg-[#FFFBF9] p-4 pb-10 rounded-2xl shadow-[0_15px_35px_rgba(80,29,34,0.06)] border border-[#FFDADA]/40 cursor-pointer transform rotate-6 hover:z-30 hover:shadow-2xl" data-card-item-id="3">
+                        <div class="w-full aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFF9F6] to-[#FFE3E3] overflow-hidden relative flex items-center justify-center p-6 border border-[#FFDADA]/20">
+                            <span class="text-4xl filter drop-shadow-md">🍁</span>
+                        </div>
+                        <div class="mt-5 px-1">
+                            <span class="font-mono-micro text-[0.55rem] tracking-[0.2em] text-[#D98880] uppercase">ANCHOR</span>
+                            <h3 class="font-serif-elegant text-sm text-[#501D22] font-semibold mt-0.5">Always There</h3>
+                            <p class="text-[0.72rem] text-[#8A5E61] font-light leading-relaxed mt-2.5">
+                                No matter what happens, you are a deeply true and loyal friend. Knowing you are with me brings absolute peace and steady confidence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="polaroid-card absolute top-[24rem] right-4 w-64 max-w-[80vw] bg-[#FFFBF9] p-4 pb-10 rounded-2xl shadow-[0_15px_35px_rgba(80,29,34,0.06)] border border-[#FFDADA]/40 cursor-pointer transform -rotate-3 hover:z-30 hover:shadow-2xl" data-card-item-id="4">
+                        <div class="w-full aspect-[4/3] rounded-lg bg-gradient-to-br from-[#FFF9F6] to-[#FFE3E3] overflow-hidden relative flex items-center justify-center p-6 border border-[#FFDADA]/20">
+                            <span class="text-4xl filter drop-shadow-md">🪐</span>
+                        </div>
+                        <div class="mt-5 px-1">
+                            <span class="font-mono-micro text-[0.55rem] tracking-[0.2em] text-[#D98880] uppercase">HARMONY</span>
+                            <h3 class="font-serif-elegant text-sm text-[#501D22] font-semibold mt-0.5">Beautiful Grace</h3>
+                            <p class="text-[0.72rem] text-[#8A5E61] font-light leading-relaxed mt-2.5">
+                                You face every obstacle with patience and exceptional elegance. You are a truly wonderful, exquisite friend inside out.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scroll-reveal premium-pastel-card p-6 md:p-10" id="vinylChronicleSection">
+                <div class="text-center mb-8">
+                    <span class="text-[0.58rem] font-mono-micro tracking-[0.3em] text-[#D98880] uppercase block mb-1">Cosmic Sync</span>
+                    <h2 class="text-2xl font-serif-elegant font-normal text-[#501D22]">The Vinyl Chronicle</h2>
+                    <p class="text-[#D98880] text-[0.68rem] tracking-widest font-bold mt-1.5 uppercase">WE LOVE THE SAME MUSIC!</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-8 justify-center mb-8">
+                    
+                    <div class="relative w-36 h-36 flex items-center justify-center cursor-pointer select-none" id="diskRotatingWrap">
+                        
+                        <div id="diskAuraRing" class="absolute -inset-2 rounded-full border border-rose-300/20 transition-all duration-1000"></div>
+                        
+                        <div id="spinningRecordDisk" class="absolute inset-0 bg-[#1D1614] rounded-full border-[6px] border-stone-800 shadow-[0_15px_35px_rgba(80,29,34,0.3)] spinning-record paused-record flex items-center justify-center transition-all duration-700">
+                            <div class="absolute inset-4 rounded-full border border-stone-700/30 opacity-70"></div>
+                            <div class="absolute inset-8 rounded-full border border-stone-700/40 opacity-50"></div>
+                            <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-[#FFF9F6] via-[#FFE3E3] to-[#FFF9F6] border border-stone-900 flex items-center justify-center relative">
+                                <div class="w-2.5 h-2.5 rounded-full bg-stone-950"></div>
+                            </div>
+                        </div>
+
+                        <div id="rotatingTonearm" class="absolute right-[-4px] top-[-8px] w-12 h-18 origin-top-right transform translate-x-1 -translate-y-1 transition-transform duration-[800ms] ease-out pointer-events-none z-10" style="transform: rotate(-16deg);">
+                            <svg viewBox="0 0 50 100" class="w-full h-full filter drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)]">
+                                <path d="M 40,10 L 16,10 L 16,68 L 13,78" stroke="#E2B653" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                <circle cx="40" cy="10" r="5" fill="#8D6E63"/>
+                                <rect x="7" y="76" width="12" height="15" rx="1.5" fill="#2D1E18"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-left">
+                        <span class="font-mono-micro text-[0.58rem] tracking-widest text-[#D98880] uppercase">Now Resonating</span>
+                        <h4 id="currentTrackDisplay" class="font-serif-elegant text-lg text-[#501D22] font-semibold mt-0.5">Choose a frequency</h4>
+                        
+                        <div class="flex items-end gap-1 h-5 mt-3 justify-center md:justify-start" id="audioEqPanel">
+                            <div class="w-[3px] bg-[#E2B653] rounded-full h-1 transition-all duration-300" id="audioEqBar1"></div>
+                            <div class="w-[3px] bg-[#D98880] rounded-full h-1 transition-all duration-300" id="audioEqBar2"></div>
+                            <div class="w-[3px] bg-[#501D22]/60 rounded-full h-1 transition-all duration-300" id="audioEqBar3"></div>
+                            <div class="w-[3px] bg-[#D98880] rounded-full h-1 transition-all duration-300" id="audioEqBar4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3.5 mb-6" id="vocalTracklistGroup">
+                    <button class="frequency-play-btn w-full p-4 bg-white/40 hover:bg-white/85 border border-white/60 hover:border-[#FFDADA] rounded-2xl flex items-center justify-between transition-all duration-500 group" data-frequency-track="thoughts">
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono-micro text-[0.62rem] text-[#D98880] group-hover:text-[#501D22]">01</span>
+                            <div class="text-left">
+                                <h5 class="text-xs font-bold text-[#501D22]">Your Thoughts</h5>
+                                <p class="text-[0.62rem] text-[#8A5E61] mt-0.5 font-light">Custom Ambient Celebration Tone</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-white group-hover:bg-[#FFF1F1] flex items-center justify-center border border-stone-200/40 transition-colors">
+                            <svg class="w-2.5 h-2.5 fill-[#8A5E61] group-hover:fill-[#501D22] transition-colors" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </button>
+
+                    <button class="frequency-play-btn w-full p-4 bg-white/40 hover:bg-white/85 border border-white/60 hover:border-[#FFDADA] rounded-2xl flex items-center justify-between transition-all duration-500 group" data-frequency-track="saajna">
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono-micro text-[0.62rem] text-[#D98880] group-hover:text-[#501D22]">02</span>
+                            <div class="text-left">
+                                <h5 class="text-xs font-bold text-[#501D22]">Saajna</h5>
+                                <p class="text-[0.62rem] text-[#8A5E61] mt-0.5 font-light">Acoustic Tribute • Falak Shabir</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-white group-hover:bg-[#FFF1F1] flex items-center justify-center border border-stone-200/40 transition-colors">
+                            <svg class="w-2.5 h-2.5 fill-[#8A5E61] group-hover:fill-[#501D22] transition-colors" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </button>
+
+                    <button class="frequency-play-btn w-full p-4 bg-white/40 hover:bg-white/85 border border-white/60 hover:border-[#FFDADA] rounded-2xl flex items-center justify-between transition-all duration-500 group" data-frequency-track="perfect">
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono-micro text-[0.62rem] text-[#D98880] group-hover:text-[#501D22]">03</span>
+                            <div class="text-left">
+                                <h5 class="text-xs font-bold text-[#501D22]">Perfect</h5>
+                                <p class="text-[0.62rem] text-[#8A5E61] mt-0.5 font-light">Acoustic Cover • Ed Sheeran</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-white group-hover:bg-[#FFF1F1] flex items-center justify-center border border-stone-200/40 transition-colors">
+                            <svg class="w-2.5 h-2.5 fill-[#8A5E61] group-hover:fill-[#501D22] transition-colors" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="border-t border-[#FFDADA]/40 pt-4 mt-4">
+                    <button id="showAddSongModalBtn" class="w-full py-3 bg-white/30 hover:bg-white/75 border border-dashed border-[#D98880]/50 rounded-2xl text-[0.68rem] tracking-widest font-mono-micro text-[#501D22] uppercase transition-all flex items-center justify-center gap-2">
+                        <span>+ ADD YOUR OWN SONG</span>
+                    </button>
+                    
+                    <div id="addSongFormContainer" class="hidden mt-4 p-4 bg-white/60 rounded-2xl border border-[#FFDADA]/60">
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-[0.55rem] font-mono-micro uppercase tracking-wider text-[#D98880] mb-1">Song Name</label>
+                                <input type="text" id="customSongNameInput" placeholder="e.g., Yellow" class="w-full p-2.5 rounded-xl border border-[#FFDADA]/60 bg-white/80 text-xs text-[#501D22] outline-none focus:border-[#D98880]">
+                            </div>
+                            <div>
+                                <label class="block text-[0.55rem] font-mono-micro uppercase tracking-wider text-[#D98880] mb-1">Artist</label>
+                                <input type="text" id="customArtistInput" placeholder="e.g., Coldplay" class="w-full p-2.5 rounded-xl border border-[#FFDADA]/60 bg-white/80 text-xs text-[#501D22] outline-none focus:border-[#D98880]">
+                            </div>
+                            <div class="flex gap-2 pt-1">
+                                <button id="submitCustomSongBtn" class="flex-1 py-2 bg-[#501D22] text-white rounded-xl text-[0.65rem] font-mono-micro uppercase tracking-wider hover:bg-black transition-colors">Add Track</button>
+                                <button id="cancelCustomSongBtn" class="px-4 py-2 bg-stone-100 text-stone-500 rounded-xl text-[0.65rem] font-mono-micro uppercase tracking-wider hover:bg-stone-200 transition-colors">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="lyricsChronicleBox" class="hidden mt-6 p-6 bg-gradient-to-br from-[#FFFDFC] to-white/75 border border-[#FFDADA]/50 rounded-2.5xl shadow-inner transition-all duration-1000">
+                    <div class="flex items-center justify-between border-b border-stone-100 pb-2 mb-4">
+                        <span class="font-mono-micro text-[0.55rem] text-[#D98880] uppercase tracking-widest">Chronicle Subtitles</span>
+                        <div class="flex gap-1">
+                            <button id="decrementLyricsTextSize" class="w-5 h-5 rounded-full bg-[#FFF1F1] hover:bg-[#FFE3E3] flex items-center justify-center text-[#501D22] text-[0.55rem] transition-colors">-</button>
+                            <button id="incrementLyricsTextSize" class="w-5 h-5 rounded-full bg-[#FFF1F1] hover:bg-[#FFE3E3] flex items-center justify-center text-[#501D22] text-[0.55rem] transition-colors">+</button>
+                        </div>
+                    </div>
+                    <div id="scrollingLyricsFrame" class="overflow-y-auto scroll-smooth py-6 h-36 flex flex-col items-center">
+                        <div id="vocalLyricsOutputArea" class="space-y-4 text-center w-full px-2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scroll-reveal premium-pastel-card p-8 md:p-10" id="luminescenceVialSection">
+                <div class="text-center mb-8">
+                    <span class="text-[0.58rem] font-mono-micro tracking-style text-[#D98880] uppercase block mb-1">Vial of Luminescence</span>
+                    <h2 class="text-2xl font-serif-elegant font-normal text-[#501D22]">Luminescence Vial</h2>
+                    <p class="text-[#D98880] text-[0.68rem] tracking-widest font-bold mt-1.5 uppercase">TAP THE BOTTLE TO SEE A SWEET NOTE</p>
+                </div>
+
+                <div class="flex flex-col items-center justify-center">
+                    <div id="vialInteractiveTarget" class="relative w-36 h-48 cursor-pointer flex items-center justify-center select-none group">
+                        
+                        <div class="absolute inset-x-0 bottom-6 h-28 w-24 mx-auto rounded-[32px] border-2 border-white bg-gradient-to-t from-white/60 to-white/10 shadow-[0_15px_30px_rgba(220,174,170,0.15)] flex flex-col items-center justify-center transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_20px_40px_rgba(220,174,170,0.25)]">
+                            <div class="w-8 h-4 rounded-b-lg bg-[#E2B653] absolute top-[-6px] border border-white/40 shadow-inner"></div>
+                            
+                            <div id="vialCoreStar" class="text-4xl text-[#E2B653] filter drop-shadow-[0_0_15px_rgba(226,182,83,0.85)] animate-pulse">✦</div>
+                        </div>
+
+                        <div class="w-8 h-6 bg-[#C49B7A] rounded-md absolute top-10 border border-stone-600/10 shadow-md"></div>
+                        
+                        <div class="absolute inset-x-0 bottom-0 h-4 w-16 mx-auto rounded-full bg-[#E8929A]/45 filter blur-xs"></div>
+                    </div>
+
+                    <div id="vialNoteDisplayContainer" class="mt-8 w-full max-w-sm">
+                        <div class="bg-[#FFFDFB] p-6 rounded-2.5xl border border-[#FFDADA]/50 shadow-inner text-center">
+                            <span class="font-mono-micro text-[0.55rem] text-[#D98880] uppercase tracking-widest block mb-2">MESSAGES FROM THE HEART</span>
+                            <p id="vialActiveMessageText" class="font-serif-elegant italic text-sm text-[#501D22] leading-relaxed">
+                                "Your sweet laugh shoots solar peach hot-flares into my universe."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scroll-reveal premium-pastel-card p-8 md:p-10" id="harpAcousticSection">
+                <div class="text-center mb-10">
+                    <span class="text-[0.58rem] font-mono-micro tracking-style text-[#D98880] uppercase block mb-1">Tactile Acoustic</span>
+                    <h2 class="text-2xl font-serif-elegant font-normal text-[#501D22]">Harp of Whispers</h2>
+                    <p class="text-[#D98880] text-[0.68rem] tracking-widest font-bold mt-1.5 uppercase">SWIPE OR TAP THE CHIMES TO HEAR CELESTIAL MELODIES</p>
+                </div>
+
+                <div class="flex justify-between items-end gap-3 h-44 px-2 touch-none relative z-10" id="synthesizerKeyboardHarp">
+                    <div class="chime-bar flex-1 h-full rounded-full premium-inner-card border border-white flex flex-col justify-end pb-4 text-center cursor-pointer" data-acoustic-freq="261.63" data-note-label="C4">
+                        <span class="font-mono-micro text-[0.55rem] tracking-widest text-[#501D22]/60 block select-none font-bold">C</span>
+                    </div>
+                    <div class="chime-bar flex-1 h-[91%] rounded-full premium-inner-card border border-white flex flex-col justify-end pb-4 text-center cursor-pointer" data-acoustic-freq="293.66" data-note-label="D4">
+                        <span class="font-mono-micro text-[0.55rem] tracking-widest text-[#501D22]/60 block select-none font-bold">D</span>
+                    </div>
+                    <div class="chime-bar flex-1 h-[82%] rounded-full premium-inner-card border border-white flex flex-col justify-end pb-4 text-center cursor-pointer" data-acoustic-freq="329.63" data-note-label="E4">
+                        <span class="font-mono-micro text-[0.55rem] tracking-widest text-[#501D22]/60 block select-none font-bold">E</span>
+                    </div>
+                    <div class="chime-bar flex-1 h-[73%] rounded-full premium-inner-card border border-white flex flex-col justify-end pb-4 text-center cursor-pointer" data-acoustic-freq="392.00" data-note-label="G4">
+                        <span class="font-mono-micro text-[0.55rem] tracking-widest text-[#501D22]/60 block select-none font-bold">G</span>
+                    </div>
+                    <div class="chime-bar flex-1 h-[64%] rounded-full premium-inner-card border border-white flex flex-col justify-end pb-4 text-center cursor-pointer" data-acoustic-freq="440.00" data-note-label="A4">
+                        <span class="font-mono-micro text-[0.55rem] tracking-widest text-[#501D22]/60 block select-none font-bold">A</span>
+                    </div>
+                    <div class="chime-bar flex-1 h-[55%] rounded-full premium-inner-card border border-white flex flex-col justify-end pb-4 text-center cursor-pointer" data-acoustic-freq="523.25" data-note-label="C5">
+                        <span class="font-mono-micro text-[0.55rem] tracking-widest text-[#501D22]/60 block select-none font-bold">C′</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-32 text-center select-none">
+            <span class="h-[1.5px] w-12 bg-[#D98880]/35 inline-block mb-6"></span>
+            <span class="font-mono-micro text-[0.58rem] text-[#D98880] uppercase tracking-[0.45em] block mb-2">EXCLUSIVELY FOR HEENA</span>
+            <p class="font-serif-elegant italic text-[#8A5E61] text-xs">A beautiful birthday legacy of quiet colors.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        let customAudioContext;
+        let synthesizerMainGain;
+        let arpeggioDelayNode;
+        let acousticFeedbackGain;
+
+        let audioDroneIsActive = false;
+        let soundDroneInstances = [];
+        let runningFrequencyTuning = null;
+        let soundTrackInterval = null;
+        let subTitleTickTimer = null;
+        let activeVocalSongMode = null;
+        let customSongFontSizeVal = 0.85;
+        let vinylPlaybackStartTime = 0;
+
+        const collectionOfTrackLyrics = {
+            "thoughts": [
+                { time: 0, text: "Welcome to Heena's bespoke birthday universe..." },
+                { time: 3.5, text: "A gentle arpeggio crafted for an elegant soul." },
+                { time: 7.0, text: "Your presence is like a peaceful candle on a quiet evening..." },
+                { time: 11.5, text: "Deep, patient, and full of quiet understanding." },
+                { time: 15.0, text: "Thank you for listening whenever I needed to vent." },
+                { time: 19.0, text: "For being a real, true, and loyal sanctuary." },
+                { time: 23.0, text: "Heena, may your orbit always shine in absolute golden light." },
+                { time: 27.0, text: "Wishing you deep peace, and the absolute happiest birthday!" }
+            ],
+            "saajna": [
+                { time: 0, text: "Resonating Saajna — A romantic, peaceful acoustic melody." },
+                { time: 4.5, text: "Through the changing seasons and chaotic orbits..." },
+                { time: 9.0, text: "Your beautiful loyalty has remained an unwavering anchor." },
+                { time: 13.5, text: "You face every life problem with pure grace and composure." },
+                { time: 18.0, text: "May your sweet laughter keep lighting up the darkness..." },
+                { time: 22.0, text: "Wishing you quiet joy, Heena. You deserve everything beautiful." }
+            ],
+            "perfect": [
+                { time: 0, text: "Playing Perfect — A delicate cover celebrating timeless bonds." },
+                { time: 4.0, text: "We danced together under the sweet starlight..." },
+                { time: 8.5, text: "Finding beautiful grace in the quiet corners of friendship." },
+                { time: 13.0, text: "No obstacle is too heavy with a loyal friend like you." },
+                { time: 17.5, text: "Heena, you shine so bright in my universe." },
+                { time: 22.0, text: "Wishing you a warm, gorgeous day ahead." }
+            ]
+        };
+
+        const listVialWritings = [
+            "Your sweet laugh shoots solar peach hot-flares into my universe.",
+            "In the constellation of my life, your friendship is the brightest star.",
+            "You possess a gentle, polite magic that makes the whole world feel safer.",
+            "Heena, you are the perfect blend of quiet wisdom and radiant joy."
+        ];
+        let messageCycleCounterIndex = 0;
+
+        function initializeAudioEnvironment() {
+            if (customAudioContext) return;
+            customAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            synthesizerMainGain = customAudioContext.createGain();
+            synthesizerMainGain.gain.setValueAtTime(0.35, customAudioContext.currentTime);
+
+            arpeggioDelayNode = customAudioContext.createDelay(1.2);
+            arpeggioDelayNode.delayTime.setValueAtTime(0.38, customAudioContext.currentTime);
+
+            acousticFeedbackGain = customAudioContext.createGain();
+            acousticFeedbackGain.gain.setValueAtTime(0.3, customAudioContext.currentTime);
+
+            synthesizerMainGain.connect(customAudioContext.destination);
+            synthesizerMainGain.connect(arpeggioDelayNode);
+            arpeggioDelayNode.connect(acousticFeedbackGain);
+            acousticFeedbackGain.connect(arpeggioDelayNode);
+            arpeggioDelayNode.connect(customAudioContext.destination);
+        }
+
+        function triggerSyntheticAcousticPluck(freq, decayTime = 2.5, modulationMultiplier = 1.5, modulationIndex = 300) {
+            initializeAudioEnvironment();
+            if (customAudioContext.state === 'suspended') {
+                customAudioContext.resume();
+            }
+
+            const playTimeInstant = customAudioContext.currentTime;
+
+            const carrierNode = customAudioContext.createOscillator();
+            carrierNode.type = 'sine';
+            carrierNode.frequency.setValueAtTime(freq, playTimeInstant);
+
+            const modulatorNode = customAudioContext.createOscillator();
+            modulatorNode.type = 'sine';
+            modulatorNode.frequency.setValueAtTime(freq * modulationMultiplier, playTimeInstant);
+
+            const modulationGainNode = customAudioContext.createGain();
+            modulationGainNode.gain.setValueAtTime(modulationIndex, playTimeInstant);
+            modulationGainNode.gain.exponentialRampToValueAtTime(0.01, playTimeInstant + (decayTime * 0.7));
+
+            const signalGainNode = customAudioContext.createGain();
+            signalGainNode.gain.setValueAtTime(0, playTimeInstant);
+            signalGainNode.gain.linearRampToValueAtTime(0.32, playTimeInstant + 0.015);
+            signalGainNode.gain.exponentialRampToValueAtTime(0.08, playTimeInstant + 0.35);
+            signalGainNode.gain.exponentialRampToValueAtTime(0.0001, playTimeInstant + decayTime);
+
+            modulatorNode.connect(modulationGainNode);
+            modulationGainNode.connect(carrierNode.frequency);
+
+            carrierNode.connect(signalGainNode);
+            signalGainNode.connect(synthesizerMainGain);
+
+            modulatorNode.start(playTimeInstant);
+            carrierNode.start(playTimeInstant);
+
+            modulatorNode.stop(playTimeInstant + decayTime + 0.1);
+            carrierNode.stop(playTimeInstant + decayTime + 0.1);
+        }
+
+        function playArpeggiatedWelcomeTones() {
+            const chimePitches = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50, 1174.66, 1318.51];
+            chimePitches.forEach((frequencyItem, indexPointer) => {
+                setTimeout(() => {
+                    triggerSyntheticAcousticPluck(frequencyItem, 2.2, 2.25, 380);
+                }, indexPointer * 110);
+            });
+        }
+
+        const sceneCanvasElement = document.getElementById('sparkleCanvas');
+        const canvasRenderingCtx = sceneCanvasElement.getContext('2d');
+        let arrayActiveParticles = [];
+
+        function dynamicCanvasRescale() {
+            sceneCanvasElement.width = window.innerWidth;
+            sceneCanvasElement.height = window.innerHeight;
+        }
+        window.addEventListener('resize', dynamicCanvasRescale);
+        dynamicCanvasRescale();
+
+        class SparkleParticleStructure {
+            constructor(posX, posY, particleGenre) {
+                this.x = posX;
+                this.y = posY;
+                this.type = particleGenre;
+                this.size = Math.random() * 3 + 1;
+                this.velocityX = Math.random() * 4 - 2;
+                this.velocityY = Math.random() * -3 - (particleGenre === 'wisps' ? 0.8 : 1.5);
+                this.opacity = 1;
+                this.shrinkRate = Math.random() * 0.012 + 0.008;
+                this.gravitationalPull = particleGenre === 'wisps' ? -0.006 : 0.05;
+                
+                if (particleGenre === 'gold') {
+                    this.color = 'rgba(226, 182, 83, 0.9)';
+                } else if (particleGenre === 'wisps') {
+                    this.color = 'rgba(100, 95, 95, 0.25)';
+                } else {
+                    this.color = 'rgba(217, 136, 128, 0.85)';
+                }
+            }
+            refresh() {
+                this.x += this.velocityX;
+                this.y += this.velocityY;
+                this.velocityY += this.gravitationalPull;
+                this.opacity -= this.shrinkRate;
+            }
+            render() {
+                canvasRenderingCtx.save();
+                canvasRenderingCtx.globalAlpha = this.opacity;
+                canvasRenderingCtx.fillStyle = this.color;
+                canvasRenderingCtx.beginPath();
+                canvasRenderingCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                canvasRenderingCtx.fill();
+                canvasRenderingCtx.restore();
+            }
+        }
+
+        function triggerExplosionCloud(originX, originY, densitySize, genreCategory) {
+            for (let indexCount = 0; indexCount < densitySize; indexCount++) {
+                arrayActiveParticles.push(new SparkleParticleStructure(originX, originY, genreCategory));
+            }
+        }
+
+        function triggerEngineRenderingLoop() {
+            canvasRenderingCtx.clearRect(0, 0, sceneCanvasElement.width, sceneCanvasElement.height);
+            arrayActiveParticles = arrayActiveParticles.filter(item => item.opacity > 0);
+            arrayActiveParticles.forEach(particleItem => {
+                particleItem.refresh();
+                particleItem.render();
+            });
+            requestAnimationFrame(triggerEngineRenderingLoop);
+        }
+        requestAnimationFrame(triggerEngineRenderingLoop);
+
+        window.addEventListener('click', (clickEvent) => {
+            if (clickEvent.target.closest('button') || 
+                clickEvent.target.closest('.chime-bar') || 
+                clickEvent.target.closest('.polaroid-card') || 
+                clickEvent.target.closest('.candle-trigger') || 
+                clickEvent.target.closest('#vialInteractiveTarget') ||
+                clickEvent.target.closest('input')) return;
+            triggerExplosionCloud(clickEvent.clientX, clickEvent.clientY, 10, 'gold');
+        });
+
+        function launchWarmFMDroneSound() {
+            initializeAudioEnvironment();
+            if (customAudioContext.state === 'suspended') {
+                customAudioContext.resume();
+            }
+
+            hushFMDroneAtmosphere();
+
+            const acousticScaleNotes = [69.30, 103.83, 130.81, 174.61, 311.13];
+            const currentSeconds = customAudioContext.currentTime;
+
+            acousticScaleNotes.forEach((frequencyPitch, scaleIdx) => {
+                const carrierUnit = customAudioContext.createOscillator();
+                carrierUnit.type = 'sine';
+                carrierUnit.frequency.setValueAtTime(frequencyPitch, currentSeconds);
+
+                const modulatorUnit = customAudioContext.createOscillator();
+                modulatorUnit.type = 'sine';
+                modulatorUnit.frequency.setValueAtTime(frequencyPitch * 1.5, currentSeconds);
+
+                const modulatorGainUnit = customAudioContext.createGain();
+                modulatorGainUnit.gain.setValueAtTime(frequencyPitch * 0.45, currentSeconds);
+
+                const compositeGainNode = customAudioContext.createGain();
+                compositeGainNode.gain.setValueAtTime(0, currentSeconds);
+                compositeGainNode.gain.linearRampToValueAtTime(0.05 / acousticScaleNotes.length, currentSeconds + 4.0);
+
+                modulatorUnit.connect(modulatorGainUnit);
+                modulatorGainUnit.connect(carrierUnit.frequency);
+
+                carrierUnit.connect(compositeGainNode);
+                compositeGainNode.connect(customAudioContext.destination);
+
+                carrierUnit.start(currentSeconds);
+                modulatorUnit.start(currentSeconds);
+
+                soundDroneInstances.push({ carrierUnit, modulatorUnit, compositeGainNode });
+            });
+
+            audioDroneIsActive = true;
+            document.getElementById('audioIconOff').classList.add('hidden');
+            document.getElementById('audioIconOn').classList.remove('hidden');
+            document.getElementById('ambientDroneTrigger').classList.add('text-amber-600', 'bg-amber-50/40');
+            document.getElementById('ambientStatusLabel').classList.remove('text-stone-400');
+            document.getElementById('ambientStatusLabel').classList.add('text-[#501D22]');
+        }
+
+        function hushFMDroneAtmosphere() {
+            const curAudioTime = customAudioContext ? customAudioContext.currentTime : 0;
+            soundDroneInstances.forEach(droneAtom => {
+                try {
+                    droneAtom.compositeGainNode.gain.cancelScheduledValues(curAudioTime);
+                    droneAtom.compositeGainNode.gain.setValueAtTime(droneAtom.compositeGainNode.gain.value, curAudioTime);
+                    droneAtom.compositeGainNode.gain.linearRampToValueAtTime(0.0001, curAudioTime + 1.5);
+                    setTimeout(() => {
+                        droneAtom.carrierUnit.stop();
+                        droneAtom.modulatorUnit.stop();
+                    }, 1600);
+                } catch(e) {}
+            });
+            soundDroneInstances = [];
+            audioDroneIsActive = false;
+            document.getElementById('audioIconOff').classList.remove('hidden');
+            document.getElementById('audioIconOn').classList.add('hidden');
+            document.getElementById('ambientDroneTrigger').classList.remove('text-amber-600', 'bg-amber-50/40');
+            document.getElementById('ambientStatusLabel').classList.add('text-stone-400');
+            document.getElementById('ambientStatusLabel').classList.remove('text-[#501D22]');
+        }
+
+        document.getElementById('ambientDroneTrigger').addEventListener('click', () => {
+            if (audioDroneIsActive) {
+                hushFMDroneAtmosphere();
+            } else {
+                launchWarmFMDroneSound();
+            }
+        });
+
+        document.getElementById('activateTributeBtn').addEventListener('click', () => {
+            initializeAudioEnvironment();
+            playArpeggiatedWelcomeTones();
+            
+            const introPanel = document.getElementById('experienceGateOverlay');
+            introPanel.style.opacity = '0';
+            introPanel.style.transform = 'scale(1.06)';
+            
+            setTimeout(() => {
+                introPanel.style.display = 'none';
+                commenceStaggeredHeenaHeaderReveal();
+                launchWarmFMDroneSound();
+            }, 1300);
+        });
+
+        const activeMorphingBlob = document.getElementById('organicEvolvingBlob');
+        document.getElementById('luminescentLidCircle').addEventListener('mouseenter', () => {
+            activeMorphingBlob.setAttribute('d', "M46.7,-64.1C61.4,-57.4,74.7,-46,80.7,-31.2C86.7,-16.4,85.5,1.9,79.5,17.4C73.4,32.9,62.6,45.7,49.8,55.9C37.1,66.1,22.4,73.8,6.4,75.9C-9.6,78,-27,74.4,-41.8,66C-56.5,57.7,-68.7,44.6,-74.6,29C-80.5,13.4,-80.1,-4.7,-74.6,-20.5C-69.2,-36.3,-58.7,-49.7,-45.5,-56.9C-32.3,-64.1,-16.1,-65.2,-0.1,-65.1C16,-65,32,-63.8,46.7,-64.1Z");
+        });
+
+        document.getElementById('luminescentLidCircle').addEventListener('mouseleave', () => {
+            activeMorphingBlob.setAttribute('d', "M43,-64.5C55.4,-57.4,65,-45,71.2,-30.9C77.4,-16.8,80.1,-1.1,76.5,13.2C72.8,27.5,62.7,40.3,50.7,51.1C38.7,61.9,24.8,70.5,9.4,72.4C-5.9,74.2,-22.8,69.2,-37.6,60.8C-52.4,52.3,-65.2,40.3,-71.4,25.5C-77.6,10.6,-77.2,-7.1,-71.5,-22.8C-65.7,-38.5,-54.6,-52.1,-40.9,-58.6C-27.2,-65.1,-10.9,-64.4,2.9,-69C16.8,-73.6,30.6,-71.6,43,-64.5Z");
+        });
+
+        function commenceStaggeredHeenaHeaderReveal() {
+            const letterChain = "Heena";
+            const visualOutputContainer = document.getElementById('celebrationHeader');
+            visualOutputContainer.innerHTML = '';
+            
+            [...letterChain].forEach((charSymbol, sequenceNumber) => {
+                const charWrapperSpan = document.createElement('span');
+                charWrapperSpan.innerText = charSymbol;
+                charWrapperSpan.className = 'char-reveal';
+                visualOutputContainer.appendChild(charWrapperSpan);
+                
+                setTimeout(() => {
+                    charWrapperSpan.classList.add('reveal');
+                }, sequenceNumber * 180);
+            });
+        }
+
+        const customScrollIntersectionObserver = new IntersectionObserver((activeElements) => {
+            activeElements.forEach(item => {
+                if (item.isIntersecting) {
+                    item.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: "0px 0px -10% 0px"
+        });
+
+        document.querySelectorAll('.scroll-reveal').forEach(observedItem => {
+            customScrollIntersectionObserver.observe(observedItem);
+        });
+
+        window.addEventListener('scroll', () => {
+            const normalizedScrollRatio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+            const listCrystals = document.querySelectorAll('.polaroid-card');
+            
+            listCrystals.forEach((itemBlock, targetIdx) => {
+                const cardIDNum = parseInt(itemBlock.getAttribute('data-card-item-id'));
+                let horizontalFactorMultiplier = (targetIdx % 2 === 0 ? -1 : 1);
+                let computedSlideX = (normalizedScrollRatio * 150 * horizontalFactorMultiplier);
+                let computedSlideY = (normalizedScrollRatio * 35 * (targetIdx - 1.5));
+                
+                if (window.innerWidth > 640) {
+                    let baseDefaultAngle = cardIDNum === 1 ? -6 : cardIDNum === 2 ? 3 : cardIDNum === 3 ? 6 : -3;
+                    itemBlock.style.transform = `translate3d(${computedSlideX}px, ${computedSlideY}px, 0px) rotate(${baseDefaultAngle + (normalizedScrollRatio * 5)}deg)`;
+                }
+            });
+        });
+
+        document.querySelectorAll('.polaroid-card').forEach(polaroidUnit => {
+            polaroidUnit.addEventListener('mousemove', (mouseMoveEvent) => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                
+                const cardBoundingBoxRect = polaroidUnit.getBoundingClientRect();
+                const mouseOffsetX = mouseMoveEvent.clientX - cardBoundingBoxRect.left - (cardBoundingBoxRect.width / 2);
+                const mouseOffsetY = mouseMoveEvent.clientY - cardBoundingBoxRect.top - (cardBoundingBoxRect.height / 2);
+                
+                const angleRotationX = -(mouseOffsetY / cardBoundingBoxRect.height) * 14; 
+                const angleRotationY = (mouseOffsetX / cardBoundingBoxRect.width) * 14;
+                
+                polaroidUnit.style.transform = `perspective(800px) rotateX(${angleRotationX}deg) rotateY(${angleRotationY}deg) scale3d(1.04, 1.04, 1.04)`;
+                polaroidUnit.style.boxShadow = "0 35px 65px rgba(80, 29, 34, 0.14)";
+            });
+
+            polaroidUnit.addEventListener('mouseleave', () => {
+                polaroidUnit.style.transform = '';
+                polaroidUnit.style.boxShadow = '';
+            });
+        });
+
+        let extinguishedCandleCounter = 0;
+        document.querySelectorAll('.candle-trigger').forEach(triggerBlock => {
+            triggerBlock.addEventListener('click', () => {
+                blowOutIndividualCandle(triggerBlock);
+            });
+        });
+
+        function blowOutIndividualCandle(candleTargetObj) {
+            const flameElementNode = candleTargetObj.querySelector('.realistic-flame');
+            if (flameElementNode && !flameElementNode.classList.contains('hidden')) {
+                flameElementNode.classList.add('hidden');
+                
+                const elementLayoutRect = flameElementNode.getBoundingClientRect();
+                const centerCoordinateX = elementLayoutRect.left + (elementLayoutRect.width / 2);
+                const centerCoordinateY = elementLayoutRect.top + (elementLayoutRect.height / 2);
+
+                triggerExplosionCloud(centerCoordinateX, centerCoordinateY, 30, 'wisps');
+                triggerExplosionCloud(centerCoordinateX, centerCoordinateY, 15, 'gold');
+
+                triggerSyntheticAcousticPluck(196.00 + (extinguishedCandleCounter * 75), 3.2, 2.5, 450);
+
+                extinguishedCandleCounter++;
+
+                if (extinguishedCandleCounter === 3) {
+                    setTimeout(() => {
+                        playArpeggiatedWelcomeTones();
+                        const noteBoxElement = document.getElementById('unfoldedCelebrationNote');
+                        noteBoxElement.classList.add('active');
+                        noteBoxElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 800);
+                }
+            }
+        }
+
+        let slideStartingCoordX = 0;
+        let slideStartingCoordY = 0;
+        const mainCakeCardElement = document.getElementById('truffleCakeSection');
+
+        mainCakeCardElement.addEventListener('touchstart', (startTouchEvent) => {
+            slideStartingCoordX = startTouchEvent.touches[0].clientX;
+            slideStartingCoordY = startTouchEvent.touches[0].clientY;
+        }, { passive: true });
+
+        mainCakeCardElement.addEventListener('touchmove', (activeMoveEvent) => {
+            const activeTouchCoordinateX = activeMoveEvent.touches[0].clientX;
+            const activeTouchCoordinateY = activeMoveEvent.touches[0].clientY;
+            
+            document.querySelectorAll('.candle-trigger').forEach(candleObj => {
+                const candleFlameChild = candleObj.querySelector('.realistic-flame');
+                if (candleFlameChild && !candleFlameChild.classList.contains('hidden')) {
+                    const rectZone = candleFlameChild.getBoundingClientRect();
+                    if (activeTouchCoordinateX >= rectZone.left - 25 && activeTouchCoordinateX <= rectZone.right + 25 &&
+                        activeTouchCoordinateY >= rectZone.top - 25 && activeTouchCoordinateY <= rectZone.bottom + 25) {
+                        blowOutIndividualCandle(candleObj);
+                    }
+                }
+            });
+        }, { passive: true });
+
+        const spinningRecordDisk = document.getElementById('spinningRecordDisk');
+        const rotatingTonearm = document.getElementById('rotatingTonearm');
+        const currentTrackDisplay = document.getElementById('currentTrackDisplay');
+        const lyricsChronicleBox = document.getElementById('lyricsChronicleBox');
+        const vocalLyricsOutputArea = document.getElementById('vocalLyricsOutputArea');
+        const scrollingLyricsFrame = document.getElementById('scrollingLyricsFrame');
+
+        function haltProceduralMelodyEngine() {
+            if (soundTrackInterval) {
+                clearInterval(soundTrackInterval);
+                soundTrackInterval = null;
+            }
+            if (subTitleTickTimer) {
+                clearInterval(subTitleTickTimer);
+                subTitleTickTimer = null;
+            }
+            spinningRecordDisk.classList.add('paused-record');
+            rotatingTonearm.style.transform = 'rotate(-16deg)';
+            currentTrackDisplay.innerText = "Choose a frequency";
+            document.getElementById('diskAuraRing').style.borderColor = '';
+            document.getElementById('diskAuraRing').style.boxShadow = '';
+            toggleEqBarsAnimationState(false);
+            lyricsChronicleBox.classList.add('hidden');
+            activeVocalSongMode = null;
+        }
+
+        function initiateProceduralVinylTrack(trackCategoryKey) {
+            initializeAudioEnvironment();
+            haltProceduralMelodyEngine();
+
+            if (audioDroneIsActive) {
+                hushFMDroneAtmosphere();
+            }
+
+            spinningRecordDisk.classList.remove('paused-record');
+            rotatingTonearm.style.transform = 'rotate(8deg)';
+            
+            let trackPrintName = "";
+            if (trackCategoryKey === 'thoughts') {
+                trackPrintName = "Your Thoughts (Procedural Drone)";
+            } else if (trackCategoryKey === 'saajna') {
+                trackPrintName = "Saajna (Acoustic Synthesized Version)";
+            } else if (trackCategoryKey === 'perfect') {
+                trackPrintName = "Perfect (Acoustic Cover)";
+            } else {
+                trackPrintName = trackCategoryKey.split("---")[0] + " (Synthesized Dedicated Track)";
+            }
+            
+            currentTrackDisplay.innerText = trackPrintName;
+            
+            document.getElementById('diskAuraRing').style.borderColor = 'rgba(226, 182, 83, 0.5)';
+            document.getElementById('diskAuraRing').style.boxShadow = '0 0 35px 5px rgba(226, 182, 83, 0.22)';
+            
+            toggleEqBarsAnimationState(true);
+            activeVocalSongMode = trackCategoryKey;
+
+            drawLyricsBlockData(trackCategoryKey);
+            lyricsChronicleBox.classList.remove('hidden');
+
+            vinylPlaybackStartTime = customAudioContext.currentTime;
+            let currentVocalTimeTracker = 0;
+
+            const melScaleThoughts = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25];
+            const melScaleSaajna = [293.66, 311.13, 349.23, 392.00, 440.00, 466.16];
+            const melScalePerfect = [329.63, 349.23, 392.00, 440.00, 523.25, 587.33];
+
+            let beatsCountValue = 0;
+
+            soundTrackInterval = setInterval(() => {
+                if (!customAudioContext) return;
+                
+                if (beatsCountValue % 4 === 0) {
+                    if (trackCategoryKey === 'thoughts') {
+                        triggerSyntheticAcousticPluck(130.81, 4.0, 1.5, 90);
+                        triggerSyntheticAcousticPluck(261.63, 3.5, 2.0, 140);
+                    } else if (trackCategoryKey === 'saajna') {
+                        triggerSyntheticAcousticPluck(116.54, 4.0, 1.5, 110);
+                        triggerSyntheticAcousticPluck(233.08, 3.5, 2.0, 140);
+                    } else {
+                        triggerSyntheticAcousticPluck(146.83, 4.0, 1.5, 100);
+                        triggerSyntheticAcousticPluck(293.66, 3.5, 2.0, 140);
+                    }
+                }
+
+                let currentActiveScale = melScaleThoughts;
+                if (trackCategoryKey === 'saajna') {
+                    currentActiveScale = melScaleSaajna;
+                } else if (trackCategoryKey === 'perfect') {
+                    currentActiveScale = melScalePerfect;
+                }
+                
+                const selectedPluckNote = currentActiveScale[Math.floor(Math.random() * currentActiveScale.length)];
+                const adaptiveHumanizationDelay = Math.random() * 0.16;
+                
+                setTimeout(() => {
+                    if (activeVocalSongMode === trackCategoryKey) {
+                        triggerSyntheticAcousticPluck(selectedPluckNote, 2.0, 1.5, 220);
+                        triggerExplosionCloud(window.innerWidth / 2 + (Math.random() * 120 - 60), window.innerHeight / 2, 2, 'gold');
+                    }
+                }, adaptiveHumanizationDelay * 1000);
+
+                beatsCountValue++;
+            }, 1400);
+
+            subTitleTickTimer = setInterval(() => {
+                currentVocalTimeTracker += 0.25;
+                refreshActiveHighlightedLyricLine(currentVocalTimeTracker, trackCategoryKey);
+            }, 250);
+        }
+
+        function drawLyricsBlockData(trackCategoryKey) {
+            vocalLyricsOutputArea.innerHTML = '';
+            
+            let trackLyricLines = collectionOfTrackLyrics[trackCategoryKey];
+            if (!trackLyricLines) {
+                const userCreatedTitle = trackCategoryKey.split("---")[0];
+                const userCreatedArtist = trackCategoryKey.split("---")[1] || "Unknown";
+                trackLyricLines = [
+                    { time: 0, text: `Now vibrating custom arpeggios for ${userCreatedTitle}...` },
+                    { time: 4.0, text: `Beautiful music aligned perfectly with ${userCreatedArtist}'s aesthetic.` },
+                    { time: 8.5, text: "A personalized harmonic space dedicated entirely to Heena." },
+                    { time: 13.0, text: "May your sweet compositions fill your day with warmth." },
+                    { time: 17.5, text: "Happy Birthday, Heena!" }
+                ];
+            }
+            
+            trackLyricLines.forEach((textLine, relativeLineIndex) => {
+                const lyricsRowParagraph = document.createElement('div');
+                lyricsRowParagraph.className = 'lyric-line';
+                lyricsRowParagraph.id = `lyric-${trackCategoryKey}-${relativeLineIndex}`;
+                lyricsRowParagraph.innerText = textLine.text;
+                lyricsRowParagraph.style.fontSize = `${customSongFontSizeVal}rem`;
+                vocalLyricsOutputArea.appendChild(lyricsRowParagraph);
+            });
+        }
+
+        function refreshActiveHighlightedLyricLine(playheadTime, trackCategoryKey) {
+            let searchScopeLines = collectionOfTrackLyrics[trackCategoryKey];
+            if (!searchScopeLines) {
+                const userCreatedTitle = trackCategoryKey.split("---")[0];
+                const userCreatedArtist = trackCategoryKey.split("---")[1] || "Unknown";
+                searchScopeLines = [
+                    { time: 0, text: `Now vibrating custom arpeggios for ${userCreatedTitle}...` },
+                    { time: 4.0, text: `Beautiful music aligned perfectly with ${userCreatedArtist}'s aesthetic.` },
+                    { time: 8.5, text: "A personalized harmonic space dedicated entirely to Heena." },
+                    { time: 13.0, text: "May your sweet compositions fill your day with warmth." },
+                    { time: 17.5, text: "Happy Birthday, Heena!" }
+                ];
+            }
+            
+            let focusHighlightIndex = -1;
+
+            for (let trackLineIdx = 0; trackLineIdx < searchScopeLines.length; trackLineIdx++) {
+                if (playheadTime >= searchScopeLines[trackLineIdx].time) {
+                    focusHighlightIndex = trackLineIdx;
+                } else {
+                    break;
+                }
+            }
+
+            if (focusHighlightIndex !== -1) {
+                const listRenderingRows = vocalLyricsOutputArea.querySelectorAll('.lyric-line');
+                listRenderingRows.forEach((rowObj, targetRowIdx) => {
+                    if (targetRowIdx === focusHighlightIndex) {
+                        if (!rowObj.classList.contains('active')) {
+                            rowObj.classList.add('active');
+                            rowObj.style.fontSize = `${customSongFontSizeVal * 1.15}rem`;
+                            const targetVerticalScrollOffset = rowObj.offsetTop - scrollingLyricsFrame.offsetTop - (scrollingLyricsFrame.clientHeight / 2) + (rowObj.clientHeight / 2);
+                            scrollingLyricsFrame.scrollTo({ top: targetVerticalScrollOffset, behavior: 'smooth' });
+                        }
+                    } else {
+                        rowObj.classList.remove('active');
+                        rowObj.style.fontSize = `${customSongFontSizeVal}rem`;
+                    }
+                });
+            }
+        }
+
+        function toggleEqBarsAnimationState(isTurnedOn) {
+            const listEqBarSelectors = [
+                document.getElementById('audioEqBar1'),
+                document.getElementById('audioEqBar2'),
+                document.getElementById('audioEqBar3'),
+                document.getElementById('audioEqBar4')
+            ];
+
+            if (isTurnedOn) {
+                window.frequencyGraphTimer = setInterval(() => {
+                    listEqBarSelectors.forEach(barTarget => {
+                        const randomComputedBarHeight = Math.random() * 18 + 4;
+                        barTarget.style.height = `${randomComputedBarHeight}px`;
+                    });
+                }, 180);
+            } else {
+                if (window.frequencyGraphTimer) {
+                    clearInterval(window.frequencyGraphTimer);
+                }
+                listEqBarSelectors.forEach(barTarget => {
+                    barTarget.style.height = `4px`;
+                });
+            }
+        }
+
+        document.getElementById('incrementLyricsTextSize').addEventListener('click', (buttonClickEvent) => {
+            buttonClickEvent.stopPropagation();
+            if (customSongFontSizeVal < 1.3) {
+                customSongFontSizeVal += 0.08;
+                applyUpdatedLyricsFontSize();
+            }
+        });
+
+        document.getElementById('decrementLyricsTextSize').addEventListener('click', (buttonClickEvent) => {
+            buttonClickEvent.stopPropagation();
+            if (customSongFontSizeVal > 0.65) {
+                customSongFontSizeVal -= 0.08;
+                applyUpdatedLyricsFontSize();
+            }
+        });
+
+        function applyUpdatedLyricsFontSize() {
+            const activeTypeKey = activeVocalSongMode;
+            if (!activeTypeKey) return;
+            const targetRowsList = vocalLyricsOutputArea.querySelectorAll('.lyric-line');
+            targetRowsList.forEach(rowElementItem => {
+                if (rowElementItem.classList.contains('active')) {
+                    rowElementItem.style.fontSize = `${customSongFontSizeVal * 1.15}rem`;
+                } else {
+                    rowElementItem.style.fontSize = `${customSongFontSizeVal}rem`;
+                }
+            });
+        }
+
+        function rebindPlaylistButtonClickTriggers() {
+            document.querySelectorAll('.frequency-play-btn').forEach(buttonElementObj => {
+                buttonElementObj.removeEventListener('click', handleTrackClickEvent);
+                buttonElementObj.addEventListener('click', handleTrackClickEvent);
+            });
+        }
+
+        function handleTrackClickEvent(buttonClickEvent) {
+            const chosenTrackAttribute = this.getAttribute('data-frequency-track');
+            if (activeVocalSongMode === chosenTrackAttribute) {
+                haltProceduralMelodyEngine();
+            } else {
+                initiateProceduralVinylTrack(chosenTrackAttribute);
+            }
+        }
+
+        document.getElementById('diskRotatingWrap').addEventListener('click', () => {
+            if (activeVocalSongMode) {
+                haltProceduralMelodyEngine();
+            } else {
+                initiateProceduralVinylTrack('thoughts');
+            }
+        });
+
+        document.getElementById('showAddSongModalBtn').addEventListener('click', () => {
+            const dynamicFormBox = document.getElementById('addSongFormContainer');
+            dynamicFormBox.classList.toggle('hidden');
+        });
+
+        document.getElementById('cancelCustomSongBtn').addEventListener('click', () => {
+            document.getElementById('addSongFormContainer').classList.add('hidden');
+        });
+
+        document.getElementById('submitCustomSongBtn').addEventListener('click', () => {
+            const rawSongName = document.getElementById('customSongNameInput').value.trim();
+            const rawArtistName = document.getElementById('customArtistInput').value.trim();
+
+            if (rawSongName) {
+                const uniqueTrackKey = `${rawSongName}---${rawArtistName || 'Me'}`;
+                
+                const customSongContainerRow = document.createElement('button');
+                customSongContainerRow.className = "frequency-play-btn w-full p-4 bg-white/40 hover:bg-white/85 border border-white/60 hover:border-[#FFDADA] rounded-2xl flex items-center justify-between transition-all duration-500 group";
+                customSongContainerRow.setAttribute('data-frequency-track', uniqueTrackKey);
+                
+                const trackListWrapperDiv = document.getElementById('vocalTracklistGroup');
+                const calculatedIndexLabel = trackListWrapperDiv.querySelectorAll('.frequency-play-btn').length + 1;
+                const formattedIndexStr = calculatedIndexLabel < 10 ? `0${calculatedIndexLabel}` : `${calculatedIndexLabel}`;
+
+                customSongContainerRow.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <span class="font-mono-micro text-[0.62rem] text-[#D98880] group-hover:text-[#501D22]">${formattedIndexStr}</span>
+                        <div class="text-left">
+                            <h5 class="text-xs font-bold text-[#501D22]">${rawSongName}</h5>
+                            <p class="text-[0.62rem] text-[#8A5E61] mt-0.5 font-light">${rawArtistName || 'Personal Track'} • Custom</p>
+                        </div>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-white group-hover:bg-[#FFF1F1] flex items-center justify-center border border-stone-200/40 transition-colors">
+                        <svg class="w-2.5 h-2.5 fill-[#8A5E61] group-hover:fill-[#501D22] transition-colors" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                `;
+
+                trackListWrapperDiv.appendChild(customSongContainerRow);
+                
+                document.getElementById('customSongNameInput').value = '';
+                document.getElementById('customArtistInput').value = '';
+                document.getElementById('addSongFormContainer').classList.add('hidden');
+
+                rebindPlaylistButtonClickTriggers();
+                initiateProceduralVinylTrack(uniqueTrackKey);
+            }
+        });
+
+        document.getElementById('vialInteractiveTarget').addEventListener('click', (interactionEvent) => {
+            initializeAudioEnvironment();
+            
+            triggerSyntheticAcousticPluck(440.00, 2.0, 1.8, 300);
+
+            const boundingRectangleOfBottle = document.getElementById('vialInteractiveTarget').getBoundingClientRect();
+            triggerExplosionCloud(boundingRectangleOfBottle.left + (boundingRectangleOfBottle.width / 2), boundingRectangleOfBottle.top + (boundingRectangleOfBottle.height / 2), 20, 'gold');
+
+            messageCycleCounterIndex = (messageCycleCounterIndex + 1) % listVialWritings.length;
+            
+            const activeMessageTextTarget = document.getElementById('vialActiveMessageText');
+            activeMessageTextTarget.style.opacity = 0;
+            
+            setTimeout(() => {
+                activeMessageTextTarget.innerText = listVialWritings[messageCycleCounterIndex];
+                activeMessageTextTarget.style.opacity = 1;
+            }, 300);
+        });
+
+        const keyboardHarpChimesBox = document.getElementById('synthesizerKeyboardHarp');
+        const tracePluckRecordState = { note: null, timestamp: 0 };
+
+        function triggerFocusedHarpNotePluck(harpBarElement, rawClientX, rawClientY) {
+            const frequencyStringValue = harpBarElement.getAttribute('data-acoustic-freq');
+            const pitchNoteLabel = harpBarElement.getAttribute('data-note-label');
+            const targetFrequencyFloatVal = parseFloat(frequencyStringValue);
+            const relativeTimestampNow = Date.now();
+
+            if (tracePluckRecordState.note === pitchNoteLabel && (relativeTimestampNow - tracePluckRecordState.timestamp < 120)) {
+                return;
+            }
+
+            tracePluckRecordState.note = pitchNoteLabel;
+            tracePluckRecordState.timestamp = relativeTimestampNow;
+
+            harpBarElement.classList.add('active');
+            
+            triggerSyntheticAcousticPluck(targetFrequencyFloatVal, 2.4, 1.5, 280);
+
+            const boundsObject = harpBarElement.getBoundingClientRect();
+            const coordinateParticlePlacementX = rawClientX || (boundsObject.left + boundsObject.width / 2);
+            const coordinateParticlePlacementY = rawClientY || boundsObject.top;
+            
+            triggerExplosionCloud(coordinateParticlePlacementX, coordinateParticlePlacementY, 8, 'gold');
+
+            setTimeout(() => {
+                harpBarElement.classList.remove('active');
+            }, 500);
+        }
+
+        keyboardHarpChimesBox.querySelectorAll('.chime-bar').forEach(chimeItemBar => {
+            chimeItemBar.addEventListener('pointerdown', (mousePointerEvent) => {
+                mousePointerEvent.preventDefault();
+                triggerFocusedHarpNotePluck(chimeItemBar, mousePointerEvent.clientX, mousePointerEvent.clientY);
+            });
+
+            chimeItemBar.addEventListener('pointerenter', (mousePointerEvent) => {
+                if (mousePointerEvent.buttons === 1) {
+                    triggerFocusedHarpNotePluck(chimeItemBar, mousePointerEvent.clientX, mousePointerEvent.clientY);
+                }
+            });
+        });
+
+        const performSweepGestureCoordinateCheck = (gestureEvent) => {
+            const currentPositionX = gestureEvent.clientX || (gestureEvent.touches && gestureEvent.touches[0].clientX);
+            const currentPositionY = gestureEvent.clientY || (gestureEvent.touches && gestureEvent.touches[0].clientY);
+            if (!currentPositionX || !currentPositionY) return;
+
+            const resolvedElementUnderCursor = document.elementFromPoint(currentPositionX, currentPositionY);
+            if (resolvedElementUnderCursor && resolvedElementUnderCursor.classList.contains('chime-bar')) {
+                triggerFocusedHarpNotePluck(resolvedElementUnderCursor, currentPositionX, currentPositionY);
+            }
+        };
+
+        keyboardHarpChimesBox.addEventListener('pointermove', (pointerMoveEvent) => {
+            if (pointerMoveEvent.buttons === 1) {
+                performSweepGestureCoordinateCheck(pointerMoveEvent);
+            }
+        });
+
+        keyboardHarpChimesBox.addEventListener('touchmove', (activeTouchMoveEvent) => {
+            activeTouchMoveEvent.preventDefault();
+            performSweepGestureCoordinateCheck(activeTouchMoveEvent);
+        }, { passive: false });
+
+        rebindPlaylistButtonClickTriggers();
+
+    </script>
+</body>
+</html>
