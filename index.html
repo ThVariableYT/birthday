@@ -140,26 +140,6 @@
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(253, 186, 116, 0.65));
             box-shadow: 0 0 30px rgba(253, 186, 116, 0.9), inset 0 0 10px rgba(255,255,255,1);
         }
-        @keyframes string-vibrate {
-            0% { transform: scaleX(1) translateX(0); }
-            25% { transform: scaleX(0.9) translateX(-3px); }
-            50% { transform: scaleX(1.1) translateX(3px); }
-            75% { transform: scaleX(0.95) translateX(-1px); }
-            100% { transform: scaleX(1) translateX(0); }
-        }
-        .chime-bar.vibrate {
-            animation: string-vibrate 0.4s ease-in-out;
-        }
-        @keyframes spin-record {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .spinning-record {
-            animation: spin-record 11s linear infinite;
-        }
-        .paused-record {
-            animation-play-state: paused;
-        }
         .music-bar-active {
             animation: bounce-bar 0.75s ease-in-out infinite alternate;
         }
@@ -286,7 +266,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 5rem;
         }
         .parallax-node {
             position: relative;
@@ -300,6 +280,7 @@
             cursor: pointer;
             position: relative;
             transition: box-shadow 0.4s ease;
+            will-change: transform;
         }
         @media (max-width: 640px) {
             .parallax-card-body {
@@ -452,9 +433,9 @@
                     <p class="text-[0.65rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mt-1.5">Scroll to float the crystals • Tap to reveal</p>
                 </div>
 
-                <div class="parallax-deck-container" id="deckContainer">
+                <div class="parallax-deck-container py-8" id="deckContainer">
                     
-                    <div class="parallax-node justify-start" data-speed="40" data-rot="-5">
+                    <div class="parallax-node justify-start" data-speed="25" data-rot="-4">
                         <div class="parallax-card-body perspective group">
                             <div class="card-inner preserve-3d w-full h-full relative duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/80 to-[#ffdaeb]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(253,164,186,0.22)]">
@@ -472,7 +453,7 @@
                         </div>
                     </div>
 
-                    <div class="parallax-node justify-end" data-speed="-25" data-rot="4">
+                    <div class="parallax-node justify-end" data-speed="12" data-rot="3">
                         <div class="parallax-card-body perspective group">
                             <div class="card-inner preserve-3d w-full h-full relative duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#e8f0fe]/80 to-[#fdf4e5]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(251,191,36,0.18)]">
@@ -490,7 +471,7 @@
                         </div>
                     </div>
 
-                    <div class="parallax-node justify-start" data-speed="35" data-rot="-3">
+                    <div class="parallax-node justify-start" data-speed="20" data-rot="-3">
                         <div class="parallax-card-body perspective group">
                             <div class="card-inner preserve-3d w-full h-full relative duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#f3e8ff]/80 to-[#ffe5ec]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(168,85,247,0.18)]">
@@ -508,7 +489,7 @@
                         </div>
                     </div>
 
-                    <div class="parallax-node justify-end" data-speed="-30" data-rot="5">
+                    <div class="parallax-node justify-end" data-speed="10" data-rot="4">
                         <div class="parallax-card-body perspective group">
                             <div class="card-inner preserve-3d w-full h-full relative duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-b from-[#e0f2fe]/80 to-[#fae8ff]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(14,165,233,0.18)]">
@@ -537,7 +518,7 @@
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
                         <div class="relative w-28 h-28 flex items-center justify-center group flex-shrink-0 cursor-pointer" id="vinylPlayer">
                             <div class="absolute -inset-1.5 rounded-full bg-transparent vinyl-glow" id="vinylOuterGlow"></div>
-                            <div class="absolute inset-0 bg-stone-950 rounded-full border-4 border-stone-800 shadow-xl spinning-record paused-record flex items-center justify-center" id="vinylRecord">
+                            <div class="absolute inset-0 bg-stone-950 rounded-full border-4 border-stone-800 shadow-xl flex items-center justify-center" id="vinylRecord">
                                 <div class="w-20 h-20 rounded-full border border-stone-700/40 opacity-60"></div>
                                 <div class="w-12 h-12 rounded-full border border-stone-800 opacity-80 animate-pulse"></div>
                                 <div class="absolute w-8 h-8 rounded-full bg-gradient-to-tr from-amber-200 to-amber-400 border-4 border-stone-900 flex items-center justify-center">
@@ -915,10 +896,10 @@
                 this.rotationSpeed = Math.random() * 0.06 - 0.03;
             }
             update() {
-                this.x += this.speedX;
+                this.x += this.speedX + Math.sin(this.y * 0.01 + this.rotation) * 0.35;
                 this.y += this.speedY;
                 if (this.color !== 'rgba(150, 140, 135, 0.3)') {
-                    this.speedY += 0.025;
+                    this.speedY += 0.02;
                 }
                 this.alpha -= this.decay;
                 this.rotation += this.rotationSpeed;
@@ -1030,7 +1011,15 @@
                     const padding = 15;
                     if (clientX >= rect.left - padding && clientX <= rect.right + padding &&
                         clientY >= rect.top - padding && clientY <= rect.bottom + padding) {
-                        flame.classList.add('hidden');
+                        gsap.to(flame, {
+                            scale: 0,
+                            opacity: 0,
+                            duration: 0.5,
+                            ease: "back.in(1.7)",
+                            onComplete: () => {
+                                flame.classList.add('hidden');
+                            }
+                        });
                         createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 30, 'smoke');
                         createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 20, 'gold');
                         playChime(587.33, 'triangle', 1.2, 0.18, mainHarpGain);
@@ -1057,7 +1046,15 @@
             candle.addEventListener('click', function() {
                 const flame = this.querySelector('.flame');
                 if (flame && !flame.classList.contains('hidden')) {
-                    flame.classList.add('hidden');
+                    gsap.to(flame, {
+                        scale: 0,
+                        opacity: 0,
+                        duration: 0.5,
+                        ease: "back.in(1.7)",
+                        onComplete: () => {
+                            flame.classList.add('hidden');
+                        }
+                    });
                     const rect = flame.getBoundingClientRect();
                     createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 30, 'smoke');
                     createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 20, 'gold');
@@ -1080,18 +1077,18 @@
 
             gsap.fromTo(node, 
                 {
-                    y: speed,
-                    rotation: targetRot * 0.3
+                    y: speed * 1.5,
+                    rotation: targetRot * 0.2
                 },
                 {
-                    y: -speed,
+                    y: -speed * 1.5,
                     rotation: targetRot,
                     ease: "none",
                     scrollTrigger: {
                         trigger: node,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: 1.2
+                        scrub: 2.0
                     }
                 }
             );
@@ -1102,11 +1099,11 @@
             card.addEventListener('click', function(e) {
                 const isFlipped = inner.classList.toggle('rotate-y-180');
                 if (isFlipped) {
-                    gsap.to(inner, { rotateY: 180, duration: 0.6, ease: 'power2.out' });
+                    gsap.to(inner, { rotateY: 180, duration: 0.8, ease: 'back.out(1.2)' });
                     const rect = card.getBoundingClientRect();
                     createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 25, 'rainbow');
                 } else {
-                    gsap.to(inner, { rotateY: 0, rotateX: 0, duration: 0.6, ease: 'power2.out' });
+                    gsap.to(inner, { rotateY: 0, rotateX: 0, duration: 0.8, ease: 'back.out(1.2)' });
                 }
                 playChime(440, 'sine', 1.0, 0.12, mainHarpGain);
             });
@@ -1117,20 +1114,33 @@
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
                 gsap.to(inner, {
-                    rotateY: x / 4,
-                    rotateX: -y / 4,
-                    scale: 1.06,
-                    duration: 0.3,
+                    rotateY: x / 3.5,
+                    rotateX: -y / 3.5,
+                    scale: 1.08,
+                    duration: 0.5,
                     ease: 'power2.out'
                 });
             });
 
             card.addEventListener('pointerleave', function() {
                 if (inner.classList.contains('rotate-y-180')) {
-                    gsap.to(inner, { rotateY: 180, rotateX: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
+                    gsap.to(inner, { rotateY: 180, rotateX: 0, scale: 1, duration: 0.8, ease: 'power3.out' });
                 } else {
-                    gsap.to(inner, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
+                    gsap.to(inner, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.8, ease: 'power3.out' });
                 }
+            });
+        });
+
+        document.querySelectorAll('.parallax-card-body').forEach((card, idx) => {
+            gsap.to(card, {
+                y: "random(-15, 15)",
+                x: "random(-8, 8)",
+                rotation: "random(-4, 4)",
+                duration: "random(4, 6)",
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: idx * 0.5
             });
         });
 
@@ -1139,12 +1149,12 @@
             if (!container) return;
             const b = document.createElement('div');
             b.classList.add('vial-bubble');
-            const size = Math.random() * 6 + 3;
+            const size = Math.random() * 7 + 3.5;
             b.style.width = `${size}px`;
             b.style.height = `${size}px`;
             b.style.left = `${Math.random() * 80 + 10}%`;
-            b.style.setProperty('--wobble', `${Math.random() * 24 - 12}px`);
-            b.style.animationDuration = `${Math.random() * 1.8 + 1.8}s`;
+            b.style.setProperty('--wobble', `${Math.random() * 32 - 16}px`);
+            b.style.animationDuration = `${Math.random() * 1.5 + 1.5}s`;
             container.appendChild(b);
             setTimeout(() => b.remove(), 3500);
         }
@@ -1153,24 +1163,30 @@
             if (!document.getElementById('mainContent').classList.contains('hidden')) {
                 createVialBubble();
             }
-        }, 600);
+        }, 450);
 
         document.getElementById('loveJar').addEventListener('click', function(e) {
             playChime(783.99, 'sine', 1.2, 0.18, mainHarpGain);
             
-            const level = document.getElementById('liquidLevel');
-            level.style.transform = 'skewY(5deg) scaleY(1.05)';
-            setTimeout(() => level.style.transform = 'none', 400);
+            gsap.fromTo("#liquidLevel",
+                { attr: { d: "M -100,85 Q -75,70 -50,90 T 0,80 T 50,90 T 100,75 T 150,90 T 200,80 L 200,135 L -100,135 Z" } },
+                { attr: { d: "M -100,85 Q -75,80 -50,85 T 0,85 T 50,85 T 100,85 T 150,85 T 200,85 L 200,135 L -100,135 Z" }, duration: 2.0, ease: "elastic.out(1.2, 0.4)" }
+            );
 
-            for (let i = 0; i < 12; i++) {
-                setTimeout(createVialBubble, i * 40);
+            gsap.fromTo("#loveJar svg",
+                { rotation: -12, scale: 0.95 },
+                { rotation: 0, scale: 1, duration: 1.5, ease: "elastic.out(1.5, 0.3)" }
+            );
+
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createVialBubble, i * 30);
             }
 
             const spark = document.querySelector('#jarSpark i');
             spark.classList.remove('opacity-0', 'scale-50');
             spark.classList.add('opacity-100', 'scale-150', '-translate-y-14');
             
-            createSparkles(e.clientX, e.clientY, 25, 'gold');
+            createSparkles(e.clientX, e.clientY, 35, 'gold');
 
             setTimeout(() => {
                 spark.classList.add('opacity-0', 'scale-50');
@@ -1190,10 +1206,26 @@
         const mbar3 = document.getElementById('mbar3');
         const mbar4 = document.getElementById('mbar4');
 
+        let vinylTween = gsap.to(vinylRecord, {
+            rotation: 360,
+            duration: 11,
+            repeat: -1,
+            ease: "none",
+            paused: true
+        });
+
         function stopVinylAndReset() {
-            vinylRecord.classList.add('paused-record');
+            gsap.to(vinylTween, { 
+                timeScale: 0, 
+                duration: 1.5, 
+                ease: "power2.in", 
+                onComplete: () => {
+                    vinylTween.pause();
+                    vinylRecord.classList.add('paused-record');
+                } 
+            });
             vinylOuterGlow.classList.remove('playing');
-            tonearm.style.transform = 'rotate(-15deg)';
+            gsap.to(tonearm, { rotation: -15, duration: 1.2, ease: "power2.inOut" });
             currentTrackName.innerText = "Tap to play a song";
             animateMusicBars(false);
             if (uploadedAudio) {
@@ -1407,7 +1439,9 @@
 
                 vinylRecord.classList.remove('paused-record');
                 vinylOuterGlow.classList.add('playing');
-                tonearm.style.transform = 'rotate(5deg)';
+                vinylTween.play();
+                gsap.to(vinylTween, { timeScale: 1, duration: 2.0, ease: "power1.out" });
+                gsap.to(tonearm, { rotation: 5, duration: 1.5, ease: "power2.out" });
                 currentTrackName.innerText = trackName;
                 animateMusicBars(true);
 
@@ -1583,15 +1617,20 @@
             lastPlayedNote.id = noteAttr;
             lastPlayedNote.timestamp = now;
 
-            element.classList.add('active', 'vibrate');
+            element.classList.add('active');
             playChime(freq, 'triangle', 2.5, 0.32, mainHarpGain);
+
+            gsap.fromTo(element, 
+                { scaleX: 0.85, skewX: -8 },
+                { scaleX: 1, skewX: 0, duration: 1.2, ease: "elastic.out(1, 0.3)" }
+            );
 
             const rect = element.getBoundingClientRect();
             const posX = clientX || (rect.left + rect.width / 2);
             const posY = clientY || rect.top;
             createSparkles(posX, posY, 12, 'gold', 0, -2.5);
 
-            setTimeout(() => element.classList.remove('active', 'vibrate'), 400);
+            setTimeout(() => element.classList.remove('active'), 400);
         };
 
         harpContainer.querySelectorAll('.chime-bar').forEach(chime => {
