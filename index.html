@@ -7,120 +7,117 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(at 0% 0%, #fff1eb 0px, transparent 60%), 
-                        radial-gradient(at 100% 0%, #f7e0ff 0px, transparent 60%), 
-                        radial-gradient(at 50% 100%, #fff8e0 0px, transparent 60%), 
-                        #fdfaf6;
+            background: radial-gradient(at 0% 0%, #fff5f0 0px, transparent 50%), 
+                        radial-gradient(at 100% 0%, #fae8ff 0px, transparent 50%), 
+                        radial-gradient(at 50% 100%, #fffbeb 0px, transparent 50%), 
+                        #fdfbf7;
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
         }
         .font-serif-elegant {
             font-family: 'Playfair Display', Georgia, serif;
         }
-        .font-display-premium {
-            font-family: 'Playfair Display', Georgia, serif;
-        }
-        .font-romantic-script {
-            font-family: 'Playfair Display', Georgia, serif;
-        }
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(255, 243, 236, 0.4);
+            background: rgba(255, 245, 238, 0.3);
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(253, 186, 116, 0.35);
+            background: rgba(251, 191, 36, 0.2);
             border-radius: 9999px;
-            transition: background 300ms ease;
+            transition: background 0.3s;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(244, 63, 94, 0.5);
+            background: rgba(244, 63, 94, 0.4);
         }
         .glass-premium {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.55));
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 
-                inset 0 1px 4px rgba(255, 255, 255, 1), 
-                0 30px 60px rgba(244, 150, 150, 0.08),
-                0 10px 25px rgba(253, 164, 186, 0.04);
-        }
-        .glass-premium-dark {
-            background: linear-gradient(135deg, rgba(13, 9, 15, 0.96), rgba(22, 15, 26, 0.88));
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 
-                0 40px 100px rgba(22, 10, 30, 0.4),
-                inset 0 1px 2px rgba(255, 255, 255, 0.12);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: inset 0 1px 3px rgba(255,255,255,0.85);
+            box-shadow: 
+                inset 0 1px 3px rgba(255, 255, 255, 0.9), 
+                0 25px 50px -12px rgba(244, 63, 94, 0.05);
+        }
+        .glass-premium-dark {
+            background: linear-gradient(135deg, rgba(15, 10, 18, 0.98), rgba(24, 16, 29, 0.92));
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 
+                0 30px 60px rgba(10, 5, 15, 0.5),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
         }
         .perspective {
-            perspective: 2000px;
+            perspective: 1500px;
         }
         .preserve-3d {
             transform-style: preserve-3d;
         }
         .backface-hidden {
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         .rotate-y-180 {
             transform: rotateY(180deg);
         }
         .liquid-blob-1 {
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(255, 195, 180, 0.5) 0%, rgba(255, 155, 185, 0.2) 50%, rgba(220,165,165,0) 75%);
-            filter: blur(100px);
-            animation: morph-1 20s ease-in-out infinite alternate;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 200, 190, 0.4) 0%, rgba(255, 170, 190, 0.15) 60%, rgba(255, 255, 255, 0) 100%);
+            filter: blur(80px);
+            animation: morph-1 18s ease-in-out infinite alternate;
             will-change: transform, border-radius;
             transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         .liquid-blob-2 {
-            width: 750px;
-            height: 750px;
-            background: radial-gradient(circle, rgba(248, 205, 255, 0.5) 0%, rgba(185, 215, 255, 0.2) 50%, rgba(162,196,222,0) 80%);
-            filter: blur(110px);
-            animation: morph-2 24s ease-in-out infinite alternate-reverse;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(245, 210, 255, 0.4) 0%, rgba(190, 220, 255, 0.15) 60%, rgba(255, 255, 255, 0) 100%);
+            filter: blur(90px);
+            animation: morph-2 22s ease-in-out infinite alternate-reverse;
             will-change: transform, border-radius;
             transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         @keyframes morph-1 {
-            0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; transform: translate(0, 0) scale(1) rotate(0deg); }
-            50% { border-radius: 70% 30% 50% 50% / 50% 30% 70% 50%; transform: translate(80px, -60px) scale(1.15) rotate(45deg); }
-            100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(-60px, 70px) scale(0.95) rotate(90deg); }
+            0% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+            50% { border-radius: 60% 40% 50% 50% / 50% 40% 60% 50%; transform: translate3d(40px, -40px, 0) scale(1.1) rotate(45deg); }
+            100% { border-radius: 50% 50% 40% 60% / 50% 50% 40% 50%; transform: translate3d(-30px, 40px, 0) scale(0.95) rotate(90deg); }
         }
         @keyframes morph-2 {
-            0% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; transform: translate(0, 0) scale(0.95) rotate(0deg); }
-            50% { border-radius: 30% 80% 40% 60% / 40% 50% 60% 70%; transform: translate(-80px, 70px) scale(1.1) rotate(-60deg); }
-            100% { border-radius: 80% 20% 70% 30% / 60% 30% 80% 40%; transform: translate(70px, -70px) scale(1.02) rotate(-120deg); }
+            0% { border-radius: 50% 50% 40% 60% / 50% 50% 40% 50%; transform: translate3d(0, 0, 0) scale(0.95) rotate(0deg); }
+            50% { border-radius: 40% 60% 50% 50% / 40% 50% 50% 60%; transform: translate3d(-40px, 40px, 0) scale(1.05) rotate(-45deg); }
+            100% { border-radius: 60% 40% 60% 40% / 50% 40% 60% 40%; transform: translate3d(40px, -40px, 0) scale(1) rotate(-90deg); }
         }
         @keyframes float-item {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
         }
         .animate-float {
-            animation: float-item 7s ease-in-out infinite;
+            animation: float-item 6s ease-in-out infinite;
         }
         .shimmer {
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%);
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
             background-size: 200% 100%;
-            animation: shimmer-anim 3.5s infinite;
+            animation: shimmer-anim 4s infinite;
         }
         @keyframes shimmer-anim {
             0% { background-position: -200% 0; }
@@ -128,57 +125,54 @@
         }
         .vial-bubble {
             position: absolute;
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(253, 186, 116, 0.55));
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(251, 191, 36, 0.45));
             border-radius: 50%;
             pointer-events: none;
-            bottom: 15px;
-            animation: float-bubble 3.5s infinite linear;
-            box-shadow: 0 0 6px rgba(253, 186, 116, 0.2);
+            bottom: 10px;
+            animation: float-bubble 4s infinite linear;
+            box-shadow: 0 0 4px rgba(251, 191, 36, 0.15);
         }
         @keyframes float-bubble {
-            0% { transform: translateY(0) scale(0.3) translateX(0); opacity: 0; }
-            15% { opacity: 0.85; }
-            85% { opacity: 0.85; }
-            100% { transform: translateY(-135px) scale(1.3) translateX(var(--wobble, 10px)); opacity: 0; }
+            0% { transform: translateY(0) scale(0.4) translateX(0); opacity: 0; }
+            15% { opacity: 0.8; }
+            85% { opacity: 0.8; }
+            100% { transform: translateY(-120px) scale(1.2) translateX(var(--wobble, 8px)); opacity: 0; }
         }
         .music-bar-active {
-            animation: bounce-bar 0.75s ease-in-out infinite alternate;
+            animation: bounce-bar 0.7s ease-in-out infinite alternate;
         }
         @keyframes bounce-bar {
             0% { height: 4px; }
-            100% { height: 32px; }
+            100% { height: 24px; }
         }
         .flame {
-            width: 14px;
-            height: 28px;
-            background: linear-gradient(to top, rgba(244, 63, 94, 0.95) 0%, rgba(253, 186, 116, 0.95) 55%, rgba(255, 255, 255, 1) 100%);
+            width: 10px;
+            height: 22px;
+            background: linear-gradient(to top, rgba(244, 63, 94, 0.95) 0%, rgba(251, 191, 36, 0.9) 60%, rgba(255, 255, 255, 1) 100%);
             border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
-            filter: drop-shadow(0 0 8px rgba(253, 186, 116, 0.95)) drop-shadow(0 0 16px rgba(244, 63, 94, 0.6));
+            filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.8)) drop-shadow(0 0 12px rgba(244, 63, 94, 0.5));
             animation: flicker 1.2s ease-in-out infinite alternate;
             transform-origin: bottom center;
             display: block;
             will-change: transform;
+            transform: translate3d(0,0,0);
         }
         @keyframes flicker {
             0% { transform: scale(1) rotate(-1deg); }
-            20% { transform: scale(1.05, 0.95) rotate(0.5deg); }
-            40% { transform: scale(0.95, 1.05) rotate(-1.5deg); }
-            60% { transform: scale(1.02, 0.98) rotate(1deg); }
-            80% { transform: scale(0.98, 1.01) rotate(-0.5deg); }
-            100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.04, 0.96) rotate(0.5deg); }
+            100% { transform: scale(0.96, 1.04) rotate(-0.5deg); }
         }
         .lyric-line {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0.12;
-            padding: 8px 0;
-            line-height: 1.5;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.15;
+            padding: 6px 0;
         }
         .lyric-line.active {
             opacity: 1;
             color: #b45309;
-            font-weight: 800;
-            transform: scale(1.08);
-            text-shadow: 0 0 15px rgba(251, 191, 36, 0.45);
+            font-weight: 700;
+            transform: scale(1.05);
+            text-shadow: 0 0 12px rgba(251, 191, 36, 0.3);
         }
         .premium-border-glowing {
             position: relative;
@@ -188,65 +182,71 @@
             position: absolute;
             inset: -1px;
             border-radius: inherit;
-            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(253, 186, 116, 0.4), rgba(244, 63, 94, 0.35), rgba(255,255,255,0.95));
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(251, 191, 36, 0.3), rgba(244, 63, 94, 0.25), rgba(255,255,255,0.9));
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.5;
             pointer-events: none;
-            transition: opacity 300ms ease;
+            transition: opacity 300ms;
         }
         .premium-border-glowing:hover::after {
-            opacity: 1.0;
+            opacity: 0.9;
         }
         .card-inner {
-            transition: transform 0.65s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             will-change: transform;
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         .vinyl-glow {
-            box-shadow: 0 0 0 0 rgba(253, 186, 116, 0);
+            box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
             transition: box-shadow 0.3s ease-in-out;
         }
         .vinyl-glow.playing {
             animation: glow-pulse 2s infinite alternate;
         }
         @keyframes glow-pulse {
-            0% { box-shadow: 0 0 8px 1px rgba(253, 186, 116, 0.2), 0 0 20px 4px rgba(244, 63, 94, 0.1); }
-            100% { box-shadow: 0 0 20px 6px rgba(253, 186, 116, 0.45), 0 0 35px 12px rgba(244, 63, 94, 0.25); }
+            0% { box-shadow: 0 0 8px 1px rgba(251, 191, 36, 0.15), 0 0 15px 3px rgba(244, 63, 94, 0.08); }
+            100% { box-shadow: 0 0 15px 4px rgba(251, 191, 36, 0.35), 0 0 25px 8px rgba(244, 63, 94, 0.18); }
         }
         .parallax-deck-container {
             position: relative;
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 6rem;
+            gap: 4rem;
         }
         .parallax-node {
             position: relative;
             width: 100%;
             display: flex;
             will-change: transform;
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         .parallax-card-body {
             width: 290px;
-            height: 390px;
+            height: 380px;
             cursor: pointer;
             position: relative;
-            transition: box-shadow 0.5s ease, transform 300ms;
+            transition: transform 0.3s;
             will-change: transform;
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         .parallax-card-body:hover {
-            transform: scale(1.02);
-        }
-        .parallax-card-body:active {
-            transform: scale(0.99);
+            transform: scale(1.01);
         }
         .glow-aura {
             position: absolute;
             inset: 0;
-            border-radius: 2.5rem;
-            background: linear-gradient(135deg, rgba(253, 186, 116, 0.12), rgba(244, 63, 94, 0.12));
-            filter: blur(25px);
+            border-radius: 2rem;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(244, 63, 94, 0.1));
+            filter: blur(20px);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.4s;
             pointer-events: none;
             z-index: -1;
         }
@@ -256,55 +256,60 @@
         @media (max-width: 640px) {
             .parallax-card-body {
                 width: 260px;
-                height: 350px;
+                height: 340px;
             }
         }
         .vinyl-metallic {
             background: repeating-conic-gradient(
                 from 0deg,
-                #121212 0deg 10deg,
-                #1c1c1c 10deg 20deg,
-                #121212 20deg 30deg,
-                #282828 30deg 40deg,
-                #121212 40deg 50deg
+                #111 0deg 8deg,
+                #1e1e1e 8deg 16deg,
+                #111 16deg 24deg,
+                #222 24deg 32deg,
+                #111 32deg 40deg
             );
         }
         .interactive-scale {
-            transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .interactive-scale:hover {
-            transform: scale(1.02);
+            transform: scale(1.015);
         }
         .interactive-scale:active {
-            transform: scale(0.99);
+            transform: scale(0.985);
         }
         .editorial-line {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
             position: relative;
         }
         .editorial-line::after {
-            content: '✨';
+            content: '✦';
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%) scale(0.7);
-            background: #fdfaf6;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #fdfbf7;
             padding: 0 8px;
+            color: #d4af37;
         }
         .ambient-glow-circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(253, 186, 116, 0.25) 0%, transparent 70%);
-            filter: blur(40px);
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, transparent 70%);
+            filter: blur(50px);
             pointer-events: none;
             z-index: 0;
-            animation: rotate-slow 20s linear infinite;
+            animation: rotate-slow 24s linear infinite;
+            will-change: transform;
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
         @keyframes rotate-slow {
-            0% { transform: rotate(0deg) translate(0, 0); }
-            50% { transform: rotate(180deg) translate(30px, -30px); }
-            100% { transform: rotate(360deg) translate(0, 0); }
+            0% { transform: rotate(0deg) translate3d(0, 0, 0); }
+            50% { transform: rotate(180deg) translate3d(20px, -20px, 0); }
+            100% { transform: rotate(360deg) translate3d(0, 0, 0); }
         }
         .spring-string-container {
             width: 100%;
@@ -314,74 +319,67 @@
         .code-interactive-token {
             display: inline-block;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
             position: relative;
         }
         .code-interactive-token:hover {
-            transform: translateY(-2px) scale(1.05);
-            text-shadow: 0 0 12px currentColor;
+            transform: translateY(-1px);
+            text-shadow: 0 0 8px currentColor;
         }
         .ide-tab-btn {
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .ide-tab-btn.active {
-            background-color: rgba(255, 255, 255, 0.08);
+            background-color: rgba(255, 255, 255, 0.06);
             color: #ffffff;
-            border-bottom-color: #ec4899;
-        }
-        .hidden {
-            display: none !important;
+            border-bottom-color: #f43f5e;
         }
         .hacker-payload-btn {
-            background: rgba(244, 63, 94, 0.04);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(244, 63, 94, 0.25);
+            background: rgba(244, 63, 94, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 63, 94, 0.2);
             box-shadow: 
-                inset 0 1px 2px rgba(255, 255, 255, 0.08),
-                0 0 30px rgba(244, 63, 94, 0.15);
+                inset 0 1px 1px rgba(255, 255, 255, 0.05),
+                0 0 20px rgba(244, 63, 94, 0.1);
             font-family: 'Fira Code', monospace;
             position: relative;
             overflow: hidden;
-            transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .hacker-payload-btn:hover:not(:disabled) {
-            background: rgba(244, 63, 94, 0.08);
-            border-color: rgba(244, 63, 94, 0.5);
+            background: rgba(244, 63, 94, 0.06);
+            border-color: rgba(244, 63, 94, 0.4);
             box-shadow: 
-                0 0 45px rgba(244, 63, 94, 0.35),
-                inset 0 0 12px rgba(244, 63, 94, 0.2);
-            transform: translateY(-2px);
-        }
-        .hacker-payload-btn:active:not(:disabled) {
-            transform: translateY(1px) scale(0.99);
+                0 0 35px rgba(244, 63, 94, 0.25),
+                inset 0 0 8px rgba(244, 63, 94, 0.1);
+            transform: translateY(-1px);
         }
         .hacker-corner {
             position: absolute;
-            width: 8px;
-            height: 8px;
-            border-color: rgba(244, 63, 94, 0.6);
+            width: 6px;
+            height: 6px;
+            border-color: rgba(244, 63, 94, 0.5);
             border-style: solid;
             pointer-events: none;
-            transition: border-color 400ms ease;
+            transition: border-color 0.3s;
         }
         .hacker-payload-btn:hover .hacker-corner {
-            border-color: rgba(244, 63, 94, 0.95);
+            border-color: rgba(244, 63, 94, 0.9);
         }
-        .corner-tl { top: 6px; left: 6px; border-width: 1.5px 0 0 1.5px; }
-        .corner-tr { top: 6px; right: 6px; border-width: 1.5px 1.5px 0 0; }
-        .corner-bl { bottom: 6px; left: 6px; border-width: 0 0 1.5px 1.5px; }
-        .corner-br { bottom: 6px; right: 6px; border-width: 0 1.5px 1.5px 0; }
-        .hacker-payload-btn::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(244, 63, 94, 0.15), transparent);
-            transition: all 600ms ease;
+        .corner-tl { top: 4px; left: 4px; border-width: 1px 0 0 1px; }
+        .corner-tr { top: 4px; right: 4px; border-width: 1px 1px 0 0; }
+        .corner-bl { bottom: 4px; left: 4px; border-width: 0 0 1px 1px; }
+        .corner-br { bottom: 4px; right: 4px; border-width: 0 1px 1px 0; }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .hacker-payload-btn:hover::after {
-            left: 100%;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        #harpPhysicsContainer, #cakeSection {
+            touch-action: none;
         }
     </style>
 </head>
@@ -406,42 +404,40 @@
         
         <div class="w-full max-w-4xl px-4 py-8 flex flex-col items-center relative z-10">
             <div class="relative w-36 h-36 mb-6 flex items-center justify-center cursor-pointer group interactive-scale" id="giftBoxContainer">
-                <div class="absolute inset-0 rounded-full border border-pink-500/30 animate-[spin_20s_linear_infinite] flex items-center justify-center">
-                    <div class="text-[0.55rem] font-mono text-pink-500/40 tracking-[0.25em] font-extrabold uppercase select-none">&lt;HEENA_INIT&gt; &lt;/HEENA_INIT&gt;</div>
+                <div class="absolute inset-0 rounded-full border border-pink-500/20 animate-[spin_20s_linear_infinite] flex items-center justify-center">
+                    <div class="text-[0.5rem] font-mono text-pink-500/30 tracking-[0.25em] font-extrabold uppercase select-none">&lt;HEENA_INIT&gt; &lt;/HEENA_INIT&gt;</div>
                 </div>
-                <div class="absolute inset-2 rounded-full border border-dashed border-amber-400/40 animate-[spin_10s_linear_infinite_reverse]"></div>
-                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-[#16121a] via-[#241a2c] to-[#120a16] border-2 border-amber-400/50 flex items-center justify-center shadow-[0_0_40px_rgba(251,191,36,0.25)] transition-transform duration-500 group-hover:scale-105 group-hover:border-amber-300 relative overflow-hidden">
+                <div class="absolute inset-2 rounded-full border border-dashed border-amber-400/30 animate-[spin_10s_linear_infinite_reverse]"></div>
+                <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-[#140e1a] via-[#20152b] to-[#0f0714] border-2 border-amber-400/40 flex items-center justify-center shadow-[0_0_30px_rgba(251,191,36,0.15)] transition-transform duration-500 group-hover:scale-105 group-hover:border-amber-300 relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-                    <span class="font-display-premium text-5xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-amber-500 font-normal select-none filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">H</span>
+                    <span class="font-serif-elegant text-5xl text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-200 to-amber-500 font-normal select-none filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">H</span>
                 </div>
-                <div class="absolute top-2 right-2 w-3.5 h-3.5 bg-emerald-500 rounded-full animate-pulse border-2 border-[#060408] shadow-[0_0_8px_#10b981]"></div>
+                <div class="absolute top-2 right-2 w-3 h-3 bg-emerald-500 rounded-full animate-pulse border-2 border-[#060408] shadow-[0_0_8px_#10b981]"></div>
             </div>
 
-            <div class="glass-premium-dark p-4 md:p-8 rounded-[2.5rem] w-full shadow-3xl relative overflow-hidden border border-white/5" id="ideContainer">
-                <div class="absolute top-0 left-0 w-full h-[3px] shimmer bg-gradient-to-r from-pink-500 via-amber-400 to-rose-500"></div>
+            <div class="glass-premium-dark p-4 md:p-8 rounded-[2rem] w-full shadow-3xl relative overflow-hidden border border-white/5 animate-float" id="ideContainer">
+                <div class="absolute top-0 left-0 w-full h-[2px] shimmer bg-gradient-to-r from-pink-500 via-amber-400 to-rose-500"></div>
                 
                 <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-4">
-                    <div class="flex gap-2 items-center">
-                        <span class="w-3 h-3 rounded-full bg-rose-500/90 shadow-[0_0_8px_rgba(244,63,94,0.5)]"></span>
-                        <span class="w-3 h-3 rounded-full bg-amber-500/90 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
-                        <span class="w-3 h-3 rounded-full bg-emerald-500/90 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                    <div class="flex gap-1.5 items-center flex-shrink-0">
+                        <span class="w-2 h-2 rounded-full bg-rose-500/90"></span>
+                        <span class="w-2 h-2 rounded-full bg-amber-500/90"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500/90"></span>
                     </div>
-                    <div class="flex gap-1 md:gap-2">
-                        <button class="ide-tab-btn active px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-mono text-[0.65rem] md:text-xs text-stone-400 hover:text-white" data-target="indexJs">friendship.js</button>
-                        <button class="ide-tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-mono text-[0.65rem] md:text-xs text-stone-400 hover:text-white" data-target="attributesJson">attributes.json</button>
-                        <button class="ide-tab-btn px-3 py-1.5 rounded-t-lg border-b-2 border-transparent font-mono text-[0.65rem] md:text-xs text-stone-400 hover:text-white" data-target="wishesCss">style.css</button>
+                    <div class="flex gap-1 overflow-x-auto no-scrollbar flex-1 justify-end sm:justify-start ml-3">
+                        <button class="ide-tab-btn active px-2.5 py-1.5 rounded-t-md font-mono text-[0.65rem] md:text-xs text-stone-400 hover:text-white whitespace-nowrap" data-target="friendshipJs">friendship.js</button>
+                        <button class="ide-tab-btn px-2.5 py-1.5 rounded-t-md font-mono text-[0.65rem] md:text-xs text-stone-400 hover:text-white whitespace-nowrap" data-target="coreJson">core.json</button>
+                        <button class="ide-tab-btn px-2.5 py-1.5 rounded-t-md font-mono text-[0.65rem] md:text-xs text-stone-400 hover:text-white whitespace-nowrap" data-target="styleCss">style.css</button>
                     </div>
-                    <div class="hidden sm:block text-[0.6rem] font-mono text-pink-300/40 uppercase font-bold tracking-widest">Heena-Workspace v3.0</div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                    <div class="lg:col-span-7 bg-[#0b080f] p-4 md:p-6 rounded-2xl border border-white/5 font-mono text-[0.65rem] md:text-[0.8rem] text-stone-300 space-y-4 shadow-inner relative overflow-hidden min-h-[250px]" id="editorPane">
+                    <div class="lg:col-span-7 bg-[#09060b] p-4 md:p-6 rounded-xl border border-white/5 font-mono text-[0.65rem] md:text-[0.75rem] text-stone-300 space-y-4 shadow-inner relative overflow-hidden min-h-[240px]" id="editorPane">
                         
-                        <div id="indexJs" class="tab-content space-y-2 leading-relaxed">
+                        <div id="friendshipJs" class="tab-content space-y-1.5 leading-relaxed">
                             <div>
                                 <span class="text-pink-400">const</span> 
-                                <span id="tokenFriend" class="code-interactive-token text-amber-300 font-bold">heena</span> 
+                                <span id="tokenFriend" class="code-interactive-token text-amber-300 font-semibold">heena</span> 
                                 <span class="text-pink-400">=</span> 
                                 <span class="text-pink-400">new</span> 
                                 <span class="text-sky-300">SpecialFriend</span>(<span class="text-emerald-400">"Warm Heart"</span>);
@@ -457,19 +453,19 @@
                             </div>
                             <div class="pl-4">];</div>
 
-                            <div class="pt-2">
+                            <div class="pt-1">
                                 <span class="text-pink-400">if</span> (<span class="text-amber-300">heena</span>.<span class="text-sky-300">isTrulyWonderful</span>()) {
                             </div>
                             <div class="pl-4">
                                 <span class="text-sky-300">console</span>.<span class="text-purple-300">log</span>(<span class="text-emerald-400">"Compiling pure happiness..."</span>);
                             </div>
                             <div class="pl-4">
-                                <span id="tokenTrigger" class="code-interactive-token text-amber-300 hover:text-amber-200 underline decoration-dotted font-bold">triggerCelebration</span>();
+                                <span id="tokenTrigger" class="code-interactive-token text-amber-300 hover:text-amber-200 underline decoration-dotted font-semibold">triggerCelebration</span>();
                             </div>
                             <div>}</div>
                         </div>
 
-                        <div id="attributesJson" class="tab-content hidden space-y-2 leading-relaxed text-indigo-200">
+                        <div id="coreJson" class="tab-content hidden space-y-1.5 leading-relaxed text-indigo-200">
                             <div>{</div>
                             <div class="pl-4">
                                 <span class="text-rose-400">"name"</span>: <span class="text-emerald-400">"Heena"</span>,
@@ -478,29 +474,29 @@
                                 <span class="text-rose-400">"character"</span>: <span class="text-emerald-400">"spectacular_friend"</span>,
                             </div>
                             <div class="pl-4">
-                                <span class="text-rose-400">"empathyLevel"</span>: <span id="tokenEmpathy" class="code-interactive-token text-amber-300 font-bold">"infinite"</span>,
+                                <span class="text-rose-400">"empathyLevel"</span>: <span id="tokenEmpathy" class="code-interactive-token text-amber-300 font-semibold">"infinite"</span>,
                             </div>
                             <div class="pl-4">
                                 <span class="text-rose-400">"chocolatePreference"</span>: <span class="text-emerald-400">"hazelnut_truffle"</span>,
                             </div>
                             <div class="pl-4">
-                                <span class="text-rose-400">"patienceStatus"</span>: <span id="tokenPatience" class="code-interactive-token text-amber-300 font-bold">"unlimited"</span>
+                                <span class="text-rose-400">"patienceStatus"</span>: <span id="tokenPatience" class="code-interactive-token text-amber-300 font-semibold">"unlimited"</span>
                             </div>
                             <div>}</div>
                         </div>
 
-                        <div id="wishesCss" class="tab-content hidden space-y-2 leading-relaxed text-stone-400">
+                        <div id="styleCss" class="tab-content hidden space-y-1.5 leading-relaxed text-stone-400">
                             <div>
                                 <span class="text-purple-300">:root</span> {
                             </div>
                             <div class="pl-4">
-                                <span class="text-sky-300">--warmth</span>: <span id="tokenWarmth" class="code-interactive-token text-emerald-400 font-bold">#ff4b72</span>;
+                                <span class="text-sky-300">--warmth</span>: <span id="tokenWarmth" class="code-interactive-token text-emerald-400 font-semibold">#ff4b72</span>;
                             </div>
                             <div class="pl-4">
                                 <span class="text-sky-300">--calmVibe</span>: <span class="text-emerald-400">#ffccd5</span>;
                             </div>
                             <div class="pl-4">
-                                <span class="text-sky-300">--heartStatus</span>: <span id="tokenHeart" class="code-interactive-token text-amber-300 font-bold">"pure_gold"</span>;
+                                <span class="text-sky-300">--heartStatus</span>: <span id="tokenHeart" class="code-interactive-token text-amber-300 font-semibold">"pure_gold"</span>;
                             </div>
                             <div>}</div>
                         </div>
@@ -509,38 +505,38 @@
 
                     <div class="lg:col-span-5 flex flex-col justify-between h-full space-y-4 text-left">
                         <div>
-                            <span class="text-[0.65rem] text-pink-400 font-mono uppercase tracking-[0.25em] font-extrabold">Dynamic Heartbeat Engine</span>
-                            <h1 class="text-4xl md:text-5xl font-display-premium font-bold text-white tracking-tight mt-1 mb-2 leading-tight">Ready to Run</h1>
-                            <p class="text-stone-400 text-xs leading-relaxed font-sans">A customized interactive module engineered to unlock a dedicated collection of shared chords, memories, and appreciation.</p>
+                            <span class="text-[0.6rem] text-pink-400 font-mono uppercase tracking-[0.2em] font-extrabold">Dynamic Heartbeat Engine</span>
+                            <h1 class="text-3xl md:text-4xl font-serif-elegant font-semibold text-white tracking-tight mt-1 mb-1.5 leading-tight">Ready to Run</h1>
+                            <p class="text-stone-400 text-xs leading-relaxed font-sans">A customized interactive experience engineered to unlock a dedicated collection of shared chords, memories, and warm appreciation.</p>
                         </div>
 
-                        <div class="space-y-2">
-                            <span class="text-[0.6rem] font-mono uppercase tracking-wider text-stone-500">System Logs</span>
-                            <div class="bg-[#0b080f] border border-white/5 p-4 rounded-xl font-mono text-[0.65rem] space-y-1 text-stone-400 overflow-hidden h-28 flex flex-col justify-end shadow-inner" id="compilerLogContainer">
+                        <div class="space-y-1.5">
+                            <span class="text-[0.55rem] font-mono uppercase tracking-wider text-stone-500">System Logs</span>
+                            <div class="bg-[#09060b] border border-white/5 p-3 rounded-lg font-mono text-[0.65rem] space-y-0.5 text-stone-400 overflow-hidden h-24 flex flex-col justify-end shadow-inner" id="compilerLogContainer">
                                 <div class="text-stone-600">&gt; Environment: online</div>
                                 <div class="text-stone-600">&gt; Awaiting execution command...</div>
                             </div>
                         </div>
 
-                        <div class="space-y-4 pt-2">
-                            <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                        <div class="space-y-3 pt-1">
+                            <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
                                 <div id="compileProgressBar" class="bg-gradient-to-r from-pink-500 via-amber-400 to-rose-500 h-full w-0 transition-all duration-300"></div>
                             </div>
                             
-                            <button id="openGiftBtn" class="hacker-payload-btn w-full text-white tracking-[0.15em] text-[0.85rem] uppercase py-6 px-8 rounded-2xl flex flex-col items-center justify-center gap-1.5 font-bold transition-all duration-300">
+                            <button id="openGiftBtn" class="hacker-payload-btn w-full text-white tracking-[0.12em] text-[0.8rem] uppercase py-5 px-6 rounded-xl flex flex-col items-center justify-center gap-1 font-bold transition-all duration-300">
                                 <div class="hacker-corner corner-tl"></div>
                                 <div class="hacker-corner corner-tr"></div>
                                 <div class="hacker-corner corner-bl"></div>
                                 <div class="hacker-corner corner-br"></div>
                                 
-                                <div class="flex items-center gap-3">
+                                <div class="flex items-center gap-2.5">
                                     <span class="text-rose-400 font-extrabold animate-pulse">&gt;</span>
-                                    <span id="compileBtnText" class="tracking-[0.18em]">RUN PAYLOAD: INJECT_JOY.SH</span>
+                                    <span id="compileBtnText" class="tracking-[0.15em]">RUN PAYLOAD: INJECT_JOY.SH</span>
                                     <i class="fa-solid fa-terminal text-rose-400 animate-pulse text-xs"></i>
                                 </div>
-                                <div class="flex items-center gap-2 text-[0.55rem] text-stone-500 tracking-[0.1em] font-normal uppercase select-none">
+                                <div class="flex items-center gap-1.5 text-[0.55rem] text-stone-500 tracking-[0.08em] font-normal uppercase select-none">
                                     <span>Target: Heena_Bday</span>
-                                    <span class="text-rose-500/40">•</span>
+                                    <span class="text-rose-500/30">•</span>
                                     <span>Payload: Active</span>
                                 </div>
                             </button>
@@ -551,158 +547,158 @@
         </div>
     </div>
 
-    <div id="mainContent" class="hidden min-h-screen pb-24 max-w-6xl mx-auto relative z-10 px-4 sm:px-8">
+    <div id="mainContent" class="hidden min-h-screen pb-20 max-w-6xl mx-auto relative z-10 px-4 sm:px-8">
         
         <div class="fixed top-4 right-4 z-40 flex gap-2">
-            <button id="musicToggle" class="w-11 h-11 rounded-full glass-premium flex items-center justify-center text-stone-700 hover:text-rose-500 transition-all shadow-xl interactive-scale">
+            <button id="musicToggle" class="w-10 h-10 rounded-full glass-premium flex items-center justify-center text-stone-700 hover:text-rose-500 transition-all shadow-xl interactive-scale">
                 <i class="fa-solid fa-music text-xs"></i>
             </button>
         </div>
 
-        <header class="relative pt-16 pb-12 text-center select-none" id="mainHeader">
-            <div class="absolute top-4 left-4 text-rose-300/80 text-lg animate-float" style="animation-duration: 4s;"><i class="fa-solid fa-star"></i></div>
-            <div class="absolute top-16 right-4 text-amber-300/80 text-xl animate-float" style="animation-duration: 5s;"><i class="fa-solid fa-sparkles animate-pulse"></i></div>
+        <header class="relative pt-12 pb-10 text-center select-none animate-float" id="mainHeader">
+            <div class="absolute top-2 left-4 text-rose-300/60 text-base"><i class="fa-solid fa-star"></i></div>
+            <div class="absolute top-12 right-4 text-amber-300/60 text-lg"><i class="fa-solid fa-sparkles animate-pulse"></i></div>
             
-            <p class="text-[0.65rem] tracking-[0.45em] uppercase text-rose-500 font-extrabold mb-1">Celestial Tribute</p>
-            <h1 class="text-6xl md:text-8xl font-serif-elegant text-transparent bg-clip-text bg-gradient-to-r from-stone-950 via-rose-800 to-amber-700 leading-none py-4">Heena</h1>
-            <div class="editorial-line w-40 mx-auto my-4"></div>
-            <p class="text-[0.75rem] text-stone-500 italic tracking-wider max-w-lg mx-auto leading-relaxed px-4">An interactive, luminous archive dedicated to a soul of pure warmth, grace, and timeless friendship.</p>
+            <p class="text-[0.6rem] tracking-[0.4em] uppercase text-rose-500 font-extrabold mb-0.5">Celestial Tribute</p>
+            <h1 class="text-5xl md:text-7xl font-serif-elegant text-transparent bg-clip-text bg-gradient-to-r from-stone-900 via-rose-800 to-amber-700 leading-none py-3">Heena</h1>
+            <div class="editorial-line w-36 mx-auto my-3"></div>
+            <p class="text-[0.7rem] text-stone-500 italic tracking-wider max-w-md mx-auto leading-relaxed px-4">An interactive, luminous archive dedicated to a soul of pure warmth, grace, and timeless friendship.</p>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div class="lg:col-span-7 space-y-10" id="mainLeftCol">
-                <section class="glass-premium p-6 sm:p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-3xl premium-border-glowing" id="cakeSection">
-                    <div class="absolute -top-16 -left-16 w-36 h-36 bg-amber-100/40 rounded-full filter blur-3xl"></div>
-                    <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-widest">Hazelnut Truffle Cake</h3>
-                    <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-8">Swipe or tap to blow out the flames</p>
+            <div class="lg:col-span-7 space-y-8" id="mainLeftCol">
+                <section class="glass-premium p-6 sm:p-8 rounded-[2rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing" id="cakeSection">
+                    <div class="absolute -top-16 -left-16 w-32 h-32 bg-amber-100/30 rounded-full filter blur-3xl"></div>
+                    <h3 class="font-serif-elegant text-xl md:text-2xl text-stone-900 mb-0.5 tracking-wider font-semibold">Hazelnut Truffle Patisserie</h3>
+                    <p class="text-[0.55rem] text-[#ff4b72] tracking-[0.25em] uppercase font-bold mb-8">Swipe or tap to blow out the flames</p>
                     
-                    <div class="flex justify-center items-end h-36 relative mb-4">
-                        <div class="relative w-52 h-28 flex flex-col items-center justify-end">
+                    <div class="flex justify-center items-end h-32 relative mb-2">
+                        <div class="relative w-56 h-24 flex flex-col items-center justify-end">
                             
                             <div class="absolute bottom-12 flex gap-8 z-30 items-end">
                                 <div class="candle flex flex-col items-center cursor-pointer" data-id="1">
                                     <div class="flame"></div>
-                                    <div class="wick w-[1.5px] h-2 bg-stone-900"></div>
-                                    <div class="body w-2 h-8 bg-gradient-to-r from-amber-200 to-amber-400 border-l border-white/60 rounded-sm"></div>
+                                    <div class="wick w-[1px] h-1.5 bg-stone-800"></div>
+                                    <div class="body w-2 h-7 bg-gradient-to-r from-amber-100 to-amber-300 border-l border-white/50 rounded-sm shadow-sm"></div>
                                 </div>
                                 <div class="candle flex flex-col items-center cursor-pointer" data-id="2">
                                     <div class="flame" style="animation-delay: 0.15s;"></div>
-                                    <div class="wick w-[1.5px] h-2 bg-stone-900"></div>
-                                    <div class="body w-2 h-8 bg-gradient-to-r from-rose-200 to-rose-400 border-l border-white/60 rounded-sm"></div>
+                                    <div class="wick w-[1px] h-1.5 bg-stone-800"></div>
+                                    <div class="body w-2 h-7 bg-gradient-to-r from-rose-100 to-rose-300 border-l border-white/50 rounded-sm shadow-sm"></div>
                                 </div>
                                 <div class="candle flex flex-col items-center cursor-pointer" data-id="3">
                                     <div class="flame" style="animation-delay: 0.3s;"></div>
-                                    <div class="wick w-[1.5px] h-2 bg-stone-900"></div>
-                                    <div class="body w-2 h-8 bg-gradient-to-r from-amber-200 to-amber-400 border-l border-white/60 rounded-sm"></div>
+                                    <div class="wick w-[1px] h-1.5 bg-stone-800"></div>
+                                    <div class="body w-2 h-7 bg-gradient-to-r from-amber-100 to-amber-300 border-l border-white/50 rounded-sm shadow-sm"></div>
                                 </div>
                             </div>
 
-                            <div class="w-44 h-10 bg-gradient-to-b from-[#2E1911] to-[#1F100A] border-t border-amber-800/40 rounded-t-[1.25rem] relative shadow-2xl flex items-center justify-center z-20">
-                                <div class="absolute -top-1 left-0 right-0 h-2 bg-gradient-to-b from-[#D4AF37] to-transparent opacity-75 rounded-t-[1.25rem] pointer-events-none"></div>
-                                <div class="absolute top-1 flex gap-1 justify-center w-full">
-                                    <span class="text-[0.45rem]">🌰</span>
-                                    <span class="text-[0.45rem]">✨</span>
-                                    <span class="text-[0.45rem]">🌰</span>
-                                    <span class="text-[0.45rem]">✨</span>
-                                    <span class="text-[0.45rem]">🌰</span>
+                            <div class="w-44 h-8 bg-gradient-to-b from-[#25130b] to-[#160b06] border-t border-amber-800/30 rounded-t-lg relative shadow-xl flex items-center justify-center z-20">
+                                <div class="absolute -top-1 left-0 right-0 h-1 bg-gradient-to-b from-[#dfba9b] to-transparent opacity-50 rounded-t-lg pointer-events-none"></div>
+                                <div class="absolute top-0.5 flex gap-1 justify-center w-full scale-75 opacity-80">
+                                    <span class="text-[0.4rem]">🌰</span>
+                                    <span class="text-[0.4rem]">✨</span>
+                                    <span class="text-[0.4rem]">🌰</span>
+                                    <span class="text-[0.4rem]">✨</span>
+                                    <span class="text-[0.4rem]">🌰</span>
                                 </div>
                             </div>
 
-                            <div class="w-48 h-8 bg-gradient-to-b from-[#3E251A] to-[#25150F] rounded-t-[0.6rem] relative shadow-lg z-10">
-                                <div class="absolute top-1 left-4 w-1 h-4 bg-[#D4AF37]/80 rounded-b-full"></div>
-                                <div class="absolute top-1 left-12 w-1 h-3 bg-[#D4AF37]/80 rounded-b-full"></div>
-                                <div class="absolute top-1 left-24 w-1.5 h-5 bg-[#D4AF37]/80 rounded-b-full"></div>
-                                <div class="absolute top-1 left-36 w-1.5 h-3 bg-[#D4AF37]/80 rounded-b-full"></div>
+                            <div class="w-48 h-6 bg-gradient-to-b from-[#341d14] to-[#1d0f0a] rounded-t-md relative shadow-md z-10">
+                                <div class="absolute top-0.5 left-4 w-1 h-3 bg-[#d4af37]/70 rounded-b-full"></div>
+                                <div class="absolute top-0.5 left-12 w-0.5 h-2 bg-[#d4af37]/70 rounded-b-full"></div>
+                                <div class="absolute top-0.5 left-24 w-1 h-4 bg-[#d4af37]/70 rounded-b-full"></div>
+                                <div class="absolute top-0.5 left-36 w-1 h-2 bg-[#d4af37]/70 rounded-b-full"></div>
                             </div>
 
-                            <div class="w-52 h-2.5 bg-stone-300/50 rounded-full blur-[2px] absolute -bottom-1"></div>
+                            <div class="w-52 h-2 bg-stone-300/40 rounded-full blur-[1px] absolute -bottom-0.5"></div>
                         </div>
                     </div>
 
-                    <div id="wishMessage" class="hidden mt-6 p-6 bg-gradient-to-br from-white/95 to-white/65 border border-rose-100 rounded-[1.8rem] text-sm text-stone-700 leading-relaxed font-serif-elegant italic shadow-xl transition-all duration-1000">
+                    <div id="wishMessage" class="hidden mt-6 p-5 bg-gradient-to-br from-white/95 to-white/70 border border-rose-100 rounded-[1.5rem] text-xs md:text-sm text-stone-700 leading-relaxed font-serif-elegant italic shadow-lg transition-all duration-1000">
                         “I hope life brings you quiet joy, deep peace, and wonderful moments, just like the happiness you always give to everyone around you, Heena. You deserve the absolute best.” ✨
                     </div>
                 </section>
 
-                <section class="space-y-6">
+                <section class="space-y-5">
                     <div class="px-2 text-center">
-                        <h3 class="font-serif-elegant text-3xl text-stone-900 tracking-widest">The Memories Archipelago</h3>
-                        <p class="text-[0.65rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mt-1.5">Scroll to float the crystals • Tap to reveal</p>
+                        <h3 class="font-serif-elegant text-2xl md:text-3xl text-stone-900 tracking-widest font-semibold">The Memories Archipelago</h3>
+                        <p class="text-[0.55rem] text-[#ff4b72] tracking-[0.25em] uppercase font-bold mt-1">Scroll to float the crystals • Tap to reveal</p>
                     </div>
 
-                    <div class="parallax-deck-container py-8" id="deckContainer">
+                    <div class="parallax-deck-container py-4" id="deckContainer">
                         
-                        <div class="parallax-node justify-start" data-speed="25" data-rot="-4">
+                        <div class="parallax-node justify-center sm:justify-start" data-speed="20" data-rot="-3">
                             <div class="parallax-card-body perspective group">
                                 <div class="glow-aura"></div>
                                 <div class="card-inner preserve-3d w-full h-full relative duration-700">
-                                    <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/80 to-[#ffdaeb]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(253,164,186,0.22)]">
-                                        <div class="w-full h-3/5 bg-white/55 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.85),_0_8px_20px_rgba(253,164,186,0.12)] transition-all group-hover:scale-[1.03] group-hover:bg-white/70 duration-300">🌸</div>
-                                        <div class="text-center py-2">
-                                            <p class="font-serif-elegant text-xl text-stone-900 font-extrabold tracking-widest">Quiet Strength</p>
-                                            <p class="text-[0.6rem] text-rose-500 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-[#ffeedd]/70 to-[#ffdaeb]/85 p-5 rounded-[2rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_15px_35px_rgba(253,164,186,0.15)]">
+                                        <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[1.5rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),_0_6px_15px_rgba(253,164,186,0.08)] transition-all group-hover:scale-[1.01] duration-300">🌸</div>
+                                        <div class="text-center py-1">
+                                            <p class="font-serif-elegant text-lg text-stone-900 font-bold tracking-wider">Quiet Strength</p>
+                                            <p class="text-[0.55rem] text-rose-500 uppercase font-bold tracking-wider mt-0.5">Tap to Open</p>
                                         </div>
                                     </div>
-                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff5f2] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
-                                        <p class="leading-relaxed font-semibold font-serif-elegant italic text-stone-800 text-lg mb-3">Quiet Strength</p>
-                                        <p class="leading-relaxed font-normal text-xs text-stone-600 px-1">You are always calm and polite. Even though in the beginning I assumed that you were rude, I am glad that I was proved wrong.</p>
+                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff5f2] p-5 rounded-[2rem] border border-white/90 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-stone-700 shadow-xl">
+                                        <p class="leading-relaxed font-bold font-serif-elegant italic text-stone-800 text-base mb-2">Quiet Strength</p>
+                                        <p class="leading-relaxed text-[0.7rem] text-stone-600 px-1">You are always calm and polite. Even though in the beginning I assumed that you were rude, I am glad that I was proved wrong.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="parallax-node justify-end" data-speed="12" data-rot="3">
+                        <div class="parallax-node justify-center sm:justify-end" data-speed="10" data-rot="2">
                             <div class="parallax-card-body perspective group">
                                 <div class="glow-aura"></div>
                                 <div class="card-inner preserve-3d w-full h-full relative duration-700">
-                                    <div class="absolute inset-0 bg-gradient-to-b from-[#e8f0fe]/80 to-[#fdf4e5]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(251,191,36,0.18)]">
-                                        <div class="w-full h-3/5 bg-white/55 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.85),_0_8px_20px_rgba(251,191,36,0.08)] transition-all group-hover:scale-[1.03] group-hover:bg-white/70 duration-300">🤍</div>
-                                        <div class="text-center py-2">
-                                            <p class="font-serif-elegant text-xl text-stone-900 font-extrabold tracking-widest">Safe Haven</p>
-                                            <p class="text-[0.6rem] text-amber-600 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-[#e8f0fe]/70 to-[#fdf4e5]/85 p-5 rounded-[2rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_15px_35px_rgba(251,191,36,0.12)]">
+                                        <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[1.5rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),_0_6px_15px_rgba(251,191,36,0.06)] transition-all group-hover:scale-[1.01] duration-300">🤍</div>
+                                        <div class="text-center py-1">
+                                            <p class="font-serif-elegant text-lg text-stone-900 font-bold tracking-wider">Safe Haven</p>
+                                            <p class="text-[0.55rem] text-amber-600 uppercase font-bold tracking-wider mt-0.5">Tap to Open</p>
                                         </div>
                                     </div>
-                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fffbf2] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
-                                        <p class="leading-relaxed font-semibold font-serif-elegant italic text-stone-800 text-lg mb-3">Safe Haven</p>
-                                        <p class="leading-relaxed font-normal text-xs text-stone-600 px-1">Whenever I needed to complain about small things, you always listened. You were so patient and kind, and you always made me feel safe.</p>
+                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fffbf2] p-5 rounded-[2rem] border border-white/90 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-stone-700 shadow-xl">
+                                        <p class="leading-relaxed font-bold font-serif-elegant italic text-stone-800 text-base mb-2">Safe Haven</p>
+                                        <p class="leading-relaxed text-[0.7rem] text-stone-600 px-1">Whenever I needed to complain about small things, you always listened. You were so patient and kind, and you always made me feel safe.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="parallax-node justify-start" data-speed="20" data-rot="-3">
+                        <div class="parallax-node justify-center sm:justify-start" data-speed="15" data-rot="-2">
                             <div class="parallax-card-body perspective group">
                                 <div class="glow-aura"></div>
                                 <div class="card-inner preserve-3d w-full h-full relative duration-700">
-                                    <div class="absolute inset-0 bg-gradient-to-b from-[#f3e8ff]/80 to-[#ffe5ec]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(168,85,247,0.18)]">
-                                        <div class="w-full h-3/5 bg-white/55 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.85),_0_8px_20px_rgba(168,85,247,0.08)] transition-all group-hover:scale-[1.03] group-hover:bg-white/70 duration-300">🍂</div>
-                                        <div class="text-center py-2">
-                                            <p class="font-serif-elegant text-xl text-stone-900 font-extrabold tracking-widest">Always There</p>
-                                            <p class="text-[0.6rem] text-purple-500 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-[#f3e8ff]/70 to-[#ffe5ec]/85 p-5 rounded-[2rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_15px_35px_rgba(168,85,247,0.12)]">
+                                        <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[1.5rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),_0_6px_15px_rgba(168,85,247,0.06)] transition-all group-hover:scale-[1.01] duration-300">🍂</div>
+                                        <div class="text-center py-1">
+                                            <p class="font-serif-elegant text-lg text-stone-900 font-bold tracking-wider">Always There</p>
+                                            <p class="text-[0.55rem] text-purple-500 uppercase font-bold tracking-wider mt-0.5">Tap to Open</p>
                                         </div>
                                     </div>
-                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff5f8] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
-                                        <p class="leading-relaxed font-semibold font-serif-elegant italic text-stone-800 text-lg mb-3">Always There</p>
-                                        <p class="leading-relaxed font-normal text-xs text-stone-600 px-1">No matter what happens, you are always a true and loyal friend. Knowing you are with me makes me very happy.</p>
+                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#fff5f8] p-5 rounded-[2rem] border border-white/90 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-stone-700 shadow-xl">
+                                        <p class="leading-relaxed font-bold font-serif-elegant italic text-stone-800 text-base mb-2">Always There</p>
+                                        <p class="leading-relaxed text-[0.7rem] text-stone-600 px-1">No matter what happens, you are always a true and loyal friend. Knowing you are with me makes me very happy.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="parallax-node justify-end" data-speed="10" data-rot="4">
+                        <div class="parallax-node justify-center sm:justify-end" data-speed="8" data-rot="3">
                             <div class="parallax-card-body perspective group">
                                 <div class="glow-aura"></div>
                                 <div class="card-inner preserve-3d w-full h-full relative duration-700">
-                                    <div class="absolute inset-0 bg-gradient-to-b from-[#e0f2fe]/80 to-[#fae8ff]/95 p-5 rounded-[2.5rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_20px_45px_rgba(14,165,233,0.18)]">
-                                        <div class="w-full h-3/5 bg-white/55 backdrop-blur-md rounded-[2rem] flex items-center justify-center text-5xl shadow-[inset_0_2px_8px_rgba(255,255,255,0.85),_0_8px_20px_rgba(14,165,233,0.08)] transition-all group-hover:scale-[1.03] group-hover:bg-white/70 duration-300">🪐</div>
-                                        <div class="text-center py-2">
-                                            <p class="font-serif-elegant text-xl text-stone-900 font-extrabold tracking-widest">Beautiful Grace</p>
-                                            <p class="text-[0.6rem] text-sky-500 uppercase font-bold tracking-widest mt-1">Tap to Open</p>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-[#e0f2fe]/70 to-[#fae8ff]/85 p-5 rounded-[2rem] flex flex-col justify-between backface-hidden border border-white/90 shadow-[0_15px_35px_rgba(14,165,233,0.12)]">
+                                        <div class="w-full h-3/5 bg-white/50 backdrop-blur-md rounded-[1.5rem] flex items-center justify-center text-4xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),_0_6px_15px_rgba(14,165,233,0.06)] transition-all group-hover:scale-[1.01] duration-300">🪐</div>
+                                        <div class="text-center py-1">
+                                            <p class="font-serif-elegant text-lg text-stone-900 font-bold tracking-wider">Beautiful Grace</p>
+                                            <p class="text-[0.55rem] text-sky-500 uppercase font-bold tracking-wider mt-0.5">Tap to Open</p>
                                         </div>
                                     </div>
-                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#f5fbf2] p-6 rounded-[2.5rem] border border-white/95 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-xs text-stone-700 shadow-2xl">
-                                        <p class="leading-relaxed font-semibold font-serif-elegant italic text-stone-800 text-lg mb-3">Beautiful Grace</p>
-                                        <p class="leading-relaxed font-normal text-xs text-stone-600 px-1">You face every problem with so much patience and calm. You are a truly wonderful friend.</p>
+                                    <div class="absolute inset-0 bg-gradient-to-br from-white to-[#f5fbf2] p-5 rounded-[2rem] border border-white/90 flex flex-col justify-center items-center rotate-y-180 backface-hidden text-center text-stone-700 shadow-xl">
+                                        <p class="leading-relaxed font-bold font-serif-elegant italic text-stone-800 text-base mb-2">Beautiful Grace</p>
+                                        <p class="leading-relaxed text-[0.7rem] text-stone-600 px-1">You face every problem with so much patience and calm. You are a truly wonderful friend.</p>
                                     </div>
                                 </div>
                             </div>
@@ -711,36 +707,36 @@
                 </section>
             </div>
 
-            <div class="lg:col-span-5 space-y-10 lg:sticky lg:top-8" id="mainRightCol">
-                <section class="glass-premium p-5 sm:p-7 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-3xl premium-border-glowing">
-                    <div class="absolute -top-16 -right-16 w-32 h-32 bg-amber-100/20 rounded-full filter blur-2xl"></div>
-                    <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-widest">Cosmic Sync</h3>
-                    <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-6">We love the same music!</p>
+            <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-8" id="mainRightCol">
+                <section class="glass-premium p-5 sm:p-6 rounded-[2rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing">
+                    <div class="absolute -top-16 -right-16 w-28 h-28 bg-amber-100/10 rounded-full filter blur-2xl"></div>
+                    <h3 class="font-serif-elegant text-xl text-stone-900 mb-0.5 tracking-wider font-semibold">Cosmic Sync</h3>
+                    <p class="text-[0.55rem] text-[#ff4b72] tracking-[0.25em] uppercase font-bold mb-6">We love the same music!</p>
 
-                    <div class="flex flex-col gap-5 mb-6 transition-all duration-500" id="cosmicPlaySection">
-                        <div class="flex flex-col sm:flex-row items-center justify-center gap-5 w-full">
-                            <div class="relative w-28 h-28 flex items-center justify-center group flex-shrink-0 cursor-pointer animate-float" id="vinylPlayer">
-                                <div class="absolute -inset-2 rounded-full bg-transparent vinyl-glow" id="vinylOuterGlow"></div>
-                                <div class="absolute inset-0 rounded-full border-4 border-stone-800 shadow-xl flex items-center justify-center vinyl-metallic" id="vinylRecord">
-                                    <div class="w-20 h-20 rounded-full border border-stone-700/20 opacity-40"></div>
-                                    <div class="w-12 h-12 rounded-full border border-stone-800 opacity-60 animate-pulse"></div>
-                                    <div class="absolute w-8 h-8 rounded-full bg-gradient-to-tr from-amber-200 to-amber-400 border-4 border-stone-950 flex items-center justify-center">
-                                        <div class="w-1.5 h-1.5 rounded-full bg-stone-950"></div>
+                    <div class="flex flex-col gap-4 mb-5 transition-all duration-500" id="cosmicPlaySection">
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+                            <div class="relative w-24 h-24 flex items-center justify-center group flex-shrink-0 cursor-pointer animate-float" id="vinylPlayer">
+                                <div class="absolute -inset-1 rounded-full bg-transparent vinyl-glow" id="vinylOuterGlow"></div>
+                                <div class="absolute inset-0 rounded-full border-4 border-stone-850 shadow-lg flex items-center justify-center vinyl-metallic" id="vinylRecord">
+                                    <div class="w-16 h-16 rounded-full border border-stone-800/10 opacity-30"></div>
+                                    <div class="w-10 h-10 rounded-full border border-stone-900 opacity-50 animate-pulse"></div>
+                                    <div class="absolute w-7 h-7 rounded-full bg-gradient-to-tr from-amber-200 to-amber-300 border-2 border-stone-950 flex items-center justify-center shadow-inner">
+                                        <div class="w-1 h-1 rounded-full bg-stone-950"></div>
                                     </div>
                                 </div>
-                                <div class="absolute right-0 top-0 w-10 h-14 origin-top-right transform translate-x-2 -translate-y-2 transition-transform duration-700 ease-out" id="tonearm" style="transform: rotate(-15deg);">
+                                <div class="absolute right-0 top-0 w-8 h-12 origin-top-right transform translate-x-1 -translate-y-1 transition-transform duration-700 ease-out" id="tonearm" style="transform: rotate(-15deg);">
                                     <svg viewBox="0 0 50 100" class="w-full h-full filter drop-shadow-md">
-                                        <path d="M 40,10 L 15,10 L 15,65 L 12,75" stroke="#dfba9b" stroke-width="3" fill="none" stroke-linecap="round"/>
-                                        <circle cx="40" cy="10" r="6" fill="#a87f5d"/>
-                                        <rect x="6" y="73" width="12" height="15" rx="2" fill="#5c4033"/>
+                                        <path d="M 40,10 L 15,10 L 15,65 L 12,75" stroke="#dfba9b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                        <circle cx="40" cy="10" r="5" fill="#a87f5d"/>
+                                        <rect x="6" y="73" width="10" height="12" rx="1.5" fill="#5c4033"/>
                                     </svg>
                                 </div>
                             </div>
 
-                            <div class="flex flex-col items-center sm:items-start space-y-1 text-center sm:text-left">
-                                <span id="currentTrackName" class="font-serif-elegant text-sm font-semibold text-stone-800">Tap to play a song</span>
-                                <span class="text-[0.6rem] text-stone-400 uppercase tracking-widest font-bold">Heena & You</span>
-                                <div class="flex gap-1.5 h-6 items-end mt-1.5">
+                            <div class="flex flex-col items-center sm:items-start space-y-0.5 text-center sm:text-left">
+                                <span id="currentTrackName" class="font-serif-elegant text-xs font-semibold text-stone-800">Tap to play a song</span>
+                                <span class="text-[0.55rem] text-stone-450 uppercase tracking-widest font-bold">Heena & You</span>
+                                <div class="flex gap-1 h-5 items-end mt-1">
                                     <div class="w-1 bg-rose-400 rounded-full h-1" id="mbar1"></div>
                                     <div class="w-1 bg-amber-400 rounded-full h-1" id="mbar2"></div>
                                     <div class="w-1 bg-purple-400 rounded-full h-1" id="mbar3"></div>
@@ -749,64 +745,64 @@
                             </div>
                         </div>
 
-                        <div id="lyricsContainer" class="hidden w-full max-h-0 opacity-0 overflow-hidden transition-all duration-700 ease-in-out glass-card rounded-2xl border border-stone-200/50 flex flex-col p-3">
+                        <div id="lyricsContainer" class="hidden w-full max-h-0 opacity-0 overflow-hidden transition-all duration-500 ease-in-out glass-card rounded-xl border border-stone-200/40 flex flex-col p-3">
                             <div class="flex justify-between items-center mb-1 px-1">
-                                <span class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-rose-500">Live Lyrics</span>
+                                <span class="text-[0.55rem] font-bold uppercase tracking-[0.2em] text-rose-500">Live Lyrics</span>
                                 <div class="flex items-center gap-1">
-                                    <button id="decreaseLyricsText" class="w-5 h-5 rounded-full bg-white/50 hover:bg-white flex items-center justify-center text-stone-700 transition-all text-[0.6rem]" title="Decrease Size">
+                                    <button id="decreaseLyricsText" class="w-4 h-4 rounded-full bg-white/40 hover:bg-white flex items-center justify-center text-stone-700 transition-all text-[0.55rem]">
                                         <i class="fa-solid fa-minus"></i>
                                     </button>
-                                    <button id="increaseLyricsText" class="w-5 h-5 rounded-full bg-white/50 hover:bg-white flex items-center justify-center text-stone-700 transition-all text-[0.6rem]" title="Increase Size">
+                                    <button id="increaseLyricsText" class="w-4 h-4 rounded-full bg-white/40 hover:bg-white flex items-center justify-center text-stone-700 transition-all text-[0.55rem]">
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
-                            <div id="lyricsScrollWindow" class="overflow-y-auto scroll-smooth flex flex-col items-center justify-start py-6 min-h-[120px] max-h-[350px] w-full" style="resize: vertical; overflow-y: auto; height: 150px;">
-                                <div id="lyricsHolder" class="space-y-4 text-center w-full px-1 font-serif-elegant italic text-sm text-stone-600"></div>
+                            <div id="lyricsScrollWindow" class="overflow-y-auto scroll-smooth flex flex-col items-center justify-start py-4 min-h-[100px] max-h-[300px] w-full" style="resize: vertical; height: 130px;">
+                                <div id="lyricsHolder" class="space-y-3 text-center w-full px-1 font-serif-elegant italic text-xs md:text-sm text-stone-600"></div>
                             </div>
-                            <div class="text-[0.5rem] text-stone-400 text-center mt-1.5 pointer-events-none">Drag corner to resize screen</div>
+                            <div class="text-[0.5rem] text-stone-400 text-center mt-1 pointer-events-none">Drag corner to resize screen</div>
                         </div>
                     </div>
 
-                    <div class="space-y-2 text-left" id="trackListContainer"></div>
+                    <div class="space-y-1.5 text-left" id="trackListContainer"></div>
 
-                    <div class="mt-5 pt-5 border-t border-white/20">
-                        <button id="showAddTrackBtn" class="w-full py-2.5 px-4 bg-white/35 hover:bg-white/50 border border-white/40 rounded-xl text-[0.65rem] font-bold tracking-wider uppercase text-stone-700 transition-all duration-300">
+                    <div class="mt-4 pt-4 border-t border-white/20">
+                        <button id="showAddTrackBtn" class="w-full py-2 px-3 bg-white/25 hover:bg-white/40 border border-white/30 rounded-lg text-[0.55rem] font-bold tracking-wider uppercase text-stone-700 transition-all duration-300">
                             + Add Your Own Song
                         </button>
-                        <div id="addTrackForm" class="hidden mt-3 space-y-3 p-3.5 glass-card rounded-2xl transition-all duration-300 text-left">
+                        <div id="addTrackForm" class="hidden mt-3 space-y-2.5 p-3 glass-card rounded-xl transition-all duration-300 text-left">
                             <div>
-                                <label class="block text-[0.6rem] font-bold uppercase text-stone-500 mb-1">Song Name</label>
-                                <input type="text" id="newTrackName" placeholder="e.g., Cozy Evening" class="w-full px-3 py-2 bg-white/80 border border-stone-200 rounded-xl text-xs focus:outline-none focus:border-amber-300">
+                                <label class="block text-[0.55rem] font-bold uppercase text-stone-550 mb-0.5">Song Name</label>
+                                <input type="text" id="newTrackName" placeholder="e.g., Cozy Evening" class="w-full px-2.5 py-1.5 bg-white/80 border border-stone-200 rounded-lg text-sm focus:outline-none focus:border-amber-300">
                             </div>
                             <div>
-                                <label class="block text-[0.6rem] font-bold uppercase text-stone-500 mb-1">Select Audio File</label>
-                                <input type="file" id="newTrackAudio" accept="audio/*" class="w-full text-[0.65rem] text-stone-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-[0.6rem] file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100 cursor-pointer">
+                                <label class="block text-[0.55rem] font-bold uppercase text-stone-550 mb-0.5">Select Audio File</label>
+                                <input type="file" id="newTrackAudio" accept="audio/*" class="w-full text-[0.55rem] text-stone-500 file:mr-2 file:py-1 file:px-2 file:rounded-md file:border-0 file:text-[0.55rem] file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100 cursor-pointer">
                             </div>
                             <div>
-                                <label class="block text-[0.6rem] font-bold uppercase text-stone-500 mb-1">Select Synced Lyrics (.lrc / .txt)</label>
-                                <input type="file" id="newTrackLyrics" accept=".lrc,.txt" class="w-full text-[0.65rem] text-stone-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-[0.6rem] file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100 cursor-pointer">
+                                <label class="block text-[0.55rem] font-bold uppercase text-stone-550 mb-0.5">Select Synced Lyrics (.lrc / .txt)</label>
+                                <input type="file" id="newTrackLyrics" accept=".lrc,.txt" class="w-full text-[0.55rem] text-stone-500 file:mr-2 file:py-1 file:px-2 file:rounded-md file:border-0 file:text-[0.55rem] file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100 cursor-pointer">
                             </div>
-                            <button id="saveTrackBtn" class="w-full py-2 bg-stone-900 text-white rounded-xl text-[0.65rem] font-bold tracking-wider uppercase transition-all duration-300">
+                            <button id="saveTrackBtn" class="w-full py-1.5 bg-stone-900 hover:bg-stone-850 text-white rounded-lg text-[0.55rem] font-bold tracking-wider uppercase transition-all duration-300">
                                 Add Song
                             </button>
                         </div>
                     </div>
                 </section>
 
-                <section class="glass-premium p-6 sm:p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-3xl premium-border-glowing">
-                    <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-amber-200/30 rounded-full filter blur-2xl"></div>
-                    <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-widest">Vial of Luminescence</h3>
-                    <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-8">Tap the bottle to see a sweet note</p>
+                <section class="glass-premium p-6 sm:p-7 rounded-[2rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing">
+                    <div class="absolute -bottom-16 -right-16 w-28 h-28 bg-amber-100/15 rounded-full filter blur-2xl"></div>
+                    <h3 class="font-serif-elegant text-xl text-stone-900 mb-0.5 tracking-wider font-semibold">Vial of Luminescence</h3>
+                    <p class="text-[0.55rem] text-[#ff4b72] tracking-[0.25em] uppercase font-bold mb-6">Tap the bottle to see a sweet note</p>
                     
-                    <div class="relative w-32 h-40 mx-auto cursor-pointer flex items-center justify-center group" id="loveJar">
-                        <div id="bubbleContainer" class="absolute inset-0 w-20 h-28 mx-auto overflow-hidden rounded-b-[1.8rem] bottom-4 pointer-events-none z-10"></div>
-                        <svg viewBox="0 0 100 130" class="w-full h-full drop-shadow-xl transition-all duration-500 group-hover:scale-105 relative z-20">
+                    <div class="relative w-28 h-36 mx-auto cursor-pointer flex items-center justify-center group" id="loveJar">
+                        <div id="bubbleContainer" class="absolute inset-0 w-16 h-24 mx-auto overflow-hidden rounded-b-2xl bottom-3 pointer-events-none z-10"></div>
+                        <svg viewBox="0 0 100 130" class="w-full h-full drop-shadow-lg transition-all duration-500 group-hover:scale-102 relative z-20">
                             <defs>
                                 <linearGradient id="vialGlassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="rgba(255,255,255,0.8)"/>
-                                    <stop offset="50%" stop-color="rgba(255,255,255,0.2)"/>
-                                    <stop offset="100%" stop-color="rgba(255,218,185,0.4)"/>
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+                                    <stop offset="50%" stop-color="rgba(255,255,255,0.15)"/>
+                                    <stop offset="100%" stop-color="rgba(255,218,185,0.3)"/>
                                 </linearGradient>
                                 <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stop-color="#f5e6d3"/>
@@ -814,49 +810,49 @@
                                     <stop offset="100%" stop-color="#a87f5d"/>
                                 </linearGradient>
                                 <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stop-color="rgba(253, 164, 186, 0.7)" />
-                                    <stop offset="100%" stop-color="rgba(251, 191, 36, 0.8)" />
+                                    <stop offset="0%" stop-color="rgba(253, 164, 186, 0.65)" />
+                                    <stop offset="100%" stop-color="rgba(251, 191, 36, 0.75)" />
                                 </linearGradient>
                                 <mask id="liquidMask">
                                     <path d="M 42,32 C 23,35 12,60 12,85 C 12,115 28,130 50,130 C 72,130 88,115 88,85 C 88,60 77,35 58,32 Z" fill="#ffffff" />
                                 </mask>
                             </defs>
-                            <rect x="40" y="10" width="20" height="8" rx="2" fill="url(#goldAcc)"/>
-                            <rect x="36" y="18" width="28" height="4" rx="1" fill="url(#goldAcc)"/>
-                            <path d="M 42,22 L 58,22 L 58,32 L 42,32 Z" fill="rgba(255,255,255,0.3)"/>
-                            <path d="M 42,32 C 23,35 12,60 12,85 C 12,115 28,130 50,130 C 72,130 88,115 88,85 C 88,60 77,35 58,32 Z" fill="url(#vialGlassGrad)" stroke="rgba(255,255,255,0.9)" stroke-width="2.5"/>
+                            <rect x="41" y="10" width="18" height="6" rx="1.5" fill="url(#goldAcc)"/>
+                            <rect x="37" y="16" width="26" height="3" rx="1" fill="url(#goldAcc)"/>
+                            <path d="M 42,19 L 58,19 L 58,32 L 42,32 Z" fill="rgba(255,255,255,0.25)"/>
+                            <path d="M 42,32 C 23,35 12,60 12,85 C 12,115 28,130 50,130 C 72,130 88,115 88,85 C 88,60 77,35 58,32 Z" fill="url(#vialGlassGrad)" stroke="rgba(255,255,255,0.85)" stroke-width="2"/>
                             
                             <g mask="url(#liquidMask)">
                                 <path id="liquidLevel" d="M -100,85 Q -75,80 -50,85 T 0,85 T 50,85 T 100,85 T 150,85 T 200,85 L 200,135 L -100,135 Z" fill="url(#liquidGrad)" />
                             </g>
 
-                            <path d="M 22,65 C 25,50 35,40 45,36" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-                            <circle cx="50" cy="95" r="11" fill="url(#goldAcc)" opacity="0.9"/>
-                            <path d="M 50,89 L 52,93 L 56,93 L 53,95 L 54,99 L 50,97 L 46,99 L 47,95 L 44,93 L 48,93 Z" fill="#fff"/>
+                            <path d="M 22,65 C 25,50 35,40 45,36" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                            <circle cx="50" cy="95" r="9" fill="url(#goldAcc)" opacity="0.85"/>
+                            <path d="M 50,90 L 51.5,93.5 L 55,93.5 L 52.2,95 L 53,98.5 L 50,96.8 L 47,98.5 L 47.8,95 L 45,93.5 L 48.5,93.5 Z" fill="#fff"/>
                         </svg>
                         <div id="jarSpark" class="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
-                            <i class="fa-solid fa-sparkles text-4xl text-amber-300 opacity-0 transform scale-50 transition-all duration-700"></i>
+                            <i class="fa-solid fa-sparkles text-3xl text-amber-300 opacity-0 transform scale-50 transition-all duration-700"></i>
                         </div>
                     </div>
 
-                    <div id="jarNote" class="mt-6 p-5 bg-gradient-to-br from-white/95 to-white/60 border border-amber-100 rounded-[1.8rem] text-sm text-stone-700 leading-relaxed font-serif-elegant italic h-24 flex items-center justify-center text-center transition-all duration-300 shadow-inner">
+                    <div id="jarNote" class="mt-5 p-4 bg-gradient-to-br from-white/95 to-white/60 border border-amber-100 rounded-[1.5rem] text-xs md:text-sm text-stone-700 leading-relaxed font-serif-elegant italic h-20 flex items-center justify-center text-center transition-all duration-300 shadow-inner">
                         Tap the bottle to see a sweet message of appreciation.
                     </div>
                 </section>
 
-                <section class="glass-premium p-6 sm:p-8 rounded-[2.5rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-3xl premium-border-glowing">
-                    <h3 class="font-serif-elegant text-2xl text-stone-900 mb-1 tracking-widest">Harp of Whispers</h3>
-                    <p class="text-[0.6rem] text-[#ff4b72] tracking-[0.3em] uppercase font-extrabold mb-6">Swipe or tap the chimes to hear celestial melodies</p>
-                    <div class="relative h-44 px-2 select-none" id="harpPhysicsContainer">
+                <section class="glass-premium p-6 sm:p-7 rounded-[2rem] text-center relative overflow-hidden transition-all duration-500 hover:shadow-2xl premium-border-glowing">
+                    <h3 class="font-serif-elegant text-xl text-stone-900 mb-0.5 tracking-wider font-semibold">Harp of Whispers</h3>
+                    <p class="text-[0.55rem] text-[#ff4b72] tracking-[0.25em] uppercase font-bold mb-6">Swipe or tap the chimes to hear celestial melodies</p>
+                    <div class="relative h-40 px-2 select-none" id="harpPhysicsContainer">
                         <svg class="spring-string-container" id="harpStringsSvg" viewBox="0 0 400 180" preserveAspectRatio="none">
-                            <path class="harp-string" d="M 40,0 Q 40,90 40,180" stroke="rgba(212, 175, 55, 0.45)" stroke-width="2.5" fill="none" data-index="0" data-note="261.63"/>
-                            <path class="harp-string" d="M 104,0 Q 104,90 104,180" stroke="rgba(212, 175, 55, 0.5)" stroke-width="2.5" fill="none" data-index="1" data-note="293.66"/>
-                            <path class="harp-string" d="M 168,0 Q 168,90 168,180" stroke="rgba(212, 175, 55, 0.55)" stroke-width="2.5" fill="none" data-index="2" data-note="329.63"/>
-                            <path class="harp-string" d="M 232,0 Q 232,90 232,180" stroke="rgba(212, 175, 55, 0.6)" stroke-width="2.5" fill="none" data-index="3" data-note="392.00"/>
-                            <path class="harp-string" d="M 296,0 Q 296,90 296,180" stroke="rgba(212, 175, 55, 0.65)" stroke-width="2.5" fill="none" data-index="4" data-note="440.00"/>
-                            <path class="harp-string" d="M 360,0 Q 360,90 360,180" stroke="rgba(212, 175, 55, 0.7)" stroke-width="2.5" fill="none" data-index="5" data-note="523.25"/>
+                            <path class="harp-string" d="M 40,0 Q 40,90 40,180" stroke="rgba(212, 175, 55, 0.35)" stroke-width="2" fill="none" data-index="0" data-note="261.63"/>
+                            <path class="harp-string" d="M 104,0 Q 104,90 104,180" stroke="rgba(212, 175, 55, 0.4)" stroke-width="2" fill="none" data-index="1" data-note="293.66"/>
+                            <path class="harp-string" d="M 168,0 Q 168,90 168,180" stroke="rgba(212, 175, 55, 0.45)" stroke-width="2" fill="none" data-index="2" data-note="329.63"/>
+                            <path class="harp-string" d="M 232,0 Q 232,90 232,180" stroke="rgba(212, 175, 55, 0.5)" stroke-width="2" fill="none" data-index="3" data-note="392.00"/>
+                            <path class="harp-string" d="M 296,0 Q 296,90 296,180" stroke="rgba(212, 175, 55, 0.55)" stroke-width="2" fill="none" data-index="4" data-note="440.00"/>
+                            <path class="harp-string" d="M 360,0 Q 360,90 360,180" stroke="rgba(212, 175, 55, 0.6)" stroke-width="2" fill="none" data-index="5" data-note="523.25"/>
                         </svg>
-                        <div class="absolute inset-x-0 bottom-1 flex justify-between px-3 text-[0.65rem] text-amber-800 font-extrabold tracking-widest pointer-events-none">
+                        <div class="absolute inset-x-0 bottom-1 flex justify-between px-3 text-[0.6rem] text-amber-800 font-extrabold tracking-widest pointer-events-none opacity-80">
                             <span>C</span>
                             <span>D</span>
                             <span>E</span>
@@ -869,10 +865,10 @@
             </div>
         </div>
 
-        <footer class="mt-24 text-center select-none" id="mainFooter">
-            <div class="w-12 h-[1px] bg-stone-300 mx-auto mb-4"></div>
-            <p class="text-[0.6rem] tracking-[0.45em] text-rose-500 uppercase font-extrabold">Exclusively for Heena</p>
-            <p class="text-xs font-serif-elegant italic text-stone-500 mt-1">A beautiful friendship glowing through time.</p>
+        <footer class="mt-20 text-center select-none" id="mainFooter">
+            <div class="w-10 h-[1px] bg-stone-300 mx-auto mb-3"></div>
+            <p class="text-[0.55rem] tracking-[0.4em] text-rose-500 uppercase font-extrabold">Exclusively for Heena</p>
+            <p class="text-xs font-serif-elegant italic text-stone-500 mt-0.5">A beautiful friendship glowing through time.</p>
         </footer>
 
     </div>
@@ -894,6 +890,16 @@
                 audioFile: "Perfect.m4a",
                 lyricsFile: "Perfect.lrc"
             }
+        ];
+
+        const jarThoughts = [
+            "You are elegant because you treat everyone with quiet kindness.",
+            "You listen with your whole heart and make others feel important.",
+            "When things get stressful, your calm energy helps everyone feel safe.",
+            "Your warm laugh always makes people feel happy and relaxed.",
+            "You are a deeply loyal friend, Heena. I can trust you with anything.",
+            "Thank you for being so kind and making the world a sweeter place.",
+            "Your friendship is a safe place full of comfort and happiness."
         ];
 
         let audioCtx = null;
@@ -920,9 +926,23 @@
                 feedbackNode.connect(delayNode);
                 delayNode.connect(audioCtx.destination);
             } catch (e) {
-                console.warn("AudioContext failed to initialize on first interaction.", e);
+                console.warn("AudioContext failed to initialize.", e);
             }
         }
+
+        window.addEventListener('click', () => {
+            initAudio();
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }, { once: true });
+
+        window.addEventListener('touchstart', () => {
+            initAudio();
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }, { once: true });
 
         let vinylOsc = null;
         let vinylGain = null;
@@ -968,17 +988,17 @@
                 const newIndex = index + 1;
                 const indexStr = newIndex < 10 ? '0' + newIndex : newIndex;
                 const btn = document.createElement('button');
-                btn.className = "track-btn w-full p-3.5 bg-white/60 hover:bg-white/90 border border-white/60 hover:border-amber-200 rounded-[1.25rem] flex items-center justify-between transition-all duration-300 group shadow-sm hover:shadow interactive-scale";
+                btn.className = "track-btn w-full p-3 bg-white/60 hover:bg-white/90 border border-white/60 hover:border-amber-200 rounded-xl flex items-center justify-between transition-all duration-300 group shadow-sm hover:shadow-md interactive-scale";
                 btn.setAttribute('data-file', track.audioFile);
                 btn.setAttribute('data-lyrics-file', track.lyricsFile);
                 btn.setAttribute('data-name', track.name);
                 btn.innerHTML = `
                     <div class="flex items-center gap-3">
-                        <span class="text-xs font-serif-elegant text-stone-500 group-hover:text-amber-800">${indexStr}</span>
-                        <span class="text-xs font-bold text-stone-800">${track.name}</span>
+                        <span class="text-[0.65rem] font-serif-elegant text-stone-500 group-hover:text-amber-800">${indexStr}</span>
+                        <span class="text-[0.7rem] font-bold text-stone-800">${track.name}</span>
                     </div>
-                    <div class="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
-                        <i class="fa-solid fa-play text-[0.6rem] text-stone-400 group-hover:text-amber-600"></i>
+                    <div class="w-6 h-6 rounded-full bg-stone-100 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-play text-[0.55rem] text-stone-400 group-hover:text-amber-600"></i>
                     </div>
                 `;
                 container.appendChild(btn);
@@ -1098,6 +1118,7 @@
         let particles = [];
         let mouseX = 0;
         let mouseY = 0;
+        let animationFrameId = null;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -1110,29 +1131,29 @@
             constructor(x, y, colorType, customSpeedX = null, customSpeedY = null) {
                 this.x = x;
                 this.y = y;
-                this.size = Math.random() * 3.5 + 1.5;
-                this.speedX = customSpeedX !== null ? customSpeedX : Math.random() * 4 - 2;
-                this.speedY = customSpeedY !== null ? customSpeedY : Math.random() * -4 - 1.5;
+                this.size = Math.random() * 3 + 1.2;
+                this.speedX = customSpeedX !== null ? customSpeedX : Math.random() * 3.5 - 1.75;
+                this.speedY = customSpeedY !== null ? customSpeedY : Math.random() * -3.5 - 1.2;
                 
                 const r = Math.floor(Math.random() * 3);
                 if (colorType === 'gold') {
                     this.color = r === 0 ? 'rgba(251, 191, 36, 0.95)' : r === 1 ? 'rgba(253, 186, 116, 0.9)' : 'rgba(255, 255, 255, 0.98)';
                 } else if (colorType === 'smoke') {
-                    this.color = 'rgba(145, 135, 130, 0.25)';
-                    this.size = Math.random() * 7 + 4;
-                    this.speedX = Math.random() * 0.8 - 0.4;
-                    this.speedY = Math.random() * -0.9 - 0.4;
+                    this.color = 'rgba(145, 135, 130, 0.2)';
+                    this.size = Math.random() * 6 + 3;
+                    this.speedX = Math.random() * 0.6 - 0.3;
+                    this.speedY = Math.random() * -0.8 - 0.3;
                 } else {
                     this.color = r === 0 ? 'rgba(244, 63, 94, 0.9)' : r === 1 ? 'rgba(216, 180, 254, 0.9)' : 'rgba(253, 186, 116, 0.9)';
                 }
                 
                 this.alpha = 1;
-                this.decay = Math.random() * 0.01 + 0.007;
+                this.decay = Math.random() * 0.012 + 0.008;
                 this.rotation = Math.random() * Math.PI * 2;
-                this.rotationSpeed = Math.random() * 0.08 - 0.04;
+                this.rotationSpeed = Math.random() * 0.06 - 0.03;
             }
             update() {
-                this.x += this.speedX + Math.sin(this.y * 0.008 + this.rotation) * 0.4;
+                this.x += this.speedX + Math.sin(this.y * 0.008 + this.rotation) * 0.3;
                 this.y += this.speedY;
                 if (this.color !== 'rgba(145, 135, 130, 0.25)') {
                     this.speedY += 0.015;
@@ -1150,8 +1171,8 @@
                 if (Math.random() > 0.5) {
                     ctx.beginPath();
                     for (let i = 0; i < 4; i++) {
-                        ctx.lineTo(0, -this.size * 1.2);
-                        ctx.lineTo(this.size * 0.3, -this.size * 0.3);
+                        ctx.lineTo(0, -this.size * 1.1);
+                        ctx.lineTo(this.size * 0.25, -this.size * 0.25);
                         ctx.rotate(Math.PI / 2);
                     }
                     ctx.closePath();
@@ -1165,35 +1186,42 @@
             }
         }
 
-        function createSparkles(x, y, count = 12, colorType = 'rainbow', customSX = null, customSY = null) {
+        function createSparkles(x, y, count = 10, colorType = 'rainbow', customSX = null, customSY = null) {
             for (let i = 0; i < count; i++) {
                 particles.push(new Sparkle(x, y, colorType, customSX, customSY));
+            }
+            if (!animationFrameId) {
+                animate();
             }
         }
 
         function animate() {
+            if (particles.length === 0) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                animationFrameId = null;
+                return;
+            }
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles = particles.filter(p => p.alpha > 0);
             particles.forEach(p => {
                 p.update();
                 p.draw();
             });
-            requestAnimationFrame(animate);
+            animationFrameId = requestAnimationFrame(animate);
         }
-        animate();
 
         window.addEventListener('pointermove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
-            if (Math.random() > 0.85) {
-                createSparkles(mouseX, mouseY, 1, 'gold', Math.random() * 0.3 - 0.15, Math.random() * 0.3 - 0.15);
+            if (Math.random() > 0.88) {
+                createSparkles(mouseX, mouseY, 1, 'gold', Math.random() * 0.2 - 0.1, Math.random() * 0.2 - 0.1);
             }
         });
 
         window.addEventListener('click', (e) => {
             if (e.target.closest('button') || e.target.closest('.candle') || e.target.closest('.parallax-card-body') || e.target.closest('#loveJar') || e.target.closest('#harpPhysicsContainer') || e.target.closest('#vinylPlayer') || e.target.closest('#cakeSection')) return;
             createSparkles(e.clientX, e.clientY, 8, 'gold');
-            playChime(600 + Math.random() * 600, 'sine', 0.8, 0.1);
+            playChime(550 + Math.random() * 550, 'sine', 0.8, 0.08);
         });
 
         let introCanvas = document.getElementById('codeStreamCanvas');
@@ -1223,9 +1251,9 @@
                 this.x = Math.random() * (introCanvas ? introCanvas.width : 500);
                 this.y = Math.random() * -(introCanvas ? introCanvas.height : 500);
                 this.text = codeElementsPool[Math.floor(Math.random() * codeElementsPool.length)];
-                this.speed = Math.random() * 1.2 + 0.6;
-                this.fontSize = Math.random() * 9 + 11;
-                this.color = Math.random() > 0.5 ? 'rgba(236, 72, 153, 0.2)' : 'rgba(245, 158, 11, 0.2)';
+                this.speed = Math.random() * 1.0 + 0.5;
+                this.fontSize = Math.random() * 8 + 10;
+                this.color = Math.random() > 0.5 ? 'rgba(236, 72, 153, 0.15)' : 'rgba(245, 158, 11, 0.15)';
             }
             update() {
                 if (warpActive) {
@@ -1239,13 +1267,13 @@
             }
             draw() {
                 if (!introCtx) return;
-                introCtx.font = `${this.fontSize}px 'Plus Jakarta Sans', sans-serif`;
+                introCtx.font = `${this.fontSize}px 'Fira Code', monospace`;
                 introCtx.fillStyle = this.color;
                 introCtx.fillText(this.text, this.x, this.y);
             }
         }
 
-        for (let i = 0; i < 75; i++) {
+        for (let i = 0; i < 60; i++) {
             streamTokens.push(new CodeStreamToken());
         }
 
@@ -1270,7 +1298,7 @@
                 line.innerText = text;
                 container.appendChild(line);
                 container.scrollTop = container.scrollHeight;
-                playChime(350 + Math.random() * 500, 'triangle', 0.2, 0.05);
+                playChime(320 + Math.random() * 450, 'triangle', 0.2, 0.04);
             }, delay);
         }
 
@@ -1283,7 +1311,7 @@
                 document.querySelectorAll('.tab-content').forEach(pane => pane.classList.add('hidden'));
                 document.getElementById(target).classList.remove('hidden');
                 
-                playChime(440 + Math.random() * 220, 'sine', 0.15, 0.08);
+                playChime(400 + Math.random() * 200, 'sine', 0.12, 0.06);
             });
         });
 
@@ -1297,15 +1325,15 @@
             const bar = document.getElementById('compileProgressBar');
             gsap.to(bar, {
                 width: "100%",
-                duration: 2.2,
+                duration: 2.0,
                 ease: "power1.inOut"
             });
 
             addLogLine("> Initiating sequence compiler...", 100);
             addLogLine("> Resolving identity: Heena", 400);
             addLogLine("> Mounting quiet_strength, safe_haven modules...", 800);
-            addLogLine("> Success: Compiled friendship values to infinite.", 1300);
-            addLogLine("> Executing visual celebration process...", 1800);
+            addLogLine("> Success: Compiled friendship values to infinite.", 1200);
+            addLogLine("> Executing visual celebration process...", 1600);
 
             setTimeout(() => {
                 warpActive = true;
@@ -1315,9 +1343,9 @@
                 flash.classList.add('opacity-100');
 
                 gsap.to(window, {
-                    duration: 1.4,
+                    duration: 1.2,
                     onUpdate: () => {
-                        warpSpeed += 2.5;
+                        warpSpeed += 2.0;
                     },
                     ease: 'power3.in'
                 });
@@ -1332,48 +1360,49 @@
                             flash.classList.add('pointer-events-none');
                             flash.classList.remove('opacity-100');
                             ScrollTrigger.refresh();
+                            updateCandleRects();
                         }
                     });
 
                     transitionTimeline.to('#introScreen', {
                         opacity: 0,
-                        duration: 0.8,
+                        duration: 0.7,
                         ease: 'power2.inOut'
                     })
                     .fromTo('#mainContent',
                         { opacity: 0 },
-                        { opacity: 1, duration: 1.0, ease: 'power2.out' },
-                        '-=0.8'
+                        { opacity: 1, duration: 0.9, ease: 'power2.out' },
+                        '-=0.7'
                     )
                     .fromTo('#mainHeader', 
-                        { opacity: 0, y: -40 },
-                        { opacity: 1, y: 0, duration: 1.2, ease: 'power4.out' },
-                        '-=0.8'
+                        { opacity: 0, y: -30 },
+                        { opacity: 1, y: 0, duration: 1.0, ease: 'power4.out' },
+                        '-=0.7'
                     )
                     .fromTo('#mainLeftCol',
-                        { opacity: 0, x: -50 },
-                        { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' },
-                        '-=1.0'
+                        { opacity: 0, x: -40 },
+                        { opacity: 1, x: 0, duration: 1.0, ease: 'power3.out' },
+                        '-=0.9'
                     )
                     .fromTo('#mainRightCol',
-                        { opacity: 0, x: 50 },
-                        { opacity: 1, x: 0, duration: 1.2, ease: 'power3.out' },
-                        '-=1.2'
+                        { opacity: 0, x: 40 },
+                        { opacity: 1, x: 0, duration: 1.0, ease: 'power3.out' },
+                        '-=1.0'
                     );
 
                     setTimeout(() => {
                         playCelebrationMelody();
-                        createSparkles(window.innerWidth / 2, window.innerHeight / 2, 95, 'rainbow');
-                    }, 200);
+                        createSparkles(window.innerWidth / 2, window.innerHeight / 2, 80, 'rainbow');
+                    }, 150);
 
-                }, 1000);
+                }, 900);
 
-            }, 2300);
+            }, 2100);
         });
 
         document.getElementById('giftBoxContainer').addEventListener('click', (e) => {
-            createSparkles(e.clientX, e.clientY, 35, 'gold');
-            playChime(659.25, 'triangle', 1.0, 0.25, mainHarpGain);
+            createSparkles(e.clientX, e.clientY, 30, 'gold');
+            playChime(659.25, 'triangle', 0.8, 0.2, mainHarpGain);
         });
 
         const interactives = [
@@ -1392,65 +1421,95 @@
             const el = document.getElementById(item.id);
             if (el) {
                 el.addEventListener('click', (e) => {
-                    createSparkles(e.clientX, e.clientY, 15, 'rainbow');
-                    playChime(400 + Math.random() * 500, 'sine', 1.0, 0.15, mainHarpGain);
-                    addLogLine(item.log, 50);
+                    createSparkles(e.clientX, e.clientY, 12, 'rainbow');
+                    playChime(380 + Math.random() * 450, 'sine', 0.8, 0.12, mainHarpGain);
+                    addLogLine(item.log, 40);
                 });
             }
         });
 
         const cardTiltContainer = document.getElementById('ideContainer');
         if (cardTiltContainer) {
+            let ideRect = null;
+            function updateIdeRect() {
+                ideRect = cardTiltContainer.getBoundingClientRect();
+            }
+            window.addEventListener('resize', updateIdeRect);
+            cardTiltContainer.addEventListener('pointerenter', updateIdeRect);
+            cardTiltContainer.addEventListener('touchstart', updateIdeRect);
+
             window.addEventListener('pointermove', (e) => {
                 if (document.getElementById('introScreen').style.display === 'none') return;
-                const rect = cardTiltContainer.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                const factorX = x / rect.width;
-                const factorY = y / rect.height;
+                if (!ideRect) updateIdeRect();
+                const x = e.clientX - ideRect.left - ideRect.width / 2;
+                const y = e.clientY - ideRect.top - ideRect.height / 2;
+                const factorX = x / ideRect.width;
+                const factorY = y / ideRect.height;
                 gsap.to(cardTiltContainer, {
-                    rotateY: factorX * 8,
-                    rotateX: -factorY * 8,
-                    duration: 0.6,
-                    ease: 'power2.out'
+                    rotateY: factorX * 6,
+                    rotateX: -factorY * 6,
+                    duration: 0.5,
+                    ease: 'power2.out',
+                    transformPerspective: 1000
                 });
             });
         }
 
         let blownCandles = 0;
+        let candleRects = [];
+
+        function updateCandleRects() {
+            candleRects = [];
+            document.querySelectorAll('.candle').forEach(candle => {
+                const flame = candle.querySelector('.flame');
+                if (flame) {
+                    const rect = flame.getBoundingClientRect();
+                    candleRects.push({
+                        element: candle,
+                        flame: flame,
+                        left: rect.left,
+                        right: rect.right,
+                        top: rect.top,
+                        bottom: rect.bottom,
+                        width: rect.width,
+                        height: rect.height
+                    });
+                }
+            });
+        }
+        window.addEventListener('resize', updateCandleRects);
         
         function triggerWishMessage() {
             setTimeout(() => {
                 playCelebrationMelody();
                 document.getElementById('wishMessage').classList.remove('hidden');
-                for (let i = 0; i < 5; i++) {
+                for (let i = 0; i < 4; i++) {
                     setTimeout(() => {
-                        createSparkles(window.innerWidth / 2, window.innerHeight / 3, 40, 'rainbow');
+                        createSparkles(window.innerWidth / 2, window.innerHeight / 3, 35, 'rainbow');
                     }, i * 200);
                 }
-            }, 400);
+            }, 300);
         }
 
         const checkBlowInteractions = (clientX, clientY) => {
-            document.querySelectorAll('.candle').forEach(candle => {
-                const flame = candle.querySelector('.flame');
-                if (flame && !flame.classList.contains('hidden')) {
-                    const rect = flame.getBoundingClientRect();
-                    const padding = 15;
-                    if (clientX >= rect.left - padding && clientX <= rect.right + padding &&
-                        clientY >= rect.top - padding && clientY <= rect.bottom + padding) {
-                        gsap.to(flame, {
+            const padding = 20;
+            if (candleRects.length === 0) updateCandleRects();
+            candleRects.forEach(c => {
+                if (!c.flame.classList.contains('hidden')) {
+                    if (clientX >= c.left - padding && clientX <= c.right + padding &&
+                        clientY >= c.top - padding && clientY <= c.bottom + padding) {
+                        gsap.to(c.flame, {
                             scale: 0,
                             opacity: 0,
-                            duration: 0.5,
-                            ease: "back.in(1.7)",
+                            duration: 0.4,
+                            ease: "back.in(1.5)",
                             onComplete: () => {
-                                flame.classList.add('hidden');
+                                c.flame.classList.add('hidden');
                             }
                         });
-                        createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 30, 'smoke');
-                        createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 20, 'gold');
-                        playChime(587.33, 'triangle', 1.2, 0.18, mainHarpGain);
+                        createSparkles(c.left + c.width / 2, c.top + c.height / 2, 25, 'smoke');
+                        createSparkles(c.left + c.width / 2, c.top + c.height / 2, 15, 'gold');
+                        playChime(587.33, 'triangle', 1.0, 0.15, mainHarpGain);
                         blownCandles++;
                         if (blownCandles === 3) {
                             triggerWishMessage();
@@ -1477,16 +1536,16 @@
                     gsap.to(flame, {
                         scale: 0,
                         opacity: 0,
-                        duration: 0.5,
-                        ease: "back.in(1.7)",
+                        duration: 0.4,
+                        ease: "back.in(1.5)",
                         onComplete: () => {
                             flame.classList.add('hidden');
                         }
                     });
                     const rect = flame.getBoundingClientRect();
-                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 30, 'smoke');
-                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 20, 'gold');
-                    playChime(587.33, 'triangle', 1.2, 0.18, mainHarpGain);
+                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 25, 'smoke');
+                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 15, 'gold');
+                    playChime(587.33, 'triangle', 1.0, 0.15, mainHarpGain);
                     blownCandles++;
                     if (blownCandles === 3) {
                         triggerWishMessage();
@@ -1505,18 +1564,18 @@
 
             gsap.fromTo(node, 
                 {
-                    y: speed * 1.5,
+                    y: speed * 1.2,
                     rotation: targetRot * 0.2
                 },
                 {
-                    y: -speed * 1.5,
+                    y: -speed * 1.2,
                     rotation: targetRot,
                     ease: "none",
                     scrollTrigger: {
                         trigger: node,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: 2.0
+                        scrub: 1.5
                     }
                 }
             );
@@ -1527,48 +1586,57 @@
             card.addEventListener('click', function(e) {
                 const isFlipped = inner.classList.toggle('rotate-y-180');
                 if (isFlipped) {
-                    gsap.to(inner, { rotateY: 180, duration: 0.8, ease: 'back.out(1.2)' });
+                    gsap.to(inner, { rotateY: 180, duration: 0.7, ease: 'back.out(1.1)' });
                     const rect = card.getBoundingClientRect();
-                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 25, 'rainbow');
+                    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, 20, 'rainbow');
                 } else {
-                    gsap.to(inner, { rotateY: 0, rotateX: 0, duration: 0.8, ease: 'back.out(1.2)' });
+                    gsap.to(inner, { rotateY: 0, rotateX: 0, duration: 0.7, ease: 'back.out(1.1)' });
                 }
-                playChime(440, 'sine', 1.0, 0.12, mainHarpGain);
+                playChime(440, 'sine', 0.8, 0.1, mainHarpGain);
+            });
+
+            let cardRect = null;
+            card.addEventListener('pointerenter', () => {
+                cardRect = card.getBoundingClientRect();
+            });
+            card.addEventListener('touchstart', () => {
+                cardRect = card.getBoundingClientRect();
             });
 
             card.addEventListener('pointermove', function(e) {
                 if (inner.classList.contains('rotate-y-180')) return;
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
+                if (!cardRect) cardRect = card.getBoundingClientRect();
+                const x = e.clientX - cardRect.left - cardRect.width / 2;
+                const y = e.clientY - cardRect.top - cardRect.height / 2;
                 
-                const factorX = x / rect.width;
-                const factorY = y / rect.height;
+                const factorX = x / cardRect.width;
+                const factorY = y / cardRect.height;
                 
                 gsap.to(inner, {
-                    rotateY: factorX * 35,
-                    rotateX: -factorY * 35,
-                    scale: 1.08,
-                    duration: 0.5,
+                    rotateY: factorX * 25,
+                    rotateX: -factorY * 25,
+                    scale: 1.05,
+                    duration: 0.4,
                     ease: 'power2.out'
                 });
                 
                 gsap.to(card, {
-                    boxShadow: `${-factorX * 35}px ${-factorY * 35}px 50px rgba(0,0,0,0.12)`,
-                    duration: 0.5,
+                    boxShadow: `${-factorX * 25}px ${-factorY * 25}px 40px rgba(0,0,0,0.08)`,
+                    duration: 0.4,
                     ease: 'power2.out'
                 });
             });
 
             card.addEventListener('pointerleave', function() {
+                cardRect = null;
                 if (inner.classList.contains('rotate-y-180')) {
-                    gsap.to(inner, { rotateY: 180, rotateX: 0, scale: 1, duration: 0.8, ease: 'power3.out' });
+                    gsap.to(inner, { rotateY: 180, rotateX: 0, scale: 1, duration: 0.7, ease: 'power3.out' });
                 } else {
-                    gsap.to(inner, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.8, ease: 'power3.out' });
+                    gsap.to(inner, { rotateY: 0, rotateX: 0, scale: 1, duration: 0.7, ease: 'power3.out' });
                 }
                 gsap.to(card, {
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-                    duration: 0.8,
+                    boxShadow: "0 8px 25px rgba(0,0,0,0.04)",
+                    duration: 0.7,
                     ease: 'power3.out'
                 });
             });
@@ -1576,14 +1644,15 @@
 
         document.querySelectorAll('.parallax-card-body').forEach((card, idx) => {
             gsap.to(card, {
-                y: "random(-15, 15)",
-                x: "random(-8, 8)",
-                rotation: "random(-4, 4)",
-                duration: "random(4, 6)",
+                y: "random(-10, 10)",
+                x: "random(-5, 5)",
+                rotation: "random(-3, 3)",
+                duration: "random(4.5, 6)",
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut",
-                delay: idx * 0.5
+                delay: idx * 0.4,
+                force3D: true
             });
         });
 
@@ -1592,21 +1661,21 @@
             if (!container) return;
             const b = document.createElement('div');
             b.classList.add('vial-bubble');
-            const size = Math.random() * 7 + 3.5;
+            const size = Math.random() * 5 + 3.0;
             b.style.width = `${size}px`;
             b.style.height = `${size}px`;
             b.style.left = `${Math.random() * 80 + 10}%`;
-            b.style.setProperty('--wobble', `${Math.random() * 32 - 16}px`);
+            b.style.setProperty('--wobble', `${Math.random() * 24 - 12}px`);
             b.style.animationDuration = `${Math.random() * 1.5 + 1.5}s`;
             container.appendChild(b);
-            setTimeout(() => b.remove(), 3500);
+            setTimeout(() => b.remove(), 4000);
         }
 
         setInterval(() => {
             if (!document.getElementById('mainContent').classList.contains('hidden')) {
                 createVialBubble();
             }
-        }, 450);
+        }, 400);
 
         let liquidImpact = 0;
         let liquidBaseY = 85;
@@ -1616,7 +1685,7 @@
         function updateLiquidPhysics() {
             sloshPhase += sloshFrequency;
             liquidImpact *= 0.95;
-            let currentAmp = 3 + liquidImpact;
+            let currentAmp = 2.5 + liquidImpact;
             let pathD = `M -100,${liquidBaseY} `;
             for (let x = -100; x <= 300; x += 10) {
                 let sloshOffset = Math.sin(x * 0.03 + sloshPhase) * currentAmp;
@@ -1629,28 +1698,28 @@
         updateLiquidPhysics();
 
         document.getElementById('loveJar').addEventListener('click', function(e) {
-            playChime(783.99, 'sine', 1.2, 0.18, mainHarpGain);
-            liquidImpact = 22;
+            playChime(783.99, 'sine', 1.0, 0.15, mainHarpGain);
+            liquidImpact = 18;
 
             gsap.fromTo("#loveJar svg",
-                { rotation: -12, scale: 0.95 },
-                { rotation: 0, scale: 1, duration: 1.5, ease: "elastic.out(1.5, 0.3)" }
+                { rotation: -8, scale: 0.96 },
+                { rotation: 0, scale: 1, duration: 1.2, ease: "elastic.out(1.2, 0.3)" }
             );
 
-            for (let i = 0; i < 20; i++) {
-                setTimeout(createVialBubble, i * 30);
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createVialBubble, i * 40);
             }
 
             const spark = document.querySelector('#jarSpark i');
             spark.classList.remove('opacity-0', 'scale-50');
-            spark.classList.add('opacity-100', 'scale-150', '-translate-y-14');
+            spark.classList.add('opacity-100', 'scale-125', '-translate-y-12');
             
-            createSparkles(e.clientX, e.clientY, 35, 'gold');
+            createSparkles(e.clientX, e.clientY, 25, 'gold');
 
             setTimeout(() => {
                 spark.classList.add('opacity-0', 'scale-50');
-                spark.classList.remove('opacity-100', 'scale-150', '-translate-y-14');
-            }, 800);
+                spark.classList.remove('opacity-100', 'scale-125', '-translate-y-12');
+            }, 700);
 
             const randomIndex = Math.floor(Math.random() * jarThoughts.length);
             document.getElementById('jarNote').innerText = jarThoughts[randomIndex];
@@ -1670,13 +1739,14 @@
             duration: 11,
             repeat: -1,
             ease: "none",
-            paused: true
+            paused: true,
+            force3D: true
         });
 
         function stopVinylAndReset() {
             gsap.to(vinylTween, { 
                 timeScale: 0, 
-                duration: 1.5, 
+                duration: 1.2, 
                 ease: "power2.in", 
                 onComplete: () => {
                     vinylTween.pause();
@@ -1684,7 +1754,7 @@
                 } 
             });
             vinylOuterGlow.classList.remove('playing');
-            gsap.to(tonearm, { rotation: -15, duration: 1.2, ease: "power2.inOut" });
+            gsap.to(tonearm, { rotation: -15, duration: 1.0, ease: "power2.inOut" });
             currentTrackName.innerText = "Tap to play a song";
             animateMusicBars(false);
             if (uploadedAudio) {
@@ -1707,7 +1777,7 @@
                 mbar1.style.animationDelay = '0.1s';
                 mbar2.style.animationDelay = '0.3s';
                 mbar3.style.animationDelay = '0s';
-                mbar4.style.animationDelay = '0.5s';
+                mbar4.style.animationDelay = '0.4s';
             } else {
                 mbar1.classList.remove('music-bar-active');
                 mbar2.classList.remove('music-bar-active');
@@ -1724,17 +1794,17 @@
             const lines = document.querySelectorAll('.lyric-line');
             lines.forEach(line => {
                 if (line.classList.contains('active')) {
-                    line.style.fontSize = `${lyricsBaseSize * 1.15}rem`;
+                    line.style.fontSize = `${lyricsBaseSize * 1.1}rem`;
                 } else {
-                    line.style.fontSize = `${lyricsBaseSize}rem`;
+                    line.style.fontSize = `${lyricsBaseSize * 0.95}rem`;
                 }
             });
         }
 
         document.getElementById('increaseLyricsText').addEventListener('click', (e) => {
             e.stopPropagation();
-            if (lyricsBaseSize < 1.6) {
-                lyricsBaseSize += 0.1;
+            if (lyricsBaseSize < 1.4) {
+                lyricsBaseSize += 0.08;
                 updateLyricsFontSize();
             }
         });
@@ -1742,7 +1812,7 @@
         document.getElementById('decreaseLyricsText').addEventListener('click', (e) => {
             e.stopPropagation();
             if (lyricsBaseSize > 0.8) {
-                lyricsBaseSize -= 0.1;
+                lyricsBaseSize -= 0.08;
                 updateLyricsFontSize();
             }
         });
@@ -1771,9 +1841,9 @@
 
             container.classList.remove('hidden');
             setTimeout(() => {
-                container.style.maxHeight = '400px';
+                container.style.maxHeight = '350px';
                 container.style.opacity = '1';
-                container.style.marginTop = '1.25rem';
+                container.style.marginTop = '1rem';
             }, 50);
         }
 
@@ -1784,7 +1854,7 @@
             container.style.marginTop = '0';
             setTimeout(() => {
                 container.classList.add('hidden');
-            }, 600);
+            }, 500);
             activeLyrics = [];
         }
 
@@ -1860,9 +1930,9 @@
                     setTimeout(() => {
                         if (currentPlayType === "procedural") {
                             playChime(note, 'sine', 2.8, 0.08, mainHarpGain);
-                            createSparkles(window.innerWidth / 2 + (Math.random() * 80 - 40), window.innerHeight / 2, 2, 'rainbow');
+                            createSparkles(window.innerWidth / 2 + (Math.random() * 60 - 30), window.innerHeight / 2, 2, 'rainbow');
                         }
-                    }, i * 200);
+                    }, i * 180);
                 });
 
                 chordIdx = (chordIdx + 1) % chords.length;
@@ -1899,8 +1969,8 @@
                 vinylRecord.classList.remove('paused-record');
                 vinylOuterGlow.classList.add('playing');
                 vinylTween.play();
-                gsap.to(vinylTween, { timeScale: 1, duration: 2.0, ease: "power1.out" });
-                gsap.to(tonearm, { rotation: 5, duration: 1.5, ease: "power2.out" });
+                gsap.to(vinylTween, { timeScale: 1, duration: 1.8, ease: "power1.out" });
+                gsap.to(tonearm, { rotation: 5, duration: 1.2, ease: "power2.out" });
                 currentTrackName.innerText = trackName;
                 animateMusicBars(true);
 
@@ -1963,13 +2033,13 @@
             }
             
             const rect = btn.getBoundingClientRect();
-            createSparkles(rect.left + rect.width / 2, rect.top, 15, 'gold');
+            createSparkles(rect.left + rect.width / 2, rect.top, 12, 'gold');
         });
 
         document.getElementById('vinylPlayer').addEventListener('click', function() {
             if (!vinylRecord.classList.contains('paused-record')) {
                 stopVinylAndReset();
-                playChime(220, 'sine', 1.0, 0.1, mainHarpGain);
+                playChime(220, 'sine', 1.0, 0.08, mainHarpGain);
             } else {
                 const firstTrack = document.querySelector('.track-btn');
                 if (firstTrack) {
@@ -2014,17 +2084,17 @@
                 const indexStr = newIndex < 10 ? '0' + newIndex : newIndex;
 
                 const btn = document.createElement('button');
-                btn.className = "track-btn w-full p-4 bg-white/60 hover:bg-white/90 border border-white/60 hover:border-amber-200 rounded-[1.25rem] flex items-center justify-between transition-all duration-300 group shadow-sm hover:shadow interactive-scale";
+                btn.className = "track-btn w-full p-3 bg-white/60 hover:bg-white/90 border border-white/60 hover:border-amber-200 rounded-xl flex items-center justify-between transition-all duration-300 group shadow-sm hover:shadow-md interactive-scale";
                 btn.setAttribute('data-uploaded', 'true');
                 btn.setAttribute('data-file-id', fileId);
                 btn.setAttribute('data-name', name);
                 btn.innerHTML = `
                     <div class="flex items-center gap-3">
-                        <span class="text-xs font-serif-elegant text-stone-500 group-hover:text-amber-800">${indexStr}</span>
-                        <span class="text-xs font-bold text-stone-800">${name}</span>
+                        <span class="text-[0.65rem] font-serif-elegant text-stone-500 group-hover:text-amber-800">${indexStr}</span>
+                        <span class="text-[0.7rem] font-bold text-stone-800">${name}</span>
                     </div>
-                    <div class="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
-                        <i class="fa-solid fa-play text-[0.6rem] text-stone-400 group-hover:text-amber-600"></i>
+                    <div class="w-6 h-6 rounded-full bg-stone-100 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
+                        <i class="fa-solid fa-play text-[0.55rem] text-stone-400 group-hover:text-amber-600"></i>
                     </div>
                 `;
                 container.appendChild(btn);
@@ -2034,8 +2104,8 @@
                 lyricsInput.value = '';
                 document.getElementById('addTrackForm').classList.add('hidden');
 
-                createSparkles(window.innerWidth / 2, window.innerHeight / 2, 20, 'gold');
-                playChime(440, 'sine', 1.0, 0.2, mainHarpGain);
+                createSparkles(window.innerWidth / 2, window.innerHeight / 2, 15, 'gold');
+                playChime(440, 'sine', 1.0, 0.15, mainHarpGain);
             };
 
             if (lyricsFile) {
@@ -2088,11 +2158,11 @@
             trigger(dis) {
                 this.displacement = dis;
                 this.velocity = 0;
-                playChime(this.note, 'triangle', 2.5, 0.35, mainHarpGain);
+                playChime(this.note, 'triangle', 2.5, 0.3, mainHarpGain);
                 
-                let rect = harpStringsSvg.getBoundingClientRect();
-                let clientX = rect.left + (this.originalX / 400) * rect.width;
-                createSparkles(clientX, rect.top + rect.height / 2, 12, 'gold', 0, -2.5);
+                if (!harpRect) updateHarpRect();
+                let clientX = harpRect.left + (this.originalX / 400) * harpRect.width;
+                createSparkles(clientX, harpRect.top + harpRect.height / 2, 10, 'gold', 0, -2);
             }
         }
 
@@ -2108,14 +2178,21 @@
         updateHarpPhysics();
 
         let lastCrossedIndex = -1;
+        let harpRect = null;
+
+        function updateHarpRect() {
+            harpRect = harpStringsSvg.getBoundingClientRect();
+        }
+        window.addEventListener('resize', updateHarpRect);
+        harpStringsSvg.addEventListener('pointerenter', updateHarpRect);
+        harpStringsSvg.addEventListener('touchstart', updateHarpRect);
 
         function handleHarpInteraction(clientX, clientY) {
-            let rect = harpStringsSvg.getBoundingClientRect();
-            let relativeX = ((clientX - rect.left) / rect.width) * 400;
-            let relativeY = ((clientY - rect.top) / rect.height) * 180;
+            if (!harpRect) updateHarpRect();
+            let relativeX = ((clientX - harpRect.left) / harpRect.width) * 400;
+            let relativeY = ((clientY - harpRect.top) / harpRect.height) * 180;
 
             if (relativeY >= 0 && relativeY <= 180 && relativeX >= 0 && relativeX <= 400) {
-                let spacing = 400 / 6;
                 let estimatedIndex = Math.round((relativeX - 20) / 64);
                 
                 if (estimatedIndex >= 0 && estimatedIndex < 6) {
@@ -2123,7 +2200,7 @@
                     let diff = relativeX - string.originalX;
                     
                     if (Math.abs(diff) < 18 && estimatedIndex !== lastCrossedIndex) {
-                        let pushDirection = diff > 0 ? 35 : -35;
+                        let pushDirection = diff > 0 ? 30 : -30;
                         string.trigger(pushDirection);
                         lastCrossedIndex = estimatedIndex;
                     }
