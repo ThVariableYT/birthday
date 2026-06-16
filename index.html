@@ -385,6 +385,15 @@
 </head>
 <body class="relative min-h-screen text-stone-800 antialiased overflow-x-hidden select-none">
 
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <button id="fullscreenToggle" class="w-10 h-10 rounded-full glass-premium flex items-center justify-center text-stone-700 hover:text-rose-500 transition-all shadow-xl interactive-scale">
+            <i class="fa-solid fa-expand text-xs"></i>
+        </button>
+        <button id="musicToggle" class="hidden w-10 h-10 rounded-full glass-premium flex items-center justify-center text-stone-700 hover:text-rose-500 transition-all shadow-xl interactive-scale">
+            <i class="fa-solid fa-music text-xs"></i>
+        </button>
+    </div>
+
     <div class="fixed inset-0 pointer-events-none z-0">
         <div class="absolute top-[-5%] left-[-15%] liquid-blob-1"></div>
         <div class="absolute bottom-[-5%] right-[-15%] liquid-blob-2"></div>
@@ -399,7 +408,7 @@
         <span id="toastText"></span>
     </div>
 
-    <div id="introScreen" class="fixed inset-0 bg-[#060408] z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
+    <div id="introScreen" class="fixed inset-0 bg-[#060408] z-40 flex flex-col items-center justify-center p-4 overflow-y-auto">
         <canvas id="codeStreamCanvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-20"></canvas>
         
         <div class="w-full max-w-4xl px-4 py-8 flex flex-col items-center relative z-10">
@@ -548,12 +557,6 @@
     </div>
 
     <div id="mainContent" class="hidden min-h-screen pb-20 max-w-6xl mx-auto relative z-10 px-4 sm:px-8">
-        
-        <div class="fixed top-4 right-4 z-40 flex gap-2">
-            <button id="musicToggle" class="w-10 h-10 rounded-full glass-premium flex items-center justify-center text-stone-700 hover:text-rose-500 transition-all shadow-xl interactive-scale">
-                <i class="fa-solid fa-music text-xs"></i>
-            </button>
-        </div>
 
         <header class="relative pt-12 pb-10 text-center select-none animate-float" id="mainHeader">
             <div class="absolute top-2 left-4 text-rose-300/60 text-base"><i class="fa-solid fa-star"></i></div>
@@ -926,7 +929,6 @@
                 feedbackNode.connect(delayNode);
                 delayNode.connect(audioCtx.destination);
             } catch (e) {
-                console.warn("AudioContext failed to initialize.", e);
             }
         }
 
@@ -1353,6 +1355,7 @@
                 setTimeout(() => {
                     const main = document.getElementById('mainContent');
                     main.classList.remove('hidden');
+                    document.getElementById('musicToggle').classList.remove('hidden');
 
                     const transitionTimeline = gsap.timeline({
                         onComplete: () => {
@@ -2224,10 +2227,80 @@
             lastCrossedIndex = -1;
         });
 
+        const fullscreenToggle = document.getElementById('fullscreenToggle');
+        const fsIcon = fullscreenToggle.querySelector('i');
+
+        function toggleFullscreen() {
+            const doc = window.document;
+            const docEl = doc.documentElement;
+            const requestFS = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+            const exitFS = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+            const isFull = doc.fullscreenElement || doc.mozFullScreenElement || doc.webkitFullscreenElement || doc.msFullscreenElement;
+
+            if (!isFull) {
+                if (requestFS) {
+                    requestFS.call(docEl).catch(() => {
+                        fallbackMockFullscreen();
+                    });
+                } else {
+                    fallbackMockFullscreen();
+                }
+            } else {
+                if (exitFS) {
+                    exitFS.call(doc).catch(() => {
+                        fallbackMockFullscreen();
+                    });
+                } else {
+                    fallbackMockFullscreen();
+                }
+            }
+        }
+
+        function fallbackMockFullscreen() {
+            if (document.body.classList.contains('mock-fullscreen')) {
+                document.body.classList.remove('mock-fullscreen');
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                document.body.style.bottom = '';
+                document.body.style.overflow = '';
+            } else {
+                document.body.classList.add('mock-fullscreen');
+                if (/iPhone|iPod|iPad/.test(navigator.userAgent)) {
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = '0';
+                    document.body.style.left = '0';
+                    document.body.style.right = '0';
+                    document.body.style.bottom = '0';
+                    document.body.style.overflow = 'hidden';
+                    window.scrollTo(0, 0);
+                }
+            }
+            updateFullscreenIcon();
+        }
+
+        function updateFullscreenIcon() {
+            const isFull = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement || document.body.classList.contains('mock-fullscreen');
+            if (isFull) {
+                fsIcon.classList.remove('fa-expand');
+                fsIcon.classList.add('fa-compress');
+            } else {
+                fsIcon.classList.remove('fa-compress');
+                fsIcon.classList.add('fa-expand');
+            }
+        }
+
+        fullscreenToggle.addEventListener('click', toggleFullscreen);
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+        document.addEventListener('mozfullscreenchange', updateFullscreenIcon);
+        document.addEventListener('MSFullscreenChange', updateFullscreenIcon);
+
         window.addEventListener('load', () => {
             renderHardcodedTracklist();
         });
-
     </script>
 </body>
 </html>
